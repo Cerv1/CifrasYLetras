@@ -1,4 +1,4 @@
-# Requisites we need:
+# Lista de requisitos:
 
 - [ ] La interfaz de la aplicación ha de ser homogénea en todas las páginas.
 - [ ] Debe usar diseño adaptable para una correcta visualización en móviles, tabletas y desktop.
