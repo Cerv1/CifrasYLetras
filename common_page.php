@@ -1,7 +1,7 @@
 <?php
 
   function HTMLbegin($title){
-    echo <<< HTML
+    echo '
     <!DOCTYPE html>
     <html>
     <head>
@@ -10,29 +10,29 @@
       <title>$title</title>
     </head>
     <body>
-    HTML;
+    ';
   }
 
   function HTMLend(){
-    echo <<< HTML
+    echo'
     </body>
     </html>
-    HTML;
+    ';
   }
 
   function HTMLnav($activo){
-    echo <<< HTML
+    echo'
     <nav> <h1>Portada</h1> <ul>
     </ul>
     </nav>
-    HTML;
+    ';
   }
 
   function HTMLfooter(){
-    echo <<< HTML
+    echo'
     <footer>
     <small>(C) Sergio Cervilla , Adrián Morente</small>
     </footer>
-    HTML;
+    ';
   }
 ?>
