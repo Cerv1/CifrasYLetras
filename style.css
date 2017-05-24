@@ -1,0 +1,50 @@
+body{
+  margin: 0 auto;
+  width: 80%;
+  background-color: rgb(212, 212, 212);
+}
+
+header{
+  background-color: rgb(151, 255, 0);
+  overflow: auto;
+  padding: 30px;
+}
+
+header div{
+  padding: 10px;
+  border-style: dotted;
+  border-color: red;
+  border-width: 5px;
+}
+
+header #logo{
+  float: left;
+}
+
+header #contacto{
+  float: right;
+}
+
+nav{
+  background-color: rgb(255, 0, 184);
+  overflow: auto;
+}
+
+nav #menu{
+  float: left;
+}
+
+nav #login{
+  margin: 15px 15px 0px 0px;
+  float: right;
+}
+
+nav ul li{
+  display: inline;
+  list-style: none;
+  padding: 0px 12px 0px 12px;
+}
+
+footer{
+  text-align: center;
+}
