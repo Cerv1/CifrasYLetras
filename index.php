@@ -1,7 +1,7 @@
 <?php
 
   require "common_page.php";
-  HTMLbegin("Final TW project");
+  HTMLbegin();
   HTMLheader();
 
   if(!isset($_GET["p"]))

@@ -1,20 +1,40 @@
 body{
   margin: 0 auto;
-  width: 80%;
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(230, 230, 230);
 }
 
 header{
-  background-color: rgb(151, 255, 0);
+  font-family: 'Gloria Hallelujah', cursive;
+  border-style: solid;
+  border-color: rgb(94, 57, 30);
+  border-width: 8px;
+  background-color: rgb(4, 33, 15);
   overflow: auto;
   padding: 30px;
+  color: rgb(220, 220, 220);
 }
 
-header div{
-  padding: 10px;
-  border-style: dotted;
-  border-color: red;
-  border-width: 5px;
+header .header-item{
+  width: 33%;
+  float: left;
+  overflow: auto;
+}
+
+header h1,h3{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+header #header-left{
+  font-size: 140%;
+}
+
+header #header-center{
+  text-align: center;
+}
+
+header #header-right{
+  text-align: center;
 }
 
 header #logo{
@@ -22,12 +42,21 @@ header #logo{
 }
 
 header #contacto{
-  float: right;
+  float: justify;
 }
 
 nav{
-  background-color: rgb(255, 0, 184);
+  font-family: 'Patrick Hand', cursive;
+  background-color: rgb(94, 57, 30);
+  border-top-color: black;
+  border-top-width: 1px;
+  border-top-style: solid;
   overflow: auto;
+}
+
+nav a{
+  text-decoration: none;
+  color: white;
 }
 
 nav #menu{
@@ -42,6 +71,9 @@ nav #login{
 nav ul li{
   display: inline;
   list-style: none;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: black;
   padding: 0px 12px 0px 12px;
 }
 
