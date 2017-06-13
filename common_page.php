@@ -85,13 +85,13 @@
   function HTMLIndex(){
     echo '
       <div class="general-content">
-        <h2> Nuestro centro </h2>
+        <h1> Nuestro centro </h1>
         <p>
-          Cifras y Letras nace con la idea de apoyar a las familias en el duro trabajo de la educación de sus hijos.
-          Ayudandolos en la formación académica que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
+          Cifras y Letras nace con la idea de <b>apoyar</b> a las familias en el duro trabajo de la <b>educación</b> de sus hijos.
+          Ayudandolos en la <b>formación académica</b> que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
           tan importantes en el día de hoy.
-
-          Cifras y Letras Centro de Formación se caracteriza por:
+          <br><br>
+          <b>Cifras y Letras Centro de Formación</b> se caracteriza por:
           <ul>
             <li>
               Estudio y evaluación del alumno/a para ver que metodologia adoptar para el máximo rendimiento.
