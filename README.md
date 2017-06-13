@@ -1,6 +1,6 @@
 # Lista de requisitos:
 
-- [ ] La interfaz de la aplicación ha de ser homogénea en todas las páginas.
+- [DOING] La interfaz de la aplicación ha de ser homogénea en todas las páginas.
 - [ ] Debe usar diseño adaptable para una correcta visualización en móviles, tabletas y desktop.
 - [ ] La gestión de la BBDD se debe desarrollar en PHP y sobre MySQL.
 - [ ] Debe usar JavaScript al menos para el filtrado de datos de entrada en formularios.
