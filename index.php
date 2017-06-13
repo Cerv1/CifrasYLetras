@@ -5,7 +5,7 @@
 
   if(!isset($_GET["p"]))
     $_GET['p']=0;
-  else if($_GET["p"]<0 || $_GET["p"]>4)
+  else if($_GET["p"]<0 || $_GET["p"]>20)
     $_GET['p']=0;
   HTMLheader($_GET["p"]);
   HTMLcontent($_GET["p"]);

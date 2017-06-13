@@ -32,7 +32,7 @@
             <h1>Cifras y Letras - Academia de Formación</h1>
           </div></a>
           <a class="header-item link-item" href="#"><div class="login-header">
-            <h4>LOG IN</h4>
+            <h4><a href="index.php?p=5">LOG IN</a></h4>
           </div></a>
         </div>
       </header>
@@ -64,6 +64,9 @@
         break;
       case 4:
         HTMLContact();
+        break;
+      case 5:
+        HTMLLogIn();
         break;
     }
     echo '</div>';
@@ -299,6 +302,23 @@
     </div>
 
 
+    ';
+  }
+
+  function HTMLLogIn(){
+    echo '
+    <div class="login-card">
+        <h1>Acceder</h1><br>
+      <form>
+        <input type="text" name="user" placeholder="Usuario">
+        <input type="password" name="pass" placeholder="Contraseña">
+        <input type="submit" name="login" class="login login-submit" value="Entrar">
+      </form>
+
+      <div class="login-help">
+        <a href="#">Registrarse</a> • <a href="#">¿Olvidaste la contraseña?</a>
+      </div>
+    </div>
     ';
   }
 ?>
