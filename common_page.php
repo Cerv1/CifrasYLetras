@@ -8,7 +8,7 @@
       <meta charset="utf-8">
       <link rel="stylesheet" href="style.css">
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+      <link href="https://fonts.googleapisº.com/css?family=Patrick+Hand" rel="stylesheet">
       <title>Cifras y Letras - Granada</title>
     </head>
     <body>
@@ -85,7 +85,30 @@
   }
 
   function HTMLIndex(){
-    echo 'index';
+    echo '
+      <div class="general-content">
+        <h2> Nuestro centro </h2>
+        <p>
+          Cifras y Letras nace con la idea de apoyar a las familias en el duro trabajo de la educación de sus hijos.
+          Ayudandolos en la formación académica que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
+          tan importantes en el día de hoy.
+
+          Cifras y Letras Centro de Formación se caracteriza por:
+          <ul>
+            <li>
+              Estudio y evaluación del alumno/a para ver que metodologia adoptar para el máximo rendimiento.
+            </li>
+            <li>
+              Un equipo de profesionales  implicados en la consecución de los objetivos fijados para cada uno de
+              nuestros alumnos/as.
+            </li>
+            <li>
+              Grupos de trabajo reducido (máx 7 alumnos) de su misma edad.
+            </li>
+          </ul>
+        </p>
+      </div>
+    ';
   }
 
   function HTMLFormation(){
