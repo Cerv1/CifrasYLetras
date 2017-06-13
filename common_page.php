@@ -54,11 +54,20 @@
   function HTMLcontent($page){
     switch($page){
       case 0:
-        HTMLFormacion();
+        HTMLIndex();
         break;
-      case 1: break;
-      case 2: break;
-      case 3: break;
+      case 1:
+        HTMLFormation();
+        break;
+      case 2:
+        HTMLFacilities();
+        break;
+      case 3:
+        HTMLAboutUs();
+        break;
+      case 4:
+        HTMLContact();
+        break;
     }
     echo '
       <div id="content">
@@ -75,7 +84,23 @@
     ';
   }
 
-  function HTMLFormacion($param){
+  function HTMLIndex(){
+    echo 'index';
+  }
 
+  function HTMLFormation(){
+    echo 'formation';
+  }
+
+  function HTMLFacilities(){
+    echo 'facilities';
+  }
+
+  function HTMLAboutUs(){
+    echo 'about us';
+  }
+
+  function HTMLContact(){
+    echo 'contact';
   }
 ?>
