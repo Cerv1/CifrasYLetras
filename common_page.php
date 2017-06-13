@@ -28,10 +28,10 @@
   function HTMLheader($activo) {
     echo '
     <header>
-      <nav class="nav-extended">
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Logo</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <nav class="nav-extended blue darken-1">
+        <div class="nav-wrapper blue darken-1">
+          <a href="index.php" class="brand-logo">Cifras y Letras - Academia de Formación</a>
+          <a href="index.php" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#">Login</a></li>
           </ul>
@@ -40,25 +40,14 @@
           </ul>
         </div>
         <div class="nav-content">
-          <ul class="tabs tabs-transparent">
-            <li class="tab"><a href="#$activo">Inicio</a></li>
-            <li class="tab"><a href="#$activo">Formación</a></li>
-            <li class="tab"><a href="#$activo">Instalaciones</a></li>
-            <li class="tab"><a href="#$activo">Sobre nosotros</a></li>
-            <li class="tab"><a href="#$activo">Contacto</a></li>
-          </ul>
+          <ul class="tabs tabs-transparent">';
+            $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto"];
+              foreach ($items as $k => $v)
+                echo "<li".($k==$activo?" class='tab active'":" class='tab'").">"."<a href='index.php?p=".($k)."'>".$v."</a></li>";
+          echo '</ul>
         </div>
       </nav>
-      <div id="test1" class="col s12">Test 1</div>
-      <div id="test2" class="col s12">Test 2</div>
-      <div id="test3" class="col s12">Test 3</div>
-      <div id="test4" class="col s12">Test 4</div>
     </header>';
-    echo '<nav><div id="menu"><ul>';
-    $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto"];
-      foreach ($items as $k => $v)
-        echo "<li".($k==$activo?" class='activo'":"").">"."<a href='index.php?p=".($k)."'>".$v."</a></li>";
-    echo '</ul></div></nav>';
   }
 
   function HTMLcontent($page){
@@ -85,8 +74,8 @@
 
   function HTMLfooter(){
     echo'
-    <footer>
-    <h1>Cifras y Letras - Academia de Formación</h1>
+    <footer class="card-panel blue darken-1">
+    <h5>Cifras y Letras - Academia de Formación</h5>
     <small>(C) Sergio Cervilla , Adrián Morente</small>
     </footer>
     ';
@@ -150,10 +139,10 @@
 
       <div class="main-content">
         <div class="general-content">
-          <h1>Apoyo escolar</h1>
+          <h3>Apoyo escolar</h3>
 
           <div class="general-content">
-            <h2>Primaria</h2>
+            <h4>Primaria</h4>
             <p>¿Notas en tu hijo problemas en el estudio? ¿Necesita refuerzo
             en alguna asignatura?</p>
             <p>Los primeros años en la educación de todo niño
@@ -164,7 +153,7 @@
           </div>
 
           <div class="general-content">
-            <h2>ESO</h2>
+            <h4>ESO</h4>
             <p>Obtener el graduado en ESO es el requisito mínimo obligatorio para
             todo estudiante. Si tienes dificultades con las asignaturas, en Academia
             Cifras y Letras te ofrecemos las herramientas necesarias para que sea
@@ -175,7 +164,7 @@
           </div>
 
           <div class="general-content">
-            <h2>Bachillerato</h2>
+            <h4>Bachillerato</h4>
             <p>Los dos cursos de Bachillerato son fundamentales si quieres cursar
             una carrera universitaria. La media de la nota obtenida junto con la de
             Selectividad determinará la titulación universitaria a la que puedas
@@ -186,7 +175,7 @@
           </div>
 
           <div class="general-content">
-            <h2>Preparación graduado ESO</h2>
+            <h4>Preparación graduado ESO</h4>
             <p>El Graduado en ESO es un requisito indispensable a la hora de encontrar
             trabajo. Si quieres mejorar tu situación laboral, no dejes escapar esta
             oportunidad.</p>
@@ -199,23 +188,79 @@
           </div>
 
           <div class="general-content">
-            <h2>Preparación título Bachillerato</h2>
-            <p>TEXTASO</p>
+            <h4>Preparación título Bachillerato</h4>
+            <p>Si ya tienes el graduado en ESO y te falta el Bachillerato, no pierdas
+            la oportunidad de completar tus estudios para mejorar tu situación
+            laboral o acceder a la universidad.</p>
+            <p>La prueba para la obtención del título se subdivide en tres bloques
+            con exámenes diferentes y solo te podrás presentar a los que no hubieras
+            superado con anterioridad.</p>
+            <p>La prueba es para personas mayores de 20 años o que cumplan esa edad
+            en el año natural en que se celebran.</p>
           </div>
 
           <div class="general-content">
-            <h2>Preparación Selectividad</h2>
-            <p>TEXTASO</p>
+            <h4>Preparación Selectividad</h4>
+            <p>Si tienes problemas con la selectividad o necesitas una nota más alta
+            te ayudamos con las asignaturas a las que te presentes. Es una prueba
+            decisiva, ya que la nota obtenida va a determinar tu futuro.</p>
+            <p>Disponemos de exámenes de selectividad y de profesores que resolverán
+            todas tus dudas. Nos adaptamos a tus necesidades y horarios, preparamos
+            durante todo el año o cursos intensivos previos a las convocatorias.</p>
           </div>
 
         </div>
 
         <div class="general-content">
-          <h1>Pruebas de Acceso</h1>
+          <h3>Pruebas de Acceso</h3>
+
+          <div class="general-content">
+            <h4>Acceso a grado medio y superior</h4>
+            <p>¿Has abandonado los estudios? ¿No estás seguro de continuar y quieres
+            acceder pronto al mercado laboral?</p>
+            <p>Impartimos cursos de formación para el acceso a grado medio y grado
+            superior. Trabajamos de <b>forma personalizada</b> con cada alumno
+            preparándole para el examen de acceso.
+          </div>
+
+          <div class="general-content">
+            <h4>Acceso a Universidad (+25 años)</h4>
+            <p>Si eres mayor de 25 años y quieres acceder a un título universitario,
+            te preparamos el examen de acceso para cualquier grado.</p>
+            <p>Somos conscientes de que retomar los estudios después de años sin coger
+            un libro es muy duro. Si a esto le sumamos que estudias y trabajas, el
+            esfuerzo es mayor.</p>
+            <p>Nuestros profesores te prepararán para que el examen de acceso te
+            resulte un paso sencillo. <b>No pierdas la oportunidad de elegir tu futuro</b>
+            </p>
+          </div>
+
         </div>
 
         <div class="general-content">
-          <h1>Cursos de Inglés</h1>
+          <h3>Cursos de Inglés</h3>
+
+          <div class="general-content">
+            <h4>Preparación para el B1, B2 y C1</h4>
+            <p>¿Quieres trabajar en el extranjero? ¿Tu trabajo te exige hablar un
+            segundo idioma? o ¿simplemente quieres aprender un idioma extranjero?</p>
+            <p>Aprender una lengua extranjera es un requisito indispensable para tener
+            éxito profesional. Las empresas demandan profesionales que hablen otro
+            idioma</p>
+            <p>Nuestras clases son tanto de conversación (ya que pensamos que hablando
+            otra lengua es como se aprende realmente) como de gramática, ya que la
+            teoría es la llave de paso de la práctica.</p>
+            <p>Disponemos de profesores con amplia experiencia en la preparación de
+            los exámenes de Cambridge.</p>
+            <p>Prueba tu nivel de inglés
+              <a href="http://www.cambridgeenglish.org/es/test-your-english/">
+                aquí
+              </a>.</p>
+
+
+
+
+          </div>
         </div>
       </div>
 
