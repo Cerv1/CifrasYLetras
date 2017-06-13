@@ -81,9 +81,12 @@ nav ul li{
   margin-left: 7%;
   margin-right: 7%;
 }
+
+
 /*CSS associated to general-content class*/
 
 .general-content{
+  overflow: auto;
   padding-left: 25px;
   padding-top: 5px;
   padding-top: 5px;
@@ -94,6 +97,12 @@ nav ul li{
   border-radius: 15px;
   background-color: rgb(238, 238, 238);
   font-family: 'Overpass', sans-serif;
+}
+
+.general-content img{
+  width: 150px;
+  margin: 0px 40px 40px 40px;
+  float: right;
 }
 
 .general-content h2{

@@ -86,6 +86,7 @@
     echo '
       <div class="general-content">
         <h1> Nuestro centro </h1>
+        <img src="./images/graduation-outfit.png">
         <p>
           Cifras y Letras nace con la idea de <b>apoyar</b> a las familias en el duro trabajo de la <b>educación</b> de sus hijos.
           Ayudandolos en la <b>formación académica</b> que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
