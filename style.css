@@ -67,6 +67,7 @@ nav li{
 }
 
 #content{
+  overflow: auto;
   margin-left: 7%;
   margin-right: 7%;
 }
