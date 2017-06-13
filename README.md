@@ -8,3 +8,7 @@
 - [ ] La aplicación debe funcionar correctamente en el servidor de prácticas.
 - [ ] La aplicación debe incluir algún sistema de instalación y desinstalación simple. La configuración inicial se hará, preferiblemente, vía web.
 - [ ] El menú de navegación debe incluir un enlace a la documentación (pdf o HTML).
+
+
+
+cagonlaputa
