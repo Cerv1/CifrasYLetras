@@ -10,7 +10,7 @@
       <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
       <link href="https://fonts.googleapisº.com/css?family=Patrick+Hand" rel="stylesheet">
-      <title>Cifras y Letras - Granada</title>
+      <title>Cifras y Letras</title>
     </head>
     <body>
     ';
@@ -24,40 +24,27 @@
   }
 
   function HTMLheader($activo) {
-    echo '<header>
-      <div class="header-item" id="header-left">
-        <h1>Cifras y Letras</h1>
-        <h3>Centro de formación</h3>
-      </div>
-      <div class="header-item" id="header-center">
-        <h2>C/Santa Rosalía Nº12</h2>
-        <h3>¡Tu academia en el Zaidín!</h3>
-      </div>
-      <div class="header-item" id="header-right">
-        <h2>Contacto</h2>
-        <h3 class="info-telf">858.95.01.08</h3>
-        <h3 class="info-telf">668.57.82.25</h3>
-      </div>
-
-      <div class="top-header">
-        <div class="logo-header">
+    echo '
+    <div class="top-panel">
+      <header>
+        <div class="top-header">
+          <a class="header-item" href="index.php"><div class="logo-header">
+            <h2>Cifras y Letras - Academia de Formación</h2>
+          </div></a>
+          <a class="header-item link-item" href="#"><div class="login-header">
+            <h5>LOG IN</h5>
+          </div></a>
         </div>
-
-        <div class="login-header">
+      </header>
+      <nav>
+        <div><ul>';
+        $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto"];
+          foreach ($items as $k => $v)
+            echo "<li".($k==$activo?" class='activo'":"class='link-item'").">"."<a href='index.php?p=".($k)."'>".$v."</a></li>";
+        echo '</ul>
         </div>
-      </div>
-
-      <div class="bottom-header">
-      </div>
-    </header>';
-    echo '<nav><div id="menu"><ul>';
-    $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto"];
-      foreach ($items as $k => $v)
-        echo "<li".($k==$activo?" class='activo'":"").">"."<a href='index.php?p=".($k)."'>".$v."</a></li>";
-    echo '</ul></div>
-    <div id="login">
-      <a href="#">LOGIN</a>
-    </div></nav>';
+      </nav>
+    </div>';
   }
 
   function HTMLcontent($page){

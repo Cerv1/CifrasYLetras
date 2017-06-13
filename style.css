@@ -3,43 +3,53 @@ body{
   background-color: rgb(230, 230, 230);
 }
 
+.top-panel{
+  overflow: auto;
+  background-color: #546e7a;
+  box-shadow: 2px 2px 5px rgb(94, 94, 94);
+}
+
+.top-panel a{
+  color: #eceff1;
+  text-decoration: none;
+}
+
 header{
   font-family: 'Gloria Hallelujah', cursive;
-  border-style: solid;
   overflow: auto;
-  padding: 30px;
-  color: rgb(220, 220, 220);
+}
+
+.header-item a{
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.header-item h2,h5{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.link-item :hover{
+  background-color: #435d69;
+}
+
+.logo-header{
+  float: left;
+  padding-left: 50px;
+}
+
+.login-header{
+  float: right;
+  padding-right: 5px;
 }
 
 nav{
   font-family: 'Patrick Hand', cursive;
-  background-color: rgb(94, 57, 30);
-  border-top-color: black;
-  border-top-width: 1px;
-  border-top-style: solid;
-  overflow: auto;
-}
-
-nav a{
-  text-decoration: none;
-  color: white;
-}
-
-nav #menu{
-  float: left;
-}
-
-nav #login{
-  margin: 15px 15px 0px 0px;
-  float: right;
 }
 
 nav ul li{
   display: inline;
   list-style: none;
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-right-color: black;
   padding: 0px 12px 0px 12px;
 }
 
