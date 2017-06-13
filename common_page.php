@@ -29,15 +29,15 @@
       <header>
         <div class="top-header">
           <a class="header-item" href="index.php"><div class="logo-header">
-            <h2>Cifras y Letras - Academia de Formación</h2>
+            <h1>Cifras y Letras - Academia de Formación</h1>
           </div></a>
           <a class="header-item link-item" href="#"><div class="login-header">
-            <h5>LOG IN</h5>
+            <h4>LOG IN</h4>
           </div></a>
         </div>
       </header>
       <nav>
-        <div><ul>';
+        <div><ul class="link-item">';
         $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto"];
           foreach ($items as $k => $v)
             echo "<li".($k==$activo?" class='activo'":"").">"."<a href='index.php?p=".($k)."'>".$v."</a></li>";
