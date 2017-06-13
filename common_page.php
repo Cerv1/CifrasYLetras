@@ -52,6 +52,14 @@
   }
 
   function HTMLcontent($page){
+    switch($page){
+      case 0:
+        HTMLFormacion();
+        break;
+      case 1: break;
+      case 2: break;
+      case 3: break;
+    }
     echo '
       <div id="content">
 
