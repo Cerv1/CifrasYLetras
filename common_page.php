@@ -139,10 +139,10 @@
 
       <div class="main-content">
         <div class="general-content">
-          <h2>Apoyo escolar</h2>
+          <h1>Apoyo escolar</h1>
 
-          <h4>Primaria</h4>
           <div class="general-content">
+            <h2>Primaria</h2>
             <p>¿Notas en tu hijo problemas en el estudio? ¿Necesita refuerzo
             en alguna asignatura?</p>
             <p>Los primeros años en la educación de todo niño
@@ -152,39 +152,59 @@
             <p>Grupos reducidos y atención personalizada para un mayor rendimiento</p>
           </div>
 
-          <h4>ESO</h4>
           <div class="general-content">
+            <h2>ESO</h2>
+            <p>Obtener el graduado en ESO es el requisito mínimo obligatorio para
+            todo estudiante. Si tienes dificultades con las asignaturas, en Academia
+            Cifras y Letras te ofrecemos las herramientas necesarias para que sea
+            todo más fácil.</p>
+            <p>Además de motivar y trabajar con los alumnos de forma personalizada,
+            les damos la formación necesaria para alcanzar los objetivos del curso
+            con buenos resultados. <strong>Impartimos clases todo el año</strong></p>
+          </div>
+
+          <div class="general-content">
+            <h2>Bachillerato</h2>
+            <p>Los dos cursos de Bachillerato son fundamentales si quieres cursar
+            una carrera universitaria. La media de la nota obtenida junto con la de
+            Selectividad determinará la titulación universitaria a la que puedas
+            acceder.</p>
+            <p>Te preparamos para conseguir los mejores resultados y los objetivos
+            que te has marcado. <strong>¡No lo pienses más, podemos ayudarte!</strong>
+            </p>
+          </div>
+
+          <div class="general-content">
+            <h2>Preparación graduado ESO</h2>
+            <p>El Graduado en ESO es un requisito indispensable a la hora de encontrar
+            trabajo. Si quieres mejorar tu situación laboral, no dejes escapar esta
+            oportunidad.</p>
+            <p>En Academia Cifras y Letras disponemos de cursos para obtener el
+            Graduado en ESO. Éste está enfocado para todos aquellos que dejaron los
+            estudios y quieren retomarlos para mejorar su situación laboral o continuar
+            con su formación.</p>
+            <p>Tenemos el <b>material necesario</b> y los profesores que te facilitarán
+            el contenido requerido para superar el examen.</p>
+          </div>
+
+          <div class="general-content">
+            <h2>Preparación título Bachillerato</h2>
             <p>TEXTASO</p>
           </div>
 
-          <h4>Bachillerato</h4>
           <div class="general-content">
-            <p>TEXTASO</p>
-          </div>
-
-          <h4>Preparación y graduado ESO</h4>
-          <div class="general-content">
-            <p>TEXTASO</p>
-          </div>
-
-          <h4>Preparación título Bachillerato</h4>
-          <div class="general-content">
-            <p>TEXTASO</p>
-          </div>
-
-          <h4>Preparación Selectividad</h4>
-          <div class="general-content">
+            <h2>Preparación Selectividad</h2>
             <p>TEXTASO</p>
           </div>
 
         </div>
 
         <div class="general-content">
-          <h2>Pruebas de Acceso</h2>
+          <h1>Pruebas de Acceso</h1>
         </div>
 
         <div class="general-content">
-          <h2>Cursos de Inglés</h2>
+          <h1>Cursos de Inglés</h1>
         </div>
       </div>
 
