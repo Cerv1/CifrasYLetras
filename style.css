@@ -7,6 +7,7 @@ body{
   overflow: auto;
   background-color: #212121;
   box-shadow: 2px 2px 5px rgb(94, 94, 94);
+  margin-bottom: 30px;
 }
 
 .top-panel a{
@@ -30,7 +31,7 @@ header{
 }
 
 .link-item :hover{
-  color: #ffab40;
+  color: orange;
 }
 
 .logo-header{
@@ -61,15 +62,64 @@ nav li{
 }
 
 .activo{
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #ffab40;
+  border-bottom: solid 2px orange;
 }
 
 #content{
   overflow: auto;
   margin-left: 7%;
   margin-right: 7%;
+}
+
+/* Formation */
+.left-navbar{
+  width: 20%;
+  font-size: 80%;
+  float: left;
+  overflow: auto;
+  padding: 5px 30px 5px 30px;
+  margin: 10px 20px 10px 20px;
+  box-shadow: 2px 2px 10px #BBB;
+  border-radius: 8px;
+  font-family: 'Overpass', sans-serif;
+  background-color: #212121;
+}
+
+.left-navbar a{
+  color: white;
+  text-decoration: none;
+}
+
+.left-navbar a:hover{
+  text-decoration: underline;
+}
+
+.left-navbar li{
+  margin-top: 5px;
+  list-style-type: none;
+}
+
+.left-navbar ul{
+  padding-left: 0px;
+}
+
+.left-navbar .ul-second-level{
+  padding-left: 20px;
+}
+
+.left-navbar .first-li-item{
+  margin-top: 15px;
+}
+
+.left-navbar .first-ul-item{
+  color: orange;
+  font-size: 110%;
+  font-weight: bold;
+}
+
+.main-content{
+  width: 70%;
+  float: right;
 }
 
 
@@ -80,7 +130,7 @@ nav li{
   padding: 5px 30px 5px 30px;
   margin: 10px 20px 10px 20px;
   box-shadow: 2px 2px 10px #BBB;
-  border-radius: 15px;
+  border-radius: 8px;
   background-color: #fafafa;
   font-family: 'Overpass', sans-serif;
 }
@@ -94,6 +144,15 @@ nav li{
 .general-content h2{
   font-weight: bold;
   text-decoration: underline;
+}
+
+.paragraph{
+  box-shadow: none;
+  border-radius: 0px;
+  background-color: white;
+  border-left: solid 20px orange;
+  border-bottom: solid 1px orange;
+  font-size: 90%;
 }
 
 /* CSS associadted to forms */
