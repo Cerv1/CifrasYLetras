@@ -24,7 +24,7 @@ header{
   padding-right: 8px;
 }
 
-.header-item h2,h5{
+.header-item h1,h4{
   margin-top: 5px;
   margin-bottom: 10px;
 }
@@ -47,15 +47,17 @@ nav{
   font-family: 'Patrick Hand', cursive;
 }
 
+nav ul{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  overflow: auto;
+  padding: 2px;
+}
+
 nav li{
   list-style-type: none;
   display: inline;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-nav a:hover{
-  color: #ffab40;
+  padding: 0px 15px 0px 15px;
 }
 
 .activo{
