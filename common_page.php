@@ -9,7 +9,9 @@
       <link rel="stylesheet" href="style.css">
       <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-      <link href="https://fonts.googleapisº.com/css?family=Patrick+Hand" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
       <title>Cifras y Letras - Granada</title>
     </head>
     <body>
@@ -23,33 +25,40 @@
     ';
   }
 
-  function HTMLheader(){
-    echo '<header>
-      <div class="header-item" id="header-left">
-        <h1>Cifras y Letras</h1>
-        <h3>Centro de formación</h3>
-      </div>
-      <div class="header-item" id="header-center">
-        <h2>C/Santa Rosalía Nº12</h2>
-        <h3>¡Tu academia en el Zaidín!</h3>
-      </div>
-      <div class="header-item" id="header-right">
-        <h2>Contacto</h2>
-        <h3 class="info-telf">858.95.01.08</h3>
-        <h3 class="info-telf">668.57.82.25</h3>
-      </div>
+  function HTMLheader($activo) {
+    echo '
+    <header>
+      <nav class="nav-extended">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Logo</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">Login</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="#">Login</a></li>
+          </ul>
+        </div>
+        <div class="nav-content">
+          <ul class="tabs tabs-transparent">
+            <li class="tab"><a href="#$activo">Inicio</a></li>
+            <li class="tab"><a href="#$activo">Formación</a></li>
+            <li class="tab"><a href="#$activo">Instalaciones</a></li>
+            <li class="tab"><a href="#$activo">Sobre nosotros</a></li>
+            <li class="tab"><a href="#$activo">Contacto</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="test1" class="col s12">Test 1</div>
+      <div id="test2" class="col s12">Test 2</div>
+      <div id="test3" class="col s12">Test 3</div>
+      <div id="test4" class="col s12">Test 4</div>
     </header>';
-  }
-
-  function HTMLnav($activo) {
     echo '<nav><div id="menu"><ul>';
     $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto"];
       foreach ($items as $k => $v)
         echo "<li".($k==$activo?" class='activo'":"").">"."<a href='index.php?p=".($k)."'>".$v."</a></li>";
-    echo '</ul></div>
-    <div id="login">
-      <a href="#">LOGIN</a>
-    </div></nav>';
+    echo '</ul></div></nav>';
   }
 
   function HTMLcontent($page){
@@ -77,6 +86,7 @@
   function HTMLfooter(){
     echo'
     <footer>
+    <h1>Cifras y Letras - Academia de Formación</h1>
     <small>(C) Sergio Cervilla , Adrián Morente</small>
     </footer>
     ';
