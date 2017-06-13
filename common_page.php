@@ -52,6 +52,7 @@
   }
 
   function HTMLcontent($page){
+    echo '<div id="content">';
     switch($page){
       case 0:
         HTMLIndex();
@@ -69,11 +70,7 @@
         HTMLContact();
         break;
     }
-    echo '
-      <div id="content">
-
-      </div>
-    ';
+    echo '</div>';
   }
 
   function HTMLfooter(){
@@ -116,7 +113,8 @@
 
       <div class="left-navbar">
         <ul>
-          <li><ul>
+          <li>Apoyo Escolar
+          <ul>
             <li>Primaria</li>
             <li>ESO</li>
             <li>Bachillerato</li>
@@ -125,12 +123,14 @@
             <li>Preparación Selectividad</li>
           </ul></li>
 
-          <li><ul>
+          <li>Pruebas de Acceso
+          <ul>
             <li>Acceso a grado medio y superior</li>
             <li>Acceso a Universidad (+25 años)</li>
           </ul></li>
 
-          <li><ul>
+          <li>Cursos de Inglés
+          <ul>
             <li>Preparación para el B1, B2 y C1</li>
           </ul></li>
         </ul>
@@ -139,6 +139,43 @@
       <div class="main-content">
         <div class="general-content">
           <h2>Apoyo escolar</h2>
+
+          <h4>Primaria</h4>
+          <div class="general-content">
+            <p>¿Notas en tu hijo problemas en el estudio? ¿Necesita refuerzo
+            en alguna asignatura?</p>
+            <p>Los primeros años en la educación de todo niño
+            son los más importantes. En Academia Cifras y Letras les formamos
+            con una buena base educativa para que puedan resolver problemas y
+            valerse por ellos mismos.</p>
+            <p>Grupos reducidos y atención personalizada para un mayor rendimiento</p>
+          </div>
+
+          <h4>ESO</h4>
+          <div class="general-content">
+            <p>TEXTASO</p>
+          </div>
+
+          <h4>Bachillerato</h4>
+          <div class="general-content">
+            <p>TEXTASO</p>
+          </div>
+
+          <h4>Preparación y graduado ESO</h4>
+          <div class="general-content">
+            <p>TEXTASO</p>
+          </div>
+
+          <h4>Preparación título Bachillerato</h4>
+          <div class="general-content">
+            <p>TEXTASO</p>
+          </div>
+
+          <h4>Preparación Selectividad</h4>
+          <div class="general-content">
+            <p>TEXTASO</p>
+          </div>
+
         </div>
 
         <div class="general-content">
