@@ -42,7 +42,7 @@
 
   function HTMLnav($activo) {
     echo '<nav><div id="menu"><ul>';
-    $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros"];
+    $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto"];
       foreach ($items as $k => $v)
         echo "<li".($k==$activo?" class='activo'":"").">"."<a href='index.php?p=".($k)."'>".$v."</a></li>";
     echo '</ul></div>
