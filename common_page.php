@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="style.css">
       <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-      <link href="https://fonts.googleapisº.com/css?family=Patrick+Hand" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
       <title>Cifras y Letras</title>
     </head>
     <body>
@@ -40,7 +40,7 @@
         <div><ul>';
         $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto"];
           foreach ($items as $k => $v)
-            echo "<li".($k==$activo?" class='activo'":"class='link-item'").">"."<a href='index.php?p=".($k)."'>".$v."</a></li>";
+            echo "<li".($k==$activo?" class='activo'":"").">"."<a href='index.php?p=".($k)."'>".$v."</a></li>";
         echo '</ul>
         </div>
       </nav>
