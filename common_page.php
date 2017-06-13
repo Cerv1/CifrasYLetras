@@ -273,38 +273,25 @@
 
   function HTMLContact(){
     echo '
-    <div class="container">
-  <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-        <h2>Contact</h2>
-      </div>
+    <div class="form">
+    <h3>Contacte con nosotros</h3>
+    <div class="form-group">
+      <input type="text" class="form-control" value="" placeholder="Nombre" id="contact-name" />
+      <label class="input-field-icon icon-user" for="login-name"></label>
+    </div>
+
+    <div class="form-group">
+      <input type="email" class="form-control" value="" placeholder="Email" id="contact-email" />
+      <label class="input-field-icon icon-email" for="login-email"></label>
+    </div>
+
+    <div class="form-group">
+      <textarea class="form-control" value="" placeholder="Mensaje" id="contact-message" rows="1"></textarea>
+    </div>
+
+    <button id="contact-send" class="btn btn-primary btn-lg btn-block">Enviar</button>
   </div>
-  <div class="row">
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3">
-          <form id="contact-form" class="form" action="#" method="POST" role="form">
-              <div class="form-group">
-                  <label class="form-label" for="name">Your Name</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Your name" tabindex="1" required>
-              </div>
-              <div class="form-group">
-                  <label class="form-label" for="email">Your Email</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" tabindex="2" required>
-              </div>
-              <div class="form-group">
-                  <label class="form-label" for="subject">Subject</label>
-                  <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" tabindex="3">
-              </div>
-              <div class="form-group">
-                  <label class="form-label" for="message">Message</label>
-                  <textarea rows="5" cols="50" name="message" class="form-control" id="message" placeholder="Message..." tabindex="4" required></textarea>
-              </div>
-              <div class="text-center">
-                  <button type="submit" class="btn btn-start-order">Send Message</button>
-              </div>
-          </form>
-      </div>
-  </div>
-</div>
+
     ';
   }
 ?>
