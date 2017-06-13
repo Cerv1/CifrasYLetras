@@ -89,7 +89,45 @@
   }
 
   function HTMLFormation(){
-    echo 'formation';
+    echo '
+
+      <div class="left-navbar">
+        <ul>
+          <li><ul>
+            <li>Primaria</li>
+            <li>ESO</li>
+            <li>Bachillerato</li>
+            <li>Preparación graduado ESO</li>
+            <li>Preparación título Bachillerato</li>
+            <li>Preparación Selectividad</li>
+          </ul></li>
+
+          <li><ul>
+            <li>Acceso a grado medio y superior</li>
+            <li>Acceso a Universidad (+25 años)</li>
+          </ul></li>
+
+          <li><ul>
+            <li>Preparación para el B1, B2 y C1</li>
+          </ul></li>
+        </ul>
+      </div>
+
+      <div class="main-content">
+        <div class="general-content">
+          <h2>Apoyo escolar</h2>
+        </div>
+
+        <div class="general-content">
+          <h2>Pruebas de Acceso</h2>
+        </div>
+
+        <div class="general-content">
+          <h2>Cursos de Inglés</h2>
+        </div>
+      </div>
+
+    ';
   }
 
   function HTMLFacilities(){
