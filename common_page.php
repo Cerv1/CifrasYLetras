@@ -273,24 +273,31 @@
 
   function HTMLContact(){
     echo '
-    <div class="form">
-    <h3>Contacte con nosotros</h3>
-    <div class="form-group">
-      <input type="text" class="form-control" value="" placeholder="Nombre" id="contact-name" />
-      <label class="input-field-icon icon-user" for="login-name"></label>
+    <div class="form-container">
+      <div class="form">
+        <h3>Contacte con nosotros</h3>
+        <div class="form-group">
+          <input type="text" class="form-control" value="" placeholder="Nombre" id="contact-name" />
+          <label class="input-field-icon icon-user" for="login-name"></label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" class="form-control" value="" placeholder="Email" id="contact-email" />
+          <label class="input-field-icon icon-email" for="login-email"></label>
+        </div>
+
+        <div class="form-group">
+          <textarea class="form-control" value="" placeholder="Mensaje" id="contact-message" rows="1"></textarea>
+        </div>
+
+        <button id="contact-send" class="btn btn-primary btn-lg btn-block">Enviar</button>
+      </div>
+
+      <div class="form-image">
+        <img src="./images/support.png">
+      </div>
     </div>
 
-    <div class="form-group">
-      <input type="email" class="form-control" value="" placeholder="Email" id="contact-email" />
-      <label class="input-field-icon icon-email" for="login-email"></label>
-    </div>
-
-    <div class="form-group">
-      <textarea class="form-control" value="" placeholder="Mensaje" id="contact-message" rows="1"></textarea>
-    </div>
-
-    <button id="contact-send" class="btn btn-primary btn-lg btn-block">Enviar</button>
-  </div>
 
     ';
   }

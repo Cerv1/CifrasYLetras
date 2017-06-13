@@ -98,10 +98,23 @@ nav li{
 
 /* CSS associadted to forms */
 
+.form-container{
+  overflow: auto;
+}
+
+.form-image{
+  float:right;
+  padding: 65px 0px 30px 60px;
+  width: 35%;
+}
+
+.form-image img{
+  width: 55%;
+}
 
 .form {
-  width: 75%;
-  margin:auto;
+  float: left;
+  width: 50%;
   background-color: rgb(238, 238, 238);
   border-radius: 10px;
   margin-top: 15px;
@@ -119,9 +132,10 @@ nav li{
 }
 
 .btn-primary {
+  cursor: pointer;
   box-shadow: 0;
   border: none;
-  background-color: #ffab40;
+  background-color: #ffa726;
   border-color: #48c9b0;
   color: #ffffff;
   outline: none;
@@ -140,7 +154,7 @@ nav li{
 }
 
 .btn-primary:hover {
-  background-color: #ffd180;
+  background-color: #ffb74d;
 }
 
 .form-group {
@@ -167,7 +181,6 @@ nav li{
   font-size: 15px;
   line-height: 1.467;
   background-color: rgb(238, 238, 238);
-
   padding: 4px;
   height: 42px;
   -webkit-appearance: none;
@@ -197,12 +210,12 @@ input:focus + .input-field-icon {
 }
 
 textarea.form-control {
-  height: 120px;
-  transition: .6s;
+  height: 60px;
+  transition: .3s;
 }
 
 textarea.form-control:focus {
-  height: 200px;
+  height: 120px;
   border-color: #ffab40;
 }
 
