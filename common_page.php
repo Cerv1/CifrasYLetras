@@ -318,7 +318,7 @@
       <form>
         <input type="text" name="user" placeholder="Usuario">
         <input type="password" name="pass" placeholder="Contraseña">
-        <input type="submit" name="login" class="login login-submit" value="Entrar">
+        <input type="submit"  formmethod="post" name="login" class="login login-submit" value="Entrar">
       </form>
 
       <div class="login-help">
@@ -326,22 +326,27 @@
       </div>
     </div>
     ';
-    $myusername = mysqli_real_escape_string($db, $_POST['user']);
-    $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
-    $sql = "SELECT name FROM users WHERE name= '$myusername' AND password='$mypassword'";
-    $result = mysqli_queri($db,$sql);
-    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-    $active = $row['active'];
 
-    $count = mysqli_num_rows($result);
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+      $myusername = mysqli_real_escape_string($db, $_POST['user']);
+      $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
+      $sql = "SELECT name FROM users WHERE name= '$myusername' AND password='$mypassword'";
+      $result = mysqli_queri($db,$sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
 
-    if($count == 1){
-      session_register("mysuername");
-      $_SESSION['login_user'] = $myusername;
+      $count = mysqli_num_rows($result);
 
-      header("location: index.php");
-    }else{
-      $error = "Your Login Name or Password is invalid";
+      echo ' $count';
+
+      if($count == 1){
+        session_register("mysuername");
+        $_SESSION['login_user'] = $myusername;
+
+        header("location: index.php");
+      }else{
+        $error = "Your Login Name or Password is invalid";
+      }
     }
   }
 ?>
