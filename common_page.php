@@ -342,7 +342,7 @@
         echo '
 
         ';
-        header("location: index.php");
+        header("location: index.php?p=0");
       }else{
         $error = "Your Login Name or Password is invalid";
         echo $error;
