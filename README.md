@@ -2,7 +2,7 @@
 
 - [X] La interfaz de la aplicación ha de ser homogénea en todas las páginas.
 - [ ] Debe usar diseño adaptable para una correcta visualización en móviles, tabletas y desktop.
-- [ ] La gestión de la BBDD se debe desarrollar en PHP y sobre MySQL.
+- [X] La gestión de la BBDD se debe desarrollar en PHP y sobre MySQL.
 - [ ] Debe usar JavaScript al menos para el filtrado de datos de entrada en formularios.
 - [ ] Debe hacer uso de tecnología AJAX en algún momento.
 - [ ] La aplicación debe funcionar correctamente en el servidor de prácticas.

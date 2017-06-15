@@ -32,7 +32,7 @@
             <h1>Cifras y Letras - Academia de Formación</h1>
           </div></a>
           <a class="header-item link-item" href="#"><div class="login-header">
-            <h4><a href="index.php?user=0&p=5">MI CUENTA</a></h4>
+            <h4><a href="index.php?user=0&p=7">MI CUENTA</a></h4>
           </div></a>
         </div>
       </header>
@@ -66,6 +66,10 @@
         UserHTMLContact();
         break;
       case 5:
+        break;
+      case 6:
+        break;
+      case 7:
         UserHTMLLogIn();
         break;
     }
@@ -355,15 +359,18 @@
     echo '
     <div class="login-card">
       <h1>Menu de usuario</h1><br>
-      <input type="submit"  formmethod="post" name="logout" class="login login-submit" value="Cerrar sesión">
+      <form method="post">
+        <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Cerrar sesión">
+      </form>
     </div>
     ';
-    if(isset($_POST['logout'])){
+    if(isset($_POST['submit'])){
       $result = logout($db);
       if(result == true){
         header("location: index.php?p=0");
       }
     }
+
 
   }
 ?>

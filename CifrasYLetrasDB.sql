@@ -16,30 +16,181 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `users`
+-- Table structure for table `Resource`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `Resource`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `name` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `lastname` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `birth` date DEFAULT NULL,
-  `dni` varchar(9) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`dni`)
+CREATE TABLE `Resource` (
+  `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idResource` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`idResource`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `Resource`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('Cervi','Cervilla','cervipass','1996-06-26','14275233F');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `Resource` WRITE;
+/*!40000 ALTER TABLE `Resource` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Resource` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Student`
+--
+
+DROP TABLE IF EXISTS `Student`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Student` (
+  `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `emailStudent` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `birth` date DEFAULT NULL,
+  `password` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`emailStudent`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Student`
+--
+
+LOCK TABLES `Student` WRITE;
+/*!40000 ALTER TABLE `Student` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Student` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Subject`
+--
+
+DROP TABLE IF EXISTS `Subject`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Subject` (
+  `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idSubject` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`idSubject`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Subject`
+--
+
+LOCK TABLES `Subject` WRITE;
+/*!40000 ALTER TABLE `Subject` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Subject` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Teacher`
+--
+
+DROP TABLE IF EXISTS `Teacher`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Teacher` (
+  `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `emailTeacher` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `birth` date DEFAULT NULL,
+  `password` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`emailTeacher`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Teacher`
+--
+
+LOCK TABLES `Teacher` WRITE;
+/*!40000 ALTER TABLE `Teacher` DISABLE KEYS */;
+INSERT INTO `Teacher` VALUES ('adri','morente','adrian95morente@gmail.com','0000-00-00','adriroot'),
+('cervi','cervilla','cervick13@gmail.com','0000-00-00','cervipass');
+/*!40000 ALTER TABLE `Teacher` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `hasResource`
+--
+
+DROP TABLE IF EXISTS `hasResource`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `hasResource` (
+  `idSubject` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idResource` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  KEY `idSubject` (`idSubject`),
+  KEY `idResource` (`idResource`),
+  CONSTRAINT `hasResource_ibfk_1` FOREIGN KEY (`idSubject`) REFERENCES `Subject` (`idSubject`),
+  CONSTRAINT `hasResource_ibfk_2` FOREIGN KEY (`idResource`) REFERENCES `Resource` (`idResource`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hasResource`
+--
+
+LOCK TABLES `hasResource` WRITE;
+/*!40000 ALTER TABLE `hasResource` DISABLE KEYS */;
+/*!40000 ALTER TABLE `hasResource` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `studiesSubject`
+--
+
+DROP TABLE IF EXISTS `studiesSubject`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `studiesSubject` (
+  `idSubject` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `emailStudent` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  KEY `idSubject` (`idSubject`),
+  KEY `emailStudent` (`emailStudent`),
+  CONSTRAINT `studiesSubject_ibfk_1` FOREIGN KEY (`idSubject`) REFERENCES `Subject` (`idSubject`),
+  CONSTRAINT `studiesSubject_ibfk_2` FOREIGN KEY (`emailStudent`) REFERENCES `Student` (`emailStudent`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `studiesSubject`
+--
+
+LOCK TABLES `studiesSubject` WRITE;
+/*!40000 ALTER TABLE `studiesSubject` DISABLE KEYS */;
+/*!40000 ALTER TABLE `studiesSubject` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `teachsSubject`
+--
+
+DROP TABLE IF EXISTS `teachsSubject`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `teachsSubject` (
+  `emailTeacher` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idSubject` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  KEY `emailTeacher` (`emailTeacher`),
+  KEY `idSubject` (`idSubject`),
+  CONSTRAINT `teachsSubject_ibfk_1` FOREIGN KEY (`emailTeacher`) REFERENCES `Teacher` (`emailTeacher`),
+  CONSTRAINT `teachsSubject_ibfk_2` FOREIGN KEY (`idSubject`) REFERENCES `Subject` (`idSubject`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `teachsSubject`
+--
+
+LOCK TABLES `teachsSubject` WRITE;
+/*!40000 ALTER TABLE `teachsSubject` DISABLE KEYS */;
+/*!40000 ALTER TABLE `teachsSubject` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +202,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-15 11:18:00
+-- Dump completed on 2017-06-15 18:43:38
