@@ -68,6 +68,7 @@
       case 5:
         break;
       case 6:
+        UserHTMLLogIn();
         break;
       case 7:
         UserHTMLLogIn();
