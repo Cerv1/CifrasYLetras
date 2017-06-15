@@ -310,7 +310,7 @@
   }
 
   function HTMLLogIn(){
-    include("config.php");
+    include("config-db.php");
     session_start();
     echo '
     <div class="login-card">
@@ -331,21 +331,21 @@
       $myusername = mysqli_real_escape_string($db, $_POST['user']);
       $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
       $sql = "SELECT name FROM users WHERE name= '$myusername' AND password='$mypassword'";
-      $result = mysqli_queri($db,$sql);
+      $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
 
       $count = mysqli_num_rows($result);
 
-      echo ' $count';
-
       if($count == 1){
-        session_register("mysuername");
         $_SESSION['login_user'] = $myusername;
+        echo '
 
+        ';
         header("location: index.php");
       }else{
         $error = "Your Login Name or Password is invalid";
+        echo $error;
       }
     }
   }
