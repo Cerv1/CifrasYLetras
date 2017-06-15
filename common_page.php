@@ -306,7 +306,7 @@
   }
 
   function HTMLLogIn(){
-    include("config.php");
+    include("config-db.php");
     session_start();
     echo '
     <div class="login-card">
@@ -333,15 +333,19 @@
 
       $count = mysqli_num_rows($result);
 
-      echo ' $count';
-
       if($count == 1){
+<<<<<<< HEAD
         session_register("myusername");
+=======
+>>>>>>> master
         $_SESSION['login_user'] = $myusername;
+        echo '
 
+        ';
         header("location: index.php");
       }else{
         $error = "Your Login Name or Password is invalid";
+        echo $error;
       }
     }
   }
