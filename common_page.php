@@ -255,10 +255,6 @@
               <a href="http://www.cambridgeenglish.org/es/test-your-english/">
                 aquí
               </a>.</p>
-
-
-
-
           </div>
         </div>
       </div>
@@ -319,6 +315,7 @@
 
   function HTMLContact(){
     echo '
+    <script src="./scripts/form-validator.js"></script>
     <div class="form-container">
       <div class="form">
         <h3>Contacte con nosotros</h3>
@@ -343,13 +340,12 @@
         <img src="./images/support.png">
       </div>
     </div>
-
-
     ';
   }
 
   function HTMLLogIn(){
     include("config-db.php");
+    include("database-methods.php");
     session_start();
     echo '
     <div class="login-card">
@@ -365,27 +361,11 @@
       </div>
     </div>
     ';
-
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $myusername = mysqli_real_escape_string($db, $_POST['user']);
-      $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
-      $sql = "SELECT name FROM users WHERE name= '$myusername' AND password='$mypassword'";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
-
-      $count = mysqli_num_rows($result);
-
-      if($count == 1){
-        $_SESSION['login_user'] = $myusername;
-        echo '
-
-        ';
-        header("location: index.php?p=0");
-      }else{
-        $error = "Your Login Name or Password is invalid";
-        echo $error;
-      }
+    $myusername = mysqli_real_escape_string($db, $_POST['user']);
+    $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
+    $result = login($myusername, $mypassword,$db);
+    if($result == -1 ){
+      echo 'Zoi jabascript i aun no ago kosas ke tio la virgen';
     }
 
   }
