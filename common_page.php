@@ -72,7 +72,7 @@
     echo '</div>';
   }
 
-  function HTMLfooter(){mysq
+  function HTMLfooter(){
     echo'
     <footer>
     <small>(C) Sergio Cervilla , Adrián Morente</small>
