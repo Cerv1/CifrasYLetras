@@ -72,7 +72,7 @@
     echo '</div>';
   }
 
-  function HTMLfooter(){
+  function HTMLfooter(){mysq
     echo'
     <footer>
     <small>(C) Sergio Cervilla , Adrián Morente</small>
@@ -310,6 +310,8 @@
   }
 
   function HTMLLogIn(){
+    include("config.php");
+    session_start();
     echo '
     <div class="login-card">
         <h1>Acceder</h1><br>
@@ -320,7 +322,7 @@
       </form>
 
       <div class="login-help">
-        <a href="#">Registrarse</a> • <a href="#">¿Olvidaste la contraseña?</a>
+        <a href="#">Registrarse</a>
       </div>
     </div>
     ';
