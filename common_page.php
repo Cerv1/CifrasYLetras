@@ -269,7 +269,7 @@
   function HTMLFacilities(){
     echo '
     <div class="general-content">
-      <div class="general-title"><h1>Nuestras instalaciones</h1></div>
+      <div class="facilities-title"><h1>Nuestras instalaciones</h1></div>
       <div class="gallery-content">
         <div class="gallery-text">
           <p><br>Disponemos de las mejores instalaciones, cómodas y ubicadas en una zona
@@ -293,20 +293,7 @@
   }
 
   function HTMLAboutUs(){
-    echo '
-    <div class="general-content">
-      <div class="general-title"><h1>¿Dónde puedes encontrarnos?</h1></div>
-      <div class="gallery-content">
-        <div class="gallery-text">
-          <p>holi aquí estamos</p>
-        </div>
-        <div class="gallery-image">
-          <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=es-419&amp;geocode=&amp;q=Calle+Santa+Rosal%C3%ADa,+12,+Granada,+Espa%C3%B1a&amp;aq=0&amp;oq=calle+santa+rosalia,+12&amp;sll=37.0625,-95.677068&amp;sspn=41.818029,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Calle+Santa+Rosal%C3%ADa,+12,+18007+Granada,+Espa%C3%B1a&amp;t=m&amp;z=14&amp;ll=37.151234,-3.599522&amp;output=embed">
-          </iframe>
-        </div>
-      </div>
-    </div>
-    ';
+    echo 'about us';
   }
 
   function HTMLContact(){
