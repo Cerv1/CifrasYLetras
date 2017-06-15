@@ -268,8 +268,26 @@
 
   function HTMLFacilities(){
     echo '
-    <div class="gallery-content">
-      <div
+    <div class="general-content">
+      <div class="facilities-title"><h1>Nuestras instalaciones</h1></div>
+      <div class="gallery-content">
+        <div class="gallery-text">
+          <p><br>Disponemos de las mejores instalaciones, cómodas y ubicadas en una zona
+          tranquila y segura. Tan solo tendrás que preocuparte por dar lo mejor de
+          ti mismo y centrarte en tus estudios y objetivos.</p>
+          <p>Fácil acceso y aparcamiento disponible 24 horas.</p>
+        </div>
+        <div class="gallery-image"><img src="./images/academy-outside.jpg" alt="academy-outside.jpg"></div>
+      </div>
+      <div class="gallery-content">
+        <div class="gallery-text">
+          <p><br>Disponemos de las mejores aulas; amplias e iluminadas, y con el mejor
+          acondicionamiento posible para tu bienestar.</p>
+          <p>También disponemos de salas de relax para que puedas despejarte entre
+          tus duras sesiones de aprendizaje.</p>
+        </div>
+        <div class="gallery-image"><img src="./images/classroom.jpg" alt="classroom.jpg"></div>
+      </div>
     </div>
     ';
   }
