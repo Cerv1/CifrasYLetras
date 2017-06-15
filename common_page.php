@@ -255,10 +255,6 @@
               <a href="http://www.cambridgeenglish.org/es/test-your-english/">
                 aquí
               </a>.</p>
-
-
-
-
           </div>
         </div>
       </div>
@@ -343,8 +339,6 @@
         <img src="./images/support.png">
       </div>
     </div>
-
-
     ';
   }
 
