@@ -1,5 +1,5 @@
 <?php
-  define('DB_SERVER', 'localhost:8001');
+  define('DB_SERVER', 'localhost');
   define('DB_USERNAME', 'root');
   define('DB_PASSWORD', 'twpassword');
   define('DB_DATABASE', 'CifrasYLetras-DB');
