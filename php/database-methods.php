@@ -2,7 +2,7 @@
 
 function login($myusername, $mypassword, $db){
   if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $sql = "SELECT name FROM users WHERE name= '$myusername' AND password='$mypassword'";
+    $sql = "SELECT name FROM Teacher WHERE name= '$myusername' AND password='$mypassword'";
     $result = mysqli_query($db,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $active = $row['active'];
