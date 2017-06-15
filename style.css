@@ -7,7 +7,7 @@ body{
   overflow: auto;
   background-color: #212121;
   box-shadow: 2px 2px 5px rgb(94, 94, 94);
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .top-panel a{
@@ -72,7 +72,7 @@ nav li{
 }
 
 /* Formation */
-.left-navbar{
+.aux-content{
   width: 20%;
   font-size: 80%;
   float: left;
@@ -85,33 +85,33 @@ nav li{
   background-color: #212121;
 }
 
-.left-navbar a{
+.aux-content a{
   color: white;
   text-decoration: none;
 }
 
-.left-navbar a:hover{
+.aux-content a:hover{
   text-decoration: underline;
 }
 
-.left-navbar li{
+.aux-content li{
   margin-top: 5px;
   list-style-type: none;
 }
 
-.left-navbar ul{
+.aux-content ul{
   padding-left: 0px;
 }
 
-.left-navbar .ul-second-level{
+.aux-content .ul-second-level{
   padding-left: 20px;
 }
 
-.left-navbar .first-li-item{
+.aux-content .first-li-item{
   margin-top: 15px;
 }
 
-.left-navbar .first-ul-item{
+.aux-content .first-ul-item{
   color: orange;
   font-size: 110%;
   font-weight: bold;
@@ -148,10 +148,11 @@ nav li{
 
 .paragraph{
   box-shadow: none;
-  border-radius: 0px;
+  border-radius: 25px;
   background-color: white;
-  border-left: solid 20px orange;
+  border-left: solid 15px orange;
   border-bottom: solid 1px orange;
+  margin-bottom: 20px;
   font-size: 90%;
 }
 

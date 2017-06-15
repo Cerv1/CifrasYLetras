@@ -111,36 +111,36 @@
   function HTMLFormation(){
     echo '
 
-      <div class="left-navbar">
+      <div class="aux-content">
         <ul>
-          <li class="first-li-item"><a href="" class="first-ul-item">Apoyo Escolar</a>
+          <li class="first-li-item"><a href="apoyo-escolar" class="first-ul-item">Apoyo Escolar</a>
           <ul class="ul-second-level">
-            <li><a href="">Primaria</a></li>
-            <li><a href="">ESO</a></li>
-            <li><a href="">Bachillerato</a></li>
-            <li><a href="">Preparación graduado ESO</a></li>
-            <li><a href="">Preparación título Bachillerato</a></li>
-            <li><a href="">Preparación Selectividad</a></li>
+            <li><a href="#apoyo-primaria">Primaria</a></li>
+            <li><a href="#apoyo-eso">ESO</a></li>
+            <li><a href="#apoyo-bachillerato">Bachillerato</a></li>
+            <li><a href="#apoyo-preparacion-eso">Preparación graduado ESO</a></li>
+            <li><a href="#apoyo-preparacion-bachillerato">Preparación título Bachillerato</a></li>
+            <li><a href="#apoyo-preparacion-selectividad">Preparación Selectividad</a></li>
           </ul></li>
 
-          <li class="first-li-item"><a href="" class="first-ul-item">Pruebas de Acceso</a>
+          <li class="first-li-item"><a href="#pruebas-de-acceso" class="first-ul-item">Pruebas de Acceso</a>
           <ul class="ul-second-level">
-            <li><a href="">Acceso a grado medio y superior</a></li>
-            <li><a href="">Acceso a Universidad (+25 años)</a></li>
+            <li><a href="#pruebas-grado">Acceso a grado medio y superior</a></li>
+            <li><a href="#pruebas-universidad">Acceso a Universidad (+25 años)</a></li>
           </ul></li>
 
-          <li class="first-li-item"><a href="" class="first-ul-item">Cursos de Inglés</a>
+          <li class="first-li-item"><a href="#cursos-de-ingles" class="first-ul-item">Cursos de Inglés</a>
           <ul class="ul-second-level">
-            <li><a href="">Preparación para el B1, B2 y C1</a></li>
+            <li><a href="#cursos-b1">Preparación para el B1, B2 y C1</a></li>
           </ul></li>
         </ul>
       </div>
 
       <div class="main-content">
         <div class="general-content">
-          <h3>Apoyo escolar</h3>
+          <h3 id="apoyo-escolar">Apoyo escolar</h3>
 
-          <div class="general-content paragraph">
+          <div class="general-content paragraph" id="apoyo-primaria">
             <h4>Primaria</h4>
             <p>¿Notas en tu hijo problemas en el estudio? ¿Necesita refuerzo
             en alguna asignatura?</p>
@@ -151,7 +151,7 @@
             <p>Grupos reducidos y atención personalizada para un mayor rendimiento</p>
           </div>
 
-          <div class="general-content paragraph">
+          <div class="general-content paragraph" id="apoyo-eso">
             <h4>ESO</h4>
             <p>Obtener el graduado en ESO es el requisito mínimo obligatorio para
             todo estudiante. Si tienes dificultades con las asignaturas, en Academia
@@ -162,7 +162,7 @@
             con buenos resultados. <strong>Impartimos clases todo el año</strong></p>
           </div>
 
-          <div class="general-content paragraph">
+          <div class="general-content paragraph" id="apoyo-bachillerato">
             <h4>Bachillerato</h4>
             <p>Los dos cursos de Bachillerato son fundamentales si quieres cursar
             una carrera universitaria. La media de la nota obtenida junto con la de
@@ -173,7 +173,7 @@
             </p>
           </div>
 
-          <div class="general-content paragraph">
+          <div class="general-content paragraph" id="apoyo-preparacion-eso">
             <h4>Preparación graduado ESO</h4>
             <p>El Graduado en ESO es un requisito indispensable a la hora de encontrar
             trabajo. Si quieres mejorar tu situación laboral, no dejes escapar esta
@@ -186,7 +186,7 @@
             el contenido requerido para superar el examen.</p>
           </div>
 
-          <div class="general-content paragraph">
+          <div class="general-content paragraph" id="apoyo-preparacion-bachillerato">
             <h4>Preparación título Bachillerato</h4>
             <p>Si ya tienes el graduado en ESO y te falta el Bachillerato, no pierdas
             la oportunidad de completar tus estudios para mejorar tu situación
@@ -198,7 +198,7 @@
             en el año natural en que se celebran.</p>
           </div>
 
-          <div class="general-content paragraph">
+          <div class="general-content paragraph" id="apoyo-preparacion-selectividad">
             <h4>Preparación Selectividad</h4>
             <p>Si tienes problemas con la selectividad o necesitas una nota más alta
             te ayudamos con las asignaturas a las que te presentes. Es una prueba
@@ -210,10 +210,10 @@
 
         </div>
 
-        <div class="general-content">
+        <div class="general-content" id="pruebas-de-acceso">
           <h3>Pruebas de Acceso</h3>
 
-          <div class="general-content paragraph">
+          <div class="general-content paragraph" id="pruebas-grado">
             <h4>Acceso a grado medio y superior</h4>
             <p>¿Has abandonado los estudios? ¿No estás seguro de continuar y quieres
             acceder pronto al mercado laboral?</p>
@@ -222,7 +222,7 @@
             preparándole para el examen de acceso.
           </div>
 
-          <div class="general-content paragraph">
+          <div class="general-content paragraph" id="pruebas-universidad">
             <h4>Acceso a Universidad (+25 años)</h4>
             <p>Si eres mayor de 25 años y quieres acceder a un título universitario,
             te preparamos el examen de acceso para cualquier grado.</p>
@@ -236,10 +236,10 @@
 
         </div>
 
-        <div class="general-content">
+        <div class="general-content" id="cursos-de-ingles">
           <h3>Cursos de Inglés</h3>
 
-          <div class="general-content paragraph">
+          <div class="general-content paragraph" id="cursos-b1">
             <h4>Preparación para el B1, B2 y C1</h4>
             <p>¿Quieres trabajar en el extranjero? ¿Tu trabajo te exige hablar un
             segundo idioma? o ¿simplemente quieres aprender un idioma extranjero?</p>
@@ -267,7 +267,11 @@
   }
 
   function HTMLFacilities(){
-    echo 'facilities';
+    echo '
+    <div class="gallery-content">
+      <div
+    </div>
+    ';
   }
 
   function HTMLAboutUs(){
