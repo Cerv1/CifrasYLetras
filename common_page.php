@@ -306,47 +306,38 @@
   }
 
   function HTMLLogIn(){
-    include("config-db.php");
-    session_start();
-    echo '
-    <div class="login-card">
-        <h1>Acceder</h1><br>
-      <form>
-        <input type="text" name="user" placeholder="Usuario">
-        <input type="password" name="pass" placeholder="Contraseña">
-        <input type="submit"  formmethod="post" name="login" class="login login-submit" value="Entrar">
-      </form>
-
-      <div class="login-help">
-        <a href="#">Registrarse</a>
+      include("config-db.php");
+      session_start();
+      echo '
+      <div class="login-card">
+          <h1>Acceder</h1><br>
+        <form>
+          <input type="text" name="user" placeholder="Usuario">
+          <input type="password" name="pass" placeholder="Contraseña">
+          <input type="submit"  formmethod="post" name="login" class="login login-submit" value="Entrar">
+        </form>
+        <div class="login-help">
+          <a href="#">Registrarse</a>
+        </div>
       </div>
-    </div>
-    ';
-
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $myusername = mysqli_real_escape_string($db, $_POST['user']);
-      $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
-      $sql = "SELECT name FROM users WHERE name= '$myusername' AND password='$mypassword'";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
-
-      $count = mysqli_num_rows($result);
-
-      if($count == 1){
-<<<<<<< HEAD
-        session_register("myusername");
-=======
->>>>>>> master
-        $_SESSION['login_user'] = $myusername;
-        echo '
-
-        ';
-        header("location: index.php");
-      }else{
-        $error = "Your Login Name or Password is invalid";
-        echo $error;
+      ';
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $myusername = mysqli_real_escape_string($db, $_POST['user']);
+        $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
+        $sql = "SELECT name FROM users WHERE name= '$myusername' AND password='$mypassword'";
+        $result = mysqli_query($db,$sql);
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+        $active = $row['active'];
+        $count = mysqli_num_rows($result);
+        if($count == 1){
+          $_SESSION['login_user'] = $myusername;
+          echo '
+          ';
+          header("location: index.php");
+        }else{
+          $error = "Your Login Name or Password is invalid";
+          echo $error;
+        }
       }
     }
-  }
 ?>
