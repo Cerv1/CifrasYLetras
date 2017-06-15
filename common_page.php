@@ -255,10 +255,6 @@
               <a href="http://www.cambridgeenglish.org/es/test-your-english/">
                 aquí
               </a>.</p>
-
-
-
-
           </div>
         </div>
       </div>
@@ -331,7 +327,7 @@
       $myusername = mysqli_real_escape_string($db, $_POST['user']);
       $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
       $sql = "SELECT name FROM users WHERE name= '$myusername' AND password='$mypassword'";
-      $result = mysqli_queri($db,$sql);
+      $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
 
@@ -340,7 +336,7 @@
       echo ' $count';
 
       if($count == 1){
-        session_register("mysuername");
+        session_register("myusername");
         $_SESSION['login_user'] = $myusername;
 
         header("location: index.php");
