@@ -272,18 +272,18 @@
       <div class="facilities-title"><h1>Nuestras instalaciones</h1></div>
       <div class="gallery-content">
         <div class="gallery-text">
-          <p><br>Disponemos de las mejores instalaciones, cómodas y ubicadas en una zona
+          <p class="parrafo"><br>Disponemos de las mejores instalaciones, cómodas y ubicadas en una zona
           tranquila y segura. Tan solo tendrás que preocuparte por dar lo mejor de
           ti mismo y centrarte en tus estudios y objetivos.</p>
-          <p>Fácil acceso y aparcamiento disponible 24 horas.</p>
+          <p class="parrafo">Fácil acceso y aparcamiento disponible 24 horas.</p>
         </div>
         <div class="gallery-image"><img src="./images/academy-outside.jpg" alt="academy-outside.jpg"></div>
       </div>
       <div class="gallery-content">
         <div class="gallery-text">
-          <p><br>Disponemos de las mejores aulas; amplias e iluminadas, y con el mejor
+          <p class="parrafo"><br>Disponemos de las mejores aulas; amplias e iluminadas, y con el mejor
           acondicionamiento posible para tu bienestar.</p>
-          <p>También disponemos de salas de relax para que puedas despejarte entre
+          <p class="parrafo">También disponemos de salas de relax para que puedas despejarte entre
           tus duras sesiones de aprendizaje.</p>
         </div>
         <div class="gallery-image"><img src="./images/classroom.jpg" alt="classroom.jpg"></div>
@@ -293,7 +293,28 @@
   }
 
   function HTMLAboutUs(){
-    echo 'about us';
+    echo '
+    <div class="general-content">
+      <div class="general-title"><h1>¿Dónde puedes encontrarnos?</h1></div>
+      <div class="gallery-content">
+        <div class="gallery-text">
+          <div class="about-us">
+            <h2>Cifras y Letras - Centro de Formación</h2>
+            <h3>¡Tu academia en el Zaidín!</h3>
+            <h3>C/ Santa Rosalía Nº12</h3>
+            <div id="num-telf">
+              <p>858.95.01.08<br>
+              668.57.82.25</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-image">
+          <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=es-419&amp;geocode=&amp;q=Calle+Santa+Rosal%C3%ADa,+12,+Granada,+Espa%C3%B1a&amp;aq=0&amp;oq=calle+santa+rosalia,+12&amp;sll=37.0625,-95.677068&amp;sspn=41.818029,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Calle+Santa+Rosal%C3%ADa,+12,+18007+Granada,+Espa%C3%B1a&amp;t=m&amp;z=14&amp;ll=37.151234,-3.599522&amp;output=embed">
+          </iframe>
+        </div>
+      </div>
+    </div>
+    ';
   }
 
   function HTMLContact(){
