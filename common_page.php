@@ -315,6 +315,7 @@
 
   function HTMLContact(){
     echo '
+    <script src="./scripts/form-validator.js"></script>
     <div class="form-container">
       <div class="form">
         <h3>Contacte con nosotros</h3>
