@@ -1,6 +1,6 @@
 <?php
 
-  function HTMLbegin(){
+  function UserHTMLbegin(){
     echo '
     <!DOCTYPE html>
     <html>
@@ -16,63 +16,63 @@
     ';
   }
 
-  function HTMLend(){
+  function UserHTMLend(){
     echo'
     </body>
     </html>
     ';
   }
 
-  function HTMLheader($activo) {
+  function UserHTMLheader($activo) {
     echo '
     <div class="top-panel">
       <header>
         <div class="top-header">
-          <a class="header-item" href="index.php"><div class="logo-header">
+          <a class="header-item" href="index.php?user=0"><div class="logo-header">
             <h1>Cifras y Letras - Academia de Formación</h1>
           </div></a>
           <a class="header-item link-item" href="#"><div class="login-header">
-            <h4><a href="index.php?p=5">LOG IN</a></h4>
+            <h4><a href="index.php?user=0&p=5">MI CUENTA</a></h4>
           </div></a>
         </div>
       </header>
       <nav>
         <div><ul class="link-item">';
-        $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto"];
+        $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto", "Asignaturas", "Mi cuenta"];
           foreach ($items as $k => $v)
-            echo "<li".($k==$activo?" class='activo'":"").">"."<a href='index.php?p=".($k)."'>".$v."</a></li>";
+            echo "<li".($k==$activo?" class='activo'":"").">"."<a href='index.php?user=0&p=".($k)."'>".$v."</a></li>";
         echo '</ul>
         </div>
       </nav>
     </div>';
   }
 
-  function HTMLcontent($page){
+  function UserHTMLcontent($page){
     echo '<div id="content">';
     switch($page){
       case 0:
-        HTMLIndex();
+        UserHTMLIndex();
         break;
       case 1:
-        HTMLFormation();
+        UserHTMLFormation();
         break;
       case 2:
-        HTMLFacilities();
+        UserHTMLFacilities();
         break;
       case 3:
-        HTMLAboutUs();
+        UserHTMLAboutUs();
         break;
       case 4:
-        HTMLContact();
+        UserHTMLContact();
         break;
       case 5:
-        HTMLLogIn();
+        UserHTMLLogIn();
         break;
     }
     echo '</div>';
   }
 
-  function HTMLfooter(){
+  function UserHTMLfooter(){
     echo'
     <footer>
     <small>(C) Sergio Cervilla , Adrián Morente</small>
@@ -80,7 +80,7 @@
     ';
   }
 
-  function HTMLIndex(){
+  function UserHTMLIndex(){
     echo '
       <div class="general-content">
         <h1> Nuestro centro </h1>
@@ -108,7 +108,7 @@
     ';
   }
 
-  function HTMLFormation(){
+  function UserHTMLFormation(){
     echo '
 
       <div class="aux-content">
@@ -255,6 +255,10 @@
               <a href="http://www.cambridgeenglish.org/es/test-your-english/">
                 aquí
               </a>.</p>
+
+
+
+
           </div>
         </div>
       </div>
@@ -262,7 +266,7 @@
     ';
   }
 
-  function HTMLFacilities(){
+  function UserHTMLFacilities(){
     echo '
     <div class="general-content">
       <div class="facilities-title"><h1>Nuestras instalaciones</h1></div>
@@ -288,7 +292,7 @@
     ';
   }
 
-  function HTMLAboutUs(){
+  function UserHTMLAboutUs(){
     echo '
     <div class="general-content">
       <div class="general-title"><h1>¿Dónde puedes encontrarnos?</h1></div>
@@ -313,9 +317,8 @@
     ';
   }
 
-  function HTMLContact(){
+  function UserHTMLContact(){
     echo '
-    <script src="./scripts/form-validator.js"></script>
     <div class="form-container">
       <div class="form">
         <h3>Contacte con nosotros</h3>
@@ -340,32 +343,26 @@
         <img src="./images/support.png">
       </div>
     </div>
+
+
     ';
   }
 
-  function HTMLLogIn(){
+  function UserHTMLLogIn(){
     include("config-db.php");
     include("database-methods.php");
     session_start();
     echo '
     <div class="login-card">
-        <h1>Acceder</h1><br>
-      <form>
-        <input type="text" name="user" placeholder="Usuario">
-        <input type="password" name="pass" placeholder="Contraseña">
-        <input type="submit"  formmethod="post" name="login" class="login login-submit" value="Entrar">
-      </form>
-
-      <div class="login-help">
-        <a href="#">Registrarse</a>
-      </div>
+      <h1>Menu de usuario</h1><br>
+      <input type="submit"  formmethod="post" name="logout" class="login login-submit" value="Cerrar sesión">
     </div>
     ';
-    $myusername = mysqli_real_escape_string($db, $_POST['user']);
-    $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
-    $result = login($myusername, $mypassword,$db);
-    if($result == -1 ){
-      echo 'Zoi jabascript i aun no ago kosas ke tio la virgen';
+    if(isset($_POST['logout'])){
+      $result = logout($db);
+      if(result == true){
+        header("location: index.php?p=0");
+      }
     }
 
   }
