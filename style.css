@@ -147,7 +147,6 @@ nav li{
 
 .general-content h2{
   font-weight: bold;
-  text-decoration: underline;
 }
 
 .paragraph{
@@ -179,8 +178,24 @@ nav li{
   width: 50%;
 }
 
-.gallery-content .gallery-text p{
+.gallery-content .gallery-text .parrafo{
   margin: 60px 30px auto 80px;
+}
+
+.gallery-content .gallery-text .about-us{
+  text-align: center;
+  margin-top: 60px;
+}
+
+.gallery-content .gallery-text .about-us p{
+  color: orange;
+  font-size: 150%;
+  font-weight: bold;
+  margin-top: 60px;
+}
+
+.gallery-content .gallery-text .about-us h2{
+  font-size: 170%;
 }
 
 .gallery-content .gallery-image{
