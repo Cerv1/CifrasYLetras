@@ -345,7 +345,7 @@
 
   function HTMLLogIn(){
     include("config-db.php");
-    include("db-login.php");
+    include("database-methods.php");
     session_start();
     echo '
     <div class="login-card">
@@ -363,7 +363,7 @@
     ';
     $myusername = mysqli_real_escape_string($db, $_POST['user']);
     $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
-    $result = DB_Connection($myusername, $mypassword,$db);
+    $result = login($myusername, $mypassword,$db);
     if($result == -1 ){
       echo 'Zoi jabascript i aun no ago kosas ke tio la virgen';
     }
