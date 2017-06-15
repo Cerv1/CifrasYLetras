@@ -21,7 +21,7 @@ function login($myusername, $mypassword, $db){
 
 function logout($db){
   $result = mysqli_close($db);
-  // header("location: index.php?p=0");
+  header("location: index.php?p=0");
   return result;
 }
 
