@@ -110,7 +110,8 @@ CREATE TABLE `Teacher` (
 
 LOCK TABLES `Teacher` WRITE;
 /*!40000 ALTER TABLE `Teacher` DISABLE KEYS */;
-INSERT INTO `Teacher` VALUES ('adri','morente','adrian95morente@gmail.com','0000-00-00','adriroot'),('cervi','cervilla','cervick13@gmail.com','0000-00-00','cervipass');
+INSERT INTO `Teacher` VALUES ('adri','morente','adrian95morente@gmail.com','0000-00-00','adriroot'),
+('cervi','cervilla','cervick13@gmail.com','0000-00-00','cervipass');
 /*!40000 ALTER TABLE `Teacher` ENABLE KEYS */;
 UNLOCK TABLES;
 
