@@ -73,6 +73,9 @@
       case 7:
         UserHTMLLogIn();
         break;
+      case 8:
+        UserProfile();
+        break;
     }
     echo '</div>';
   }
