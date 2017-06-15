@@ -122,9 +122,13 @@ nav li{
   float: right;
 }
 
+.facilities-title{
+  text-align: center;
+  color: #212121;
+}
+
 
 /*CSS associated to general-content class*/
-
 .general-content{
   overflow: auto;
   padding: 5px 30px 5px 30px;
@@ -156,8 +160,42 @@ nav li{
   font-size: 90%;
 }
 
-/* CSS associadted to forms */
+/* CSS associated to gallery-content */
+.gallery-content{
+  color: white;
+  font-size: 120%;
+  padding: 15px;
+  background-color: rgb(79, 50, 0);
+  overflow: auto;
+  margin: 70px 30px 40px 30px;
+  border-radius: 8px;
+  font-family: 'Overpass', sans-serif;
+  background-color: #212121;
+  box-shadow: 2px 2px 10px #CCC
+}
 
+.gallery-content .gallery-text{
+  float: left;
+  width: 50%;
+}
+
+.gallery-content .gallery-text p{
+  margin: 60px 30px auto 80px;
+}
+
+.gallery-content .gallery-image{
+  float: right;
+  width: 50%;
+}
+
+.gallery-content .gallery-image img{
+  width: 60%;
+  border: solid 3px white;
+  margin-top: 50px;
+  margin-right: 80px;
+}
+
+/* CSS associated to forms */
 .form-container{
   overflow: auto;
 }
