@@ -122,7 +122,7 @@ nav li{
   float: right;
 }
 
-.facilities-title{
+.general-title{
   text-align: center;
   color: #212121;
 }
@@ -171,7 +171,7 @@ nav li{
   border-radius: 8px;
   font-family: 'Overpass', sans-serif;
   background-color: #212121;
-  box-shadow: 5px 5px 10px #EEE
+  box-shadow: 10px 10px 10px #434343;
 }
 
 .gallery-content .gallery-text{
@@ -186,6 +186,10 @@ nav li{
 .gallery-content .gallery-image{
   float: right;
   width: 50%;
+}
+
+.gallery-content .gallery-image iframe{
+  margin-left: 0px;
 }
 
 .gallery-content .gallery-image img{
@@ -401,7 +405,6 @@ body {
   background: #fff;
   border: 1px solid #d9d9d9;
   border-top: 1px solid #c0c0c0;
-  /* border-radius: 2px; */
   padding: 0 8px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
