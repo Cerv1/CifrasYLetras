@@ -367,7 +367,9 @@
       <div class="facilities-title"><h1>Lista de asignaturas y material</h1></div>
       <div class="gallery-content">
         <div  id="subject-content" class="gallery-text">
-          <p class="subject-text"><br>Aqui van las asignaturas</p>
+          <p class="subject-text">';
+
+          echo '</p>
         </div>';
         include("database-methods.php");
         include("config-db.php");
