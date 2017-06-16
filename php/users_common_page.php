@@ -360,7 +360,7 @@
       <div class="facilities-title"><h1>Lista de asignaturas y material</h1></div>
       <div class="gallery-content">
         <div  id="subject-content" class="gallery-text">
-          <p class="parrafo"><br>Aqui van las asignaturas</p>
+          <p class="subject-text"><br>Aqui van las asignaturas</p>
         </div>
         <div  class="subject-buttons">
           <input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" />

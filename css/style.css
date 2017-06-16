@@ -231,6 +231,10 @@ nav li{
   float: right;
 }
 
+.subject-text{
+  margin-left: 5%;
+}
+
 
 
 /* CSS associated to forms */
