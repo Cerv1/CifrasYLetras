@@ -81,6 +81,11 @@
       case 8:
         SubjectCreateUser();
         break;
+      case 9:
+        CreateHTMLStudent();
+        break;
+      case 10:
+        CreateHTMLSubject();
     }
     echo '</div>';
   }
@@ -369,7 +374,7 @@
         include("config-db.php");
         if(isTeacher($db) == true){
           echo '<div  class="subject-buttons">
-            <input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" />
+            <a href="user.php?p=9"><input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" /></a>
             <input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" />
           </div>';
         }
@@ -408,4 +413,45 @@
       }
     }
   }
+
+  function CreateHTMLStudent(){
+    echo '
+    <div class="form-container">
+      <div class="form">
+        <h3>Registrar nuevo estudiante</h3>
+        <div class="form-group">
+          <input type="text" class="form-control" value="" placeholder="Nombre del alumno" id="contact-name" />
+          <label class="input-field-icon icon-user" for="login-name"></label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" value="" placeholder="Apellidos" id="contact-email" />
+          <label class="input-field-icon icon-email" for="login-email"></label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" value="" placeholder="Email" id="contact-email" />
+          <label class="input-field-icon icon-email" for="login-email"></label>
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-control" value="" placeholder="Contraseña" id="contact-email" />
+          <label class="input-field-icon icon-email" for="login-email"></label>
+        </div>
+
+        <div class="form-group">
+          <input type="date" class="form-control" value="" placeholder="Fecha de nacimiento" id="contact-email" />
+          <label class="input-field-icon icon-email" for="login-email"></label>
+        </div>
+
+        <button id="contact-send" class="btn btn-primary btn-lg btn-block">Crear</button>
+      </div>
+
+      <div class="form-image">
+        <img src="./images/student.png">
+      </div>
+    </div>
+    ';
+  }
+
 ?>
