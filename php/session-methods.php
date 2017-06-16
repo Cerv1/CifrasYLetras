@@ -1,10 +1,10 @@
 <?php
 
-  function startSession(){
-    session_start(["use_cookies" => "0",
-                  "use_only_cookies" => "0",
-                  "use_trans_sid" => "1"]);
-  }
+  // function startSession(){
+  //   session_start(["use_cookies" => "0",
+  //                 "use_only_cookies" => "0",
+  //                 "use_trans_sid" => "1"]);
+  // }
 
   function endSession(){
     //session must be started

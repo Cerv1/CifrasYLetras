@@ -1,6 +1,7 @@
 <?php
 
   function login($myusername, $mypassword, $db){
+    session_start();
     if($_SERVER["REQUEST_METHOD"] == "POST"){
       $sql = "SELECT name FROM Teacher WHERE name= '$myusername' AND password='$mypassword'";
       $result = mysqli_query($db,$sql);
@@ -11,9 +12,8 @@
 
       if($count == 1){
         include("session-methods.php");
-        startSession();
         $_SESSION['login_user'] = $myusername;
-        header("location: index.php?p=0&user=0");
+        header("location: user.php?p=0");
       }
       else{
         return -1;

@@ -6,7 +6,7 @@
     <html>
     <head>
       <meta charset="utf-8">
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="./css/style.css">
       <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
@@ -28,11 +28,12 @@
     <div class="top-panel">
       <header>
         <div class="top-header">
-          <a class="header-item" href="index.php?user=0"><div class="logo-header">
+          <a class="header-item" href="user.php?p=0"><div class="logo-header">
             <h1>Cifras y Letras - Academia de Formación</h1>
           </div></a>
           <a class="header-item link-item" href="#"><div class="login-header">
-            <h4><a href="index.php?user=0&p=7">';
+            <h4><a href="user.php?p=7">';
+            session_start();
             $activeUser = $_SESSION['login_user'];
             echo "$activeUser";
             echo '</a></h4>
@@ -43,7 +44,7 @@
         <div><ul class="link-item">';
         $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto", "Asignaturas", "Mi cuenta"];
           foreach ($items as $k => $v)
-            echo "<li".($k==$activo?" class='activo'":"").">"."<a href='index.php?user=0&p=".($k)."'>".$v."</a></li>";
+            echo "<li".($k==$activo?" class='activo'":"").">"."<a href='user.php?p=".($k)."'>".$v."</a></li>";
         echo '</ul>
         </div>
       </nav>
@@ -355,7 +356,6 @@
   function UserHTMLLogin(){
     include("config-db.php");
     include("database-methods.php");
-    session_start();
     echo '
     <div class="general-content">
       <h1>Perfil de usuario</h1><br>

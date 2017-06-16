@@ -346,7 +346,6 @@
   function HTMLLogin(){
     include("./php/config-db.php");
     include("./php/database-methods.php");
-    session_start();
     echo '
     <div class="login-card">
         <h1>Acceder</h1><br>
