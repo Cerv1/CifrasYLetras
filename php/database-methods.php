@@ -93,8 +93,6 @@
 
   function createSubject($name, $idSubject){
     include("config-db.php");
-    if($db->connect_error)
-      die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
       $sql = "INSERT INTO Subject VALUES('$name', '$idSubject')";
       if ($db->query($sql) === TRUE){
@@ -112,8 +110,6 @@
 
   function deleteSubject($idSubject){
     include("config-db.php");
-    if($db->connect_error)
-      die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
       $sql = "DELETE FROM Subject WHERE idSubject='$idSubject'";
       if($db->query($sql) === TRUE)
@@ -123,9 +119,11 @@
     }
   }
 
+  function getSubjectsList($db){
+    $active = $_SESSION['login_user'];
+  }
+
   function getTeacherAttributes($db){
-    if($db->connect_error)
-      die("Connection failed...". $db->connect_error);
     $active = $_SESSION['login_user'];
     $sql = "SELECT name, lastname, emailTeacher, birth FROM Teacher WHERE emailTeacher='$active'";
     $result = $db->query($sql);
@@ -144,8 +142,6 @@
   }
 
   function getStudentAttributes($db){
-    if($db->connect_error)
-      die("Connection failed...". $db->connect_error);
     $active = $_SESSION['login_user'];
     $sql = "SELECT name, lastname, emailStudent, birth FROM Student WHERE emailStudent='$active'";
     $result = $db->query($sql);
