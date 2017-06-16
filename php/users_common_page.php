@@ -78,6 +78,9 @@
       case 7:
         UserHTMLLogin();
         break;
+      case 8:
+        SubjectCreateUser();
+        break;
     }
     echo '</div>';
   }
@@ -361,12 +364,15 @@
       <div class="gallery-content">
         <div  id="subject-content" class="gallery-text">
           <p class="parrafo"><br>Aqui van las asignaturas</p>
-        </div>
-        <div  class="subject-buttons">
-          <input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" />
-          <input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" />
-        </div>
-      </div>
+        </div>';
+        include("database-methods.php");
+        if(isTeacher() == true){
+          echo '<div  class="subject-buttons">
+            <input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" />
+            <input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" />
+          </div>';
+        }
+      echo '</div>
     </div>
     ';
   }
