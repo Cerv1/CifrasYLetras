@@ -11,6 +11,7 @@
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
       <script src="./js/login-validator.js"></script>
+      <script src="./js/contact-validator.js"></script>
       <title>Cifras y Letras</title>
     </head>
     <body>
@@ -316,27 +317,34 @@
 
   function HTMLContact(){
     echo '
-    <script src="./scripts/form-validator.js"></script>
     <div class="form-container">
       <div class="form">
-        <h3>Contacte con nosotros</h3>
-        <div class="form-group">
-          <input type="text" class="form-control" value="" placeholder="Nombre" id="contact-name" />
-          <label class="input-field-icon icon-user" for="login-name"></label>
+        <form name="contact-form" onsubmit="return validateContact(this)">
+          <h3>Contacte con nosotros</h3>
+
+          <div class="form-group">
+            <input type="text" name ="name" class="form-control" value="" placeholder="Nombre" id="contact-name" />
+            <label class="input-field-icon icon-user" for="login-name"></label>
+          </div>
+
+          <div class="info" id="name-info"></div>
+
+          <div class="form-group">
+            <input type="email" name="email" class="form-control" value="" placeholder="Email" id="contact-email" />
+            <label class="input-field-icon icon-email" for="login-email"></label>
+          </div>
+
+          <div class="info" id="email-info"></div>
+
+          <div class="form-group">
+            <textarea class="form-control" name="msg" value="" placeholder="Mensaje" id="contact-message" rows="1"></textarea>
+          </div>
+
+          <div class="info" id="msg-info"></div>
+
+          <button id="contact-send" onclick="return validateForm();" class="btn btn-primary btn-lg btn-block">Enviar</button>
         </div>
-
-        <div class="form-group">
-          <input type="email" class="form-control" value="" placeholder="Email" id="contact-email" />
-          <label class="input-field-icon icon-email" for="login-email"></label>
-        </div>
-
-        <div class="form-group">
-          <textarea class="form-control" value="" placeholder="Mensaje" id="contact-message" rows="1"></textarea>
-        </div>
-
-        <button id="contact-send" class="btn btn-primary btn-lg btn-block">Enviar</button>
-      </div>
-
+      </form>
       <div class="form-image">
         <img src="./images/support.png">
       </div>
@@ -350,7 +358,7 @@
     echo '
     <div class="login-card">
         <h1>Acceder</h1><br>
-      <form name="login-form" onsubmit="return validateForm(this)">
+      <form name="login-form" onsubmit="return validateLogin(this)">
         <input type="text" name="user" placeholder="Usuario">
         <div class="info" id="user-info"></div>
         <input type="password" name="pass" placeholder="Contraseña">

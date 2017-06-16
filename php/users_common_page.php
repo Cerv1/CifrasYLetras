@@ -11,6 +11,7 @@
       <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+      <script src="./js/contact-validator.js"></script>
       <title>Cifras y Letras</title>
     </head>
     <body>
@@ -42,7 +43,7 @@
       </header>
       <nav>
         <div><ul class="link-item">';
-        $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto", "Asignaturas", "Mi cuenta"];
+        $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto", "Gestión", "Mi cuenta"];
           foreach ($items as $k => $v)
             echo "<li".($k==$activo?" class='activo'":"").">"."<a href='user.php?p=".($k)."'>".$v."</a></li>";
         echo '</ul>
@@ -326,20 +327,32 @@
     echo '
     <div class="form-container">
       <div class="form">
-        <h3>Contacte con nosotros</h3>
-        <div class="form-group">
-          <input type="text" class="form-control" value="" placeholder="Nombre" id="contact-name" />
-          <label class="input-field-icon icon-user" for="login-name"></label>
+        <form name="contact-form" onsubmit="return validateContact(this)">
+          <h3>Contacte con nosotros</h3>
+
+          <div class="form-group">
+            <input type="text" name ="name" class="form-control" value="" placeholder="Nombre" id="contact-name" />
+            <label class="input-field-icon icon-user" for="login-name"></label>
+          </div>
+
+          <div class="info" id="name-info"></div>
+
+          <div class="form-group">
+            <input type="email" name="email" class="form-control" value="" placeholder="Email" id="contact-email" />
+            <label class="input-field-icon icon-email" for="login-email"></label>
+          </div>
+
+          <div class="info" id="email-info"></div>
+
+          <div class="form-group">
+            <textarea class="form-control" name="msg" value="" placeholder="Mensaje" id="contact-message" rows="1"></textarea>
+          </div>
+
+          <div class="info" id="msg-info"></div>
+
+          <button id="contact-send" onclick="return validateForm();" class="btn btn-primary btn-lg btn-block">Enviar</button>
         </div>
-        <div class="form-group">
-          <input type="email" class="form-control" value="" placeholder="Email" id="contact-email" />
-          <label class="input-field-icon icon-email" for="login-email"></label>
-        </div>
-        <div class="form-group">
-          <textarea class="form-control" value="" placeholder="Mensaje" id="contact-message" rows="1"></textarea>
-        </div>
-        <button id="contact-send" class="btn btn-primary btn-lg btn-block">Enviar</button>
-      </div>
+      </form>
       <div class="form-image">
         <img src="./images/support.png">
       </div>
