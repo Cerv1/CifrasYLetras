@@ -4,7 +4,7 @@
   //   session_start();
 
   require "./php/users_common_page.php";
-  UserHTMLbegin();  
+  UserHTMLbegin();
   if($_SESSION['login_user']){
     if(!isset($_GET["p"])){
       $_GET['p']=0;
