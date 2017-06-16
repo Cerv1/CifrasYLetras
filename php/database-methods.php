@@ -28,13 +28,26 @@
   }
 
   function createStudent($name, $lastname, $emailStudent, $birth){
+    if($db->connect_error)
+      die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $sql = "INSERT INTO users(name, lastname, emailStudent, birth) VALUES($name, $lastname, $emailTeacher, $birth)";
-      $result = $db->query($sql);
-      if($result)
-        return 1;
+      $sql = "INSERT INTO Student VALUES($name, $lastname, $emailStudent, $birth)";
+      if ($db->query($sql) === TRUE)
+        echo "New Student created successfully.";
       else
-        return -1;
+        echo "Error: " . $sql . "<br>" . $db->error;
+    }
+  }
+
+  function createSubject($name, $lastname, $emailSubject, $birth){
+    if($db->connect_error)
+      die("Connection failed...". $db->connect_error);
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+      $sql = "INSERT INTO Subject VALUES($name, $lastname, $emailSubject, $birth)";
+      if ($db->query($sql) === TRUE)
+        echo "New Subject created successfully.";
+      else
+        echo "Error: " . $sql . "<br>" . $db->error;
     }
   }
 
