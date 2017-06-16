@@ -1,6 +1,7 @@
 <?php
 
   function UserHTMLbegin(){
+    session_start();
     echo '
     <!DOCTYPE html>
     <html>
@@ -33,7 +34,6 @@
           </div></a>
           <a class="header-item link-item" href="#"><div class="login-header">
             <h4><a href="user.php?p=7">';
-            session_start();
             $activeUser = $_SESSION['login_user'];
             echo "$activeUser";
             echo '</a></h4>
