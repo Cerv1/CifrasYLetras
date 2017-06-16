@@ -85,10 +85,10 @@
         CreateHTMLStudent();
         break;
       case 10:
-        CreateHTMLSubject();
+        DeleteHTMLStudent();
         break;
       case 11:
-        DeleteHTMLStudent();
+        CreateHTMLSubject();
         break;
       case 12:
         DeleteHTMLSubject();
@@ -491,7 +491,27 @@
   }
 
   function DeleteHTMLStudent(){
-
+    include("database-methods.php");
+    echo '
+    <div class="form-container">
+      <div class="form">
+        <h3>Eliminar usuario</h3>
+        <form method="post">
+          <div class="form-group">
+            <input type="text" formmethod="post" name="id" class="form-control" value="" placeholder="Email del estudiante" />
+            <label class="input-field-icon icon-user" for="login-name"></label>
+          </div>
+          <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Eliminar estudiante/profesor">
+        </form>
+      </div>
+      <div class="form-image">
+        <img src="./images/studying-girl.jpg">
+      </div>
+    </div>';
+    if(isset($_POST['submit'])){
+      $result = deleteStudent($_POST["id"]);
+      echo $result;
+    }
   }
 
   function DeleteHTMLSubject(){
@@ -513,7 +533,7 @@
       </div>
     </div>';
     if(isset($_POST['submit'])){
-      $result = deleteSubject($_POST["name"],$_POST["id"]);
+      $result = deleteSubject($_POST["id"]);
       echo $result;
     }
   }

@@ -61,7 +61,6 @@ CREATE TABLE `Student` (
 
 LOCK TABLES `Student` WRITE;
 /*!40000 ALTER TABLE `Student` DISABLE KEYS */;
-INSERT INTO `Student` VALUES ('Hadri','El mas wapis','adrielvello@vellesa.kon','1233-03-17','guapis'),('parra','diler','nosetio@jaja.ugr','1900-01-01','pabloporro');
 /*!40000 ALTER TABLE `Student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +84,7 @@ CREATE TABLE `Subject` (
 
 LOCK TABLES `Subject` WRITE;
 /*!40000 ALTER TABLE `Subject` DISABLE KEYS */;
-INSERT INTO `Subject` VALUES ('ISE','IsePaServi'),('LMD','LMD2017');
+INSERT INTO `Subject` VALUES ('TEDEERRECÉ','TDRC');
 /*!40000 ALTER TABLE `Subject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +111,7 @@ CREATE TABLE `Teacher` (
 
 LOCK TABLES `Teacher` WRITE;
 /*!40000 ALTER TABLE `Teacher` DISABLE KEYS */;
-INSERT INTO `Teacher` VALUES ('adri','morente','adrian95morente@gmail.com','1995-10-20','adriroot'),('cervi','cervilla','cervick13@gmail.com','1996-06-26','cervipass'),('nombre','apellido','nadie@nunca.bah','1990-01-01','rootpass');
+INSERT INTO `Teacher` VALUES ('adri','morente','adrian95morente@gmail.com','1995-10-20','adriroot'),('cervi','cervilla','cervick13@gmail.com','1996-06-26','cervipass');
 /*!40000 ALTER TABLE `Teacher` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -230,4 +229,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-16 16:17:26
+-- Dump completed on 2017-06-16 16:38:39
