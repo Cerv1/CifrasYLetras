@@ -378,9 +378,8 @@
     ';
     if(isset($_POST['submit'])){
       $result = logout($db);
-      if(result == true){
+      if($result == true){
         header("location: index.php");
-        echo session_destroy();
       }
     }
   }
