@@ -371,15 +371,17 @@
       </div>
       <div class="floatable-button">
         <form method="post">
-          <input type="submit" name="submit" class="login login-submit" value="Cerrar sesión">
+          <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Cerrar sesión">
         </form>
       </div>
     </div>
     ';
     if(isset($_POST['submit'])){
       $result = logout($db);
-      if(result == true)
+      if(result == true){
         header("location: index.php?p=0");
+        session_close();
+      }
     }
   }
 ?>
