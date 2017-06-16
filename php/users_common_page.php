@@ -32,7 +32,10 @@
             <h1>Cifras y Letras - Academia de Formación</h1>
           </div></a>
           <a class="header-item link-item" href="#"><div class="login-header">
-            <h4><a href="index.php?user=0&p=7">MI CUENTA</a></h4>
+            <h4><a href="index.php?user=0&p=7">';
+            $activeUser = $_SESSION['login_user'];
+            echo "$activeUser";
+            echo '</a></h4>
           </div></a>
         </div>
       </header>
@@ -68,10 +71,10 @@
       case 5:
         break;
       case 6:
-        UserHTMLLogIn();
+        UserHTMLLogin();
         break;
       case 7:
-        UserHTMLLogIn();
+        UserHTMLLogin();
         break;
     }
     echo '</div>';
@@ -260,10 +263,6 @@
               <a href="http://www.cambridgeenglish.org/es/test-your-english/">
                 aquí
               </a>.</p>
-
-
-
-
           </div>
         </div>
       </div>
@@ -353,25 +352,36 @@
     ';
   }
 
-  function UserHTMLLogIn(){
+  function UserHTMLLogin(){
     include("config-db.php");
     include("database-methods.php");
     session_start();
     echo '
-    <div class="login-card">
-      <h1>Menu de usuario</h1><br>
-      <form method="post">
-        <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Cerrar sesión">
-      </form>
+    <div class="general-content">
+      <h1>Perfil de usuario</h1><br>
+      <div class="gallery-content">
+        <div class="gallery-image">
+          <img src="./images/libros.jpg" alt="libros.jpg" />
+        </div>
+        <div class="gallery-text">
+          <ul class="user-attributes">';
+            getUserAttributes($db);
+          echo '</ul>
+        </div>
+      </div>
+      <div class="floatable-button">
+        <form method="post">
+          <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Cerrar sesión">
+        </form>
+      </div>
     </div>
     ';
     if(isset($_POST['submit'])){
       $result = logout($db);
       if(result == true){
-        header("location: index.php?p=0");
+        header("location: index.php");
+        echo session_destroy();
       }
     }
-
-
   }
 ?>

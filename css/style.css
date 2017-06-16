@@ -339,43 +339,6 @@ textarea.form-control:focus {
   border-color: #ffab40;
 }
 
-.social {
-  display: block;
-  margin: auto;
-  width: 250px;
-}
-
-.social li {
-  display: inline-block;
-  list-style: none;
-  margin: auto;
-  margin-right: 10px;
-}
-
-.social li a {
-  display:block;
-  text-decoration: none;
-  color: #999;
-  border: 2px solid #999;
-  border-radius: 100%;
-  font-size: 26px;
-  width: 34px;
-  padding: 3px;
-  text-align: center;
-  transition: all .4s;
-}
-
-.social li a:hover {
-  background: #999;
-  color: white;
-}
-
-.social li a span {
-  margin-top: 4px;
-  text-align: center;
-}
-
-
 @media (max-width: 600px) {
   .form {
     width: 90%;
@@ -474,12 +437,6 @@ body {
 
 .login-card a:hover {
   opacity: 1;
-}
-
-.login-help {
-  width: 100%;
-  text-align: center;
-  font-size: 12px;
 }
 
 footer{

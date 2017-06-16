@@ -66,7 +66,7 @@
         HTMLContact();
         break;
       case 5:
-        HTMLLogIn();
+        HTMLLogin();
         break;
     }
     echo '</div>';
@@ -343,7 +343,7 @@
     ';
   }
 
-  function HTMLLogIn(){
+  function HTMLLogin(){
     include("./php/config-db.php");
     include("./php/database-methods.php");
     session_start();
@@ -355,10 +355,6 @@
         <input type="password" name="pass" placeholder="Contraseña">
         <input type="submit"  formmethod="post" name="login" class="login login-submit" value="Entrar">
       </form>
-
-      <div class="login-help">
-        <a href="#">Registrarse</a>
-      </div>
     </div>
     ';
     $myusername = mysqli_real_escape_string($db, $_POST['user']);
@@ -367,6 +363,5 @@
     if($result == -1 ){
       echo 'Zoi jabascript i aun no ago kosas ke tio la virgen';
     }
-
   }
 ?>
