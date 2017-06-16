@@ -47,12 +47,12 @@
     return $isTeacher;
   }
 
-  function createStudent($name, $lastname, $emailStudent, $birth){
+  function createStudent($name, $lastname, $emailStudent, $birth, $password){
     include("config-db.php");
     if($db->connect_error)
       die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $sql = "INSERT INTO Student VALUES($name, $lastname, $emailStudent, $birth)";
+      $sql = "INSERT INTO Student VALUES($name, $lastname, $emailStudent, $birth, $password)";
       if ($db->query($sql) === TRUE)
         echo "New Student created successfully.";
       else
@@ -60,14 +60,40 @@
     }
   }
 
-  function createSubject($name, $lastname, $emailSubject, $birth){
+  function deleteStudent($emailStudent){
     include("config-db.php");
     if($db->connect_error)
       die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $sql = "INSERT INTO Subject VALUES($name, $lastname, $emailSubject, $birth)";
+      $sql = "DELETE FROM Student WHERE emailStudent='$emailStudent'";
+      if($db->query($sql) === TRUE)
+        echo "Student deleted successfully.";
+      else
+        echo "Error: " . $sql . "<br>" . $db->error;
+    }
+  }
+
+  function createSubject($name, $lastname, $idSubject, $birth){
+    include("config-db.php");
+    if($db->connect_error)
+      die("Connection failed...". $db->connect_error);
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+      $sql = "INSERT INTO Subject VALUES($name, $lastname, $idSubject, $birth)";
       if ($db->query($sql) === TRUE)
         echo "New Subject created successfully.";
+      else
+        echo "Error: " . $sql . "<br>" . $db->error;
+    }
+  }
+
+  function deleteSubject($idSubject){
+    include("config-db.php");
+    if($db->connect_error)
+      die("Connection failed...". $db->connect_error);
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+      $sql = "DELETE FROM Subject WHERE idSubject='$idSubject'";
+      if($db->query($sql) === TRUE)
+        echo "Subject deleted successfully.";
       else
         echo "Error: " . $sql . "<br>" . $db->error;
     }
