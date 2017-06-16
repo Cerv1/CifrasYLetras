@@ -73,6 +73,10 @@
     }
   }
 
+  function alterStudent(){
+    
+  }
+
   function createSubject($name, $idSubject){
     include("config-db.php");
     if($db->connect_error)

@@ -86,6 +86,13 @@
         break;
       case 10:
         CreateHTMLSubject();
+        break;
+      case 11:
+        DeleteHTMLStudent();
+        break;
+      case 12:
+        DeleteHTMLSubject();
+        break;
     }
     echo '</div>';
   }
