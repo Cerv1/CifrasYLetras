@@ -27,10 +27,10 @@
     return $result;
   }
 
-  function createUser($name, $lastname, $password, $birth, $email){
+  function createUser($name, $lastname, $emailTeacher, $birth){
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $sql = "INSERT INTO users(name, lastname, password, birth, dni)
-              VALUES($name, $lastname, $password, $birth, $dni)";
+      $sql = "INSERT INTO users(name, lastname, emailTeacher, birth)
+              VALUES($name, $lastname, $emailTeacher, $birth)";
       $result = mysqli_query($db,$sql);
       if($result)
         return 1;
@@ -41,10 +41,8 @@
 
   function getUserAttributes($db){
     $active = $_SESSION['login_user'];
-    $sql = "SELECT name FROM Teacher WHERE name='adri'";
+    $sql = "SELECT name, lastname, emailTeacher, birth FROM Teacher WHERE name='$active'";
     $result = mysqli_query($db,$sql);
-    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-
   }
 
 ?>
