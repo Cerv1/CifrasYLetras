@@ -375,9 +375,9 @@
         if(isTeacher($db) == true){
           echo '<div  class="subject-buttons">
             <a href="user.php?p=9"><input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" /></a>
-            <a href="user.php?p=10"><input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" /></a>
-            <a href="user.php?p=9"><input type="button"  class="login login-submit" name="createUser" value="Eliminar alumno" /></a>
-            <a href="user.php?p=9"><input type="button"  class="login login-submit" name="createUser" value="Eliminar asignatura" /></a>
+            <a href="user.php?p=10"><input type="button"  class="login login-submit" name="deleteUser" value="Eliminar alumno" /></a>
+            <a href="user.php?p=11"><input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" /></a>
+            <a href="user.php?p=12"><input type="button"  class="login login-submit" name="deleteSubject" value="Eliminar asignatura" /></a>
           </div>';
         }
       echo '</div>
@@ -422,39 +422,35 @@
     <div class="form-container">
       <div class="form">
         <h3>Registrar nuevo estudiante</h3>
-          <form method="post">
-            <div class="form-group">
-              <input type="text" formmethod="post" name="student-name" class="form-control" value="" placeholder="Nombre del alumno" id="contact-name" />
-              <label class="input-field-icon icon-user" for="login-name"></label>
-            </div>
-            <div class="form-group">
-              <input type="text" formmethod="post" name="student-lastname" class="form-control" value="" placeholder="Apellidos" id="contact-email" />
-              <label class="input-field-icon icon-email" for="login-email"></label>
-            </div>
-            <div class="form-group">
-              <input type="text" formmethod="post" name="student-email" class="form-control" value="" placeholder="Email" id="contact-email" />
-              <label class="input-field-icon icon-email" for="login-email"></label>
-            </div>
-            <div class="form-group">
-              <input type="password" formmethod="post" name="student-password" class="form-control" value="" placeholder="Contraseña" id="contact-email" />
-              <label class="input-field-icon icon-email" for="login-email"></label>
-            </div>
-            <div class="form-group">
-              <input type="date" formmethod="post" name="student-date" class="form-control" value="" placeholder="Fecha de nacimiento" id="contact-email" />
-              <label class="input-field-icon icon-email" for="login-email"></label>
-            </div>
-              <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Crear usuario">
+        <form method="post">
+          <div class="form-group">
+            <input type="text" formmethod="post" name="student-name" class="form-control" placeholder="Nombre del alumno"/>
+            <label class="input-field-icon icon-user" for="login-name"></label>
+          </div>
+          <div class="form-group">
+            <input type="text" formmethod="post" name="student-lastname" class="form-control" placeholder="Apellidos"/>
+            <label class="input-field-icon icon-email" for="login-email"></label>
+          </div>
+          <div class="form-group">
+            <input type="text" formmethod="post" name="student-email" class="form-control" placeholder="Email"/>
+            <label class="input-field-icon icon-email" for="login-email"></label>
+          </div>
+          <div class="form-group">
+            <input type="password" formmethod="post" name="student-password" class="form-control" placeholder="Contraseña"/>
+            <label class="input-field-icon icon-email" for="login-email"></label>
+          </div>
+          <div class="form-group">
+            <input type="date" formmethod="post" name="student-date" class="form-control" placeholder="Fecha de nacimiento"/>
+            <label class="input-field-icon icon-email" for="login-email"></label>
+          </div>
+          <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Crear usuario">
         </form>
       </div>
-      <div class="form-image">
-        <img src="./images/student.png">
-      </div>
+      <div class="form-image"><img src="./images/student.png"></div>
     </div>
     ';
-
     if(isset($_POST['submit'])){
       $result = createStudent($_POST["student-name"],$_POST['student-lastname'],$_POST['student-email'],$_POST['student-date'],$_POST['student-password']);
-      /* header("location: user.php"); */
       echo $result;
     }
   }
@@ -465,26 +461,52 @@
     <div class="form-container">
       <div class="form">
         <h3>Registrar nueva asignatura</h3>
-          <form method="post">
-            <div class="form-group">
-              <input type="text" formmethod="post" name="student-name" class="form-control" value="" placeholder="Nombre de la asignatura" id="contact-name" />
-              <label class="input-field-icon icon-user" for="login-name"></label>
-            </div>
-            <div class="form-group">
-              <input type="text" formmethod="post" name="student-lastname" class="form-control" value="" placeholder="Código identificador" id="contact-email" />
-              <label class="input-field-icon icon-email" for="login-email"></label>
-            </div>
-              <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Crear asignatura">
+        <form method="post">
+          <div class="form-group">
+            <input type="text" formmethod="post" name="name" class="form-control" placeholder="Nombre de la asignatura"/>
+            <label class="input-field-icon icon-user" for="login-name"></label>
+          </div>
+          <div class="form-group">
+            <input type="text" formmethod="post" name="id" class="form-control" placeholder="Código identificador"/>
+            <label class="input-field-icon icon-email" for="login-email"></label>
+          </div>
+          <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Crear asignatura">
         </form>
       </div>
       <div class="form-image">
         <img src="./images/book.png">
       </div>
-    </div>
-    ';
-
+    </div>';
     if(isset($_POST['submit'])){
-      $result = createSubject($_POST["student-name"],$_POST['student-lastname'],$_POST['student-email'],$_POST['student-date'],$_POST['student-password']);
+      $result = createSubject($_POST["name"],$_POST["id"]);
+      echo $result;
+    }
+  }
+
+  function DeleteHTMLStudent(){
+
+  }
+
+  function DeleteHTMLSubject(){
+    include("database-methods.php");
+    echo '
+    <div class="form-container">
+      <div class="form">
+        <h3>Eliminar asignatura</h3>
+        <form method="post">
+          <div class="form-group">
+            <input type="text" formmethod="post" name="id" class="form-control" value="" placeholder="Código identificador" />
+            <label class="input-field-icon icon-user" for="login-name"></label>
+          </div>
+          <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Eliminar asignatura">
+        </form>
+      </div>
+      <div class="form-image">
+        <img src="./images/studying-girl">
+      </div>
+    </div>';
+    if(isset($_POST['submit'])){
+      $result = deleteSubject($_POST["name"],$_POST["id"]);
       echo $result;
     }
   }
