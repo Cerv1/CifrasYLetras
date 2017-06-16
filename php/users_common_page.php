@@ -369,7 +369,7 @@
         include("config-db.php");
         if(isTeacher($db) == true){
           echo '<div  class="subject-buttons">
-            <input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" />
+            <input type="button"  class="login login-submit" name="createStudent" value="Añadir alumno" />
             <input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" />
           </div>';
         }

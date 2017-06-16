@@ -36,27 +36,19 @@
     return $result;
   }
 
-<<<<<<< HEAD
-  function isTeacher(){
-    include("config-db.php");
-    $activeUser = $_SESSION['login_user'];
-    $sql = "SELECT name FROM Teacher WHERE name='$activeUser'";
-    $resultTeacher = $db->query($sql);
-    if ($resultTeacher->num_rows > 0)
-      return true;
-=======
   function isTeacher($db){
     $activeUser = $_SESSION['login_user'];
     $isTeacher = "SELECT name FROM Teacher WHERE name='$activeUser'";
     $resultTeacher = mysqli_query($db,$isTeacher);
     if ($resultTeacher->num_rows > 0)
       $isTeacher = true;
->>>>>>> master
     else
-      return false;
+      $isTeacher = false;
+    return $isTeacher;
   }
 
   function createStudent($name, $lastname, $emailStudent, $birth){
+    include("config-db.php");
     if($db->connect_error)
       die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -69,6 +61,7 @@
   }
 
   function createSubject($name, $lastname, $emailSubject, $birth){
+    include("config-db.php");
     if($db->connect_error)
       die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
