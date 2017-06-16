@@ -65,16 +65,35 @@
     if($db->connect_error)
       die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $sql = "DELETE FROM Student WHERE emailStudent='$emailStudent'";
-      if($db->query($sql) === TRUE)
-        echo "Student deleted successfully.";
-      else
-        echo "Error: " . $sql . "<br>" . $db->error;
+      $sql_teacher = "DELETE FROM Teacher WHERE emailTeacher='$emailStudent'";
+      $result_teacher = mysqli_query($db,$sql_teacher);
+      $row_teacher = mysqli_fetch_array($result_teacher,MYSQLI_ASSOC);
+      $count_teacher = mysqli_num_rows($result_teacher);
+
+      $sql_student = "DELETE FROM Student WHERE emailStudent='$emailStudent'";
+      $result_student = mysqli_query($db,$sql_student);
+      $row_student = mysqli_fetch_array($result_student,MYSQLI_ASSOC);
+      $count_student = mysqli_num_rows($result_student);
+
+      if($count_teacher == 1){
+        echo "aqui estoy!";
+        if($db->query($sql_teacher) === TRUE)
+          echo "Teacher deleted successfully.";
+        else
+          echo "Error: " . $sql_teacher . "<br>" . $db->error;
+      }
+      else if($count_student){
+        echo "que no que no";
+        if($db->query($sql_student) === TRUE)
+          echo "Student deleted successfully.";
+        else
+          echo "Error: " . $sql_student . "<br>" . $db->error;
+      }
     }
   }
 
   function alterStudent(){
-    
+
   }
 
   function createSubject($name, $idSubject){
