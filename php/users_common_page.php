@@ -374,11 +374,8 @@
         include("config-db.php");
         if(isTeacher($db) == true){
           echo '<div  class="subject-buttons">
-<<<<<<< HEAD
             <input type="button"  class="login login-submit" name="createStudent" value="Añadir alumno" />
-=======
             <a href="user.php?p=9"><input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" /></a>
->>>>>>> master
             <input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" />
           </div>';
         }
