@@ -52,7 +52,7 @@
     if($db->connect_error)
       die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $sql = "INSERT INTO Student VALUES($name, $lastname, $emailStudent, $birth, $password)";
+      $sql = "INSERT INTO Student() VALUES('$name', '$lastname', '$emailStudent', '$birth', '$password')";
       if ($db->query($sql) === TRUE)
         echo "New Student created successfully.";
       else
@@ -73,12 +73,12 @@
     }
   }
 
-  function createSubject($name, $lastname, $idSubject, $birth){
+  function createSubject($name, $idSubject){
     include("config-db.php");
     if($db->connect_error)
       die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $sql = "INSERT INTO Subject VALUES($name, $lastname, $idSubject, $birth)";
+      $sql = "INSERT INTO Subject VALUES('$name', '$idSubject')";
       if ($db->query($sql) === TRUE)
         echo "New Subject created successfully.";
       else

@@ -374,9 +374,8 @@
         include("config-db.php");
         if(isTeacher($db) == true){
           echo '<div  class="subject-buttons">
-            <input type="button"  class="login login-submit" name="createStudent" value="Añadir alumno" />
             <a href="user.php?p=9"><input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" /></a>
-            <input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" />
+            <a href="user.php?p=10"><input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" /></a>
           </div>';
         }
       echo '</div>
@@ -416,43 +415,76 @@
   }
 
   function CreateHTMLStudent(){
+    include("database-methods.php");
     echo '
     <div class="form-container">
       <div class="form">
         <h3>Registrar nuevo estudiante</h3>
-        <div class="form-group">
-          <input type="text" class="form-control" value="" placeholder="Nombre del alumno" id="contact-name" />
-          <label class="input-field-icon icon-user" for="login-name"></label>
-        </div>
-
-        <div class="form-group">
-          <input type="text" class="form-control" value="" placeholder="Apellidos" id="contact-email" />
-          <label class="input-field-icon icon-email" for="login-email"></label>
-        </div>
-
-        <div class="form-group">
-          <input type="text" class="form-control" value="" placeholder="Email" id="contact-email" />
-          <label class="input-field-icon icon-email" for="login-email"></label>
-        </div>
-
-        <div class="form-group">
-          <input type="password" class="form-control" value="" placeholder="Contraseña" id="contact-email" />
-          <label class="input-field-icon icon-email" for="login-email"></label>
-        </div>
-
-        <div class="form-group">
-          <input type="date" class="form-control" value="" placeholder="Fecha de nacimiento" id="contact-email" />
-          <label class="input-field-icon icon-email" for="login-email"></label>
-        </div>
-
-        <button id="contact-send" class="btn btn-primary btn-lg btn-block">Crear</button>
+          <form method="post">
+            <div class="form-group">
+              <input type="text" formmethod="post" name="student-name" class="form-control" value="" placeholder="Nombre del alumno" id="contact-name" />
+              <label class="input-field-icon icon-user" for="login-name"></label>
+            </div>
+            <div class="form-group">
+              <input type="text" formmethod="post" name="student-lastname" class="form-control" value="" placeholder="Apellidos" id="contact-email" />
+              <label class="input-field-icon icon-email" for="login-email"></label>
+            </div>
+            <div class="form-group">
+              <input type="text" formmethod="post" name="student-email" class="form-control" value="" placeholder="Email" id="contact-email" />
+              <label class="input-field-icon icon-email" for="login-email"></label>
+            </div>
+            <div class="form-group">
+              <input type="password" formmethod="post" name="student-password" class="form-control" value="" placeholder="Contraseña" id="contact-email" />
+              <label class="input-field-icon icon-email" for="login-email"></label>
+            </div>
+            <div class="form-group">
+              <input type="date" formmethod="post" name="student-date" class="form-control" value="" placeholder="Fecha de nacimiento" id="contact-email" />
+              <label class="input-field-icon icon-email" for="login-email"></label>
+            </div>
+              <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Crear usuario">
+        </form>
       </div>
-
       <div class="form-image">
         <img src="./images/student.png">
       </div>
     </div>
     ';
+
+    if(isset($_POST['submit'])){
+      $result = createStudent($_POST["student-name"],$_POST['student-lastname'],$_POST['student-email'],$_POST['student-date'],$_POST['student-password']);
+      /* header("location: user.php"); */
+      echo $result;
+    }
+  }
+
+  function CreateHTMLSubject(){
+    include("database-methods.php");
+    echo '
+    <div class="form-container">
+      <div class="form">
+        <h3>Registrar nueva asignatura</h3>
+          <form method="post">
+            <div class="form-group">
+              <input type="text" formmethod="post" name="student-name" class="form-control" value="" placeholder="Nombre de la asignatura" id="contact-name" />
+              <label class="input-field-icon icon-user" for="login-name"></label>
+            </div>
+            <div class="form-group">
+              <input type="text" formmethod="post" name="student-lastname" class="form-control" value="" placeholder="Código identificador" id="contact-email" />
+              <label class="input-field-icon icon-email" for="login-email"></label>
+            </div>
+              <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Crear asignatura">
+        </form>
+      </div>
+      <div class="form-image">
+        <img src="./images/book.png">
+      </div>
+    </div>
+    ';
+
+    if(isset($_POST['submit'])){
+      $result = createSubject($_POST["student-name"],$_POST['student-lastname'],$_POST['student-email'],$_POST['student-date'],$_POST['student-password']);
+      echo $result;
+    }
   }
 
 ?>
