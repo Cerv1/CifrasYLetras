@@ -3,14 +3,23 @@
   function login($myusername, $mypassword, $db){
     session_start();
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $sql = "SELECT name FROM Teacher WHERE name= '$myusername' AND password='$mypassword'";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
+      $sql_teacher = "SELECT name FROM Teacher WHERE name= '$myusername' AND password='$mypassword'";
+      $result_teacher = mysqli_query($db,$sql_teacher);
+      $row_teacher = mysqli_fetch_array($result_teacher,MYSQLI_ASSOC);
+      $active_teacher = $row['active'];
+      $count_teacher = mysqli_num_rows($result_teacher);
 
-      $count = mysqli_num_rows($result);
+      $sql_student = "SELECT name FROM Student WHERE name= '$myusername' AND password='$mypassword'";
+      $result_student = mysqli_query($db,$sql_student);
+      $row_student = mysqli_fetch_array($result_student,MYSQLI_ASSOC);
+      $active_student = $row['active'];
+      $count_student = mysqli_num_rows($result_student);
 
-      if($count == 1){
+      if($count_teacher == 1){
+        $_SESSION['login_user'] = $myusername;
+        header("location: user.php?p=0");
+      }
+      else if($count_student){
         $_SESSION['login_user'] = $myusername;
         header("location: user.php?p=0");
       }
@@ -27,14 +36,38 @@
     return $result;
   }
 
-  function createUser($name, $lastname, $emailTeacher, $birth){
+  function isTeacher($db){
+    $activeUser = $_SESSION['login_user'];
+    $isTeacher = "SELECT name FROM Teacher WHERE name='$activeUser'";
+    $resultTeacher = mysqli_query($db,$isTeacher);
+    if ($resultTeacher->num_rows > 0)
+      $isTeacher = true;
+    else
+      $isTeacher = false;
+    return $isTeacher;
+  }
+
+  function createStudent($name, $lastname, $emailStudent, $birth){
+    if($db->connect_error)
+      die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $sql = "INSERT INTO users(name, lastname, emailTeacher, birth) VALUES($name, $lastname, $emailTeacher, $birth)";
-      $result = $db->query($sql);
-      if($result)
-        return 1;
+      $sql = "INSERT INTO Student VALUES($name, $lastname, $emailStudent, $birth)";
+      if ($db->query($sql) === TRUE)
+        echo "New Student created successfully.";
       else
-        return -1;
+        echo "Error: " . $sql . "<br>" . $db->error;
+    }
+  }
+
+  function createSubject($name, $lastname, $emailSubject, $birth){
+    if($db->connect_error)
+      die("Connection failed...". $db->connect_error);
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+      $sql = "INSERT INTO Subject VALUES($name, $lastname, $emailSubject, $birth)";
+      if ($db->query($sql) === TRUE)
+        echo "New Subject created successfully.";
+      else
+        echo "Error: " . $sql . "<br>" . $db->error;
     }
   }
 

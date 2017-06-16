@@ -70,12 +70,16 @@
         UserHTMLContact();
         break;
       case 5:
+        UserHTMLSubject();
         break;
       case 6:
         UserHTMLLogin();
         break;
       case 7:
         UserHTMLLogin();
+        break;
+      case 8:
+        SubjectCreateUser();
         break;
     }
     echo '</div>';
@@ -350,6 +354,27 @@
     </div>
 
 
+    ';
+  }
+
+  function UserHTMLSubject(){
+    echo '
+    <div class="general-content">
+      <div class="facilities-title"><h1>Lista de asignaturas y material</h1></div>
+      <div class="gallery-content">
+        <div  id="subject-content" class="gallery-text">
+          <p class="subject-text"><br>Aqui van las asignaturas</p>
+        </div>';
+        include("database-methods.php");
+        include("config-db.php");
+        if(isTeacher($db) == true){
+          echo '<div  class="subject-buttons">
+            <input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" />
+            <input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" />
+          </div>';
+        }
+      echo '</div>
+    </div>
     ';
   }
 
