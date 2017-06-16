@@ -12,6 +12,7 @@
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
       <script src="./js/contact-validator.js"></script>
+      <script src="./js/register-user.js"></script>
       <title>Cifras y Letras</title>
     </head>
     <body>
@@ -427,28 +428,44 @@
     <div class="form-container">
       <div class="form">
         <h3>Registrar nuevo estudiante</h3>
-        <form method="post">
+        <form name="register-user-form" method="post" onsubmit="return validateUserRegister(this)">
+
           <div class="form-group">
             <input type="text" formmethod="post" name="student-name" class="form-control" placeholder="Nombre del alumno"/>
             <label class="input-field-icon icon-user" for="login-name"></label>
           </div>
+
+          <div class="info" id="name-info"></div>
+
           <div class="form-group">
             <input type="text" formmethod="post" name="student-lastname" class="form-control" placeholder="Apellidos"/>
             <label class="input-field-icon icon-email" for="login-email"></label>
           </div>
+
+          <div class="info" id="lastname-info"></div>
+
           <div class="form-group">
             <input type="text" formmethod="post" name="student-email" class="form-control" placeholder="Email"/>
             <label class="input-field-icon icon-email" for="login-email"></label>
           </div>
+
+          <div class="info" id="email-info"></div>
+
           <div class="form-group">
             <input type="password" formmethod="post" name="student-password" class="form-control" placeholder="Contraseña"/>
             <label class="input-field-icon icon-email" for="login-email"></label>
           </div>
+
+          <div class="info" id="password-info"></div>
+
           <div class="form-group">
             <input type="date" formmethod="post" name="student-date" class="form-control" placeholder="Fecha de nacimiento"/>
             <label class="input-field-icon icon-email" for="login-email"></label>
           </div>
-          <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Crear usuario">
+
+          <div class="info" id="date-info"></div>
+
+          <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Crear usuario" onclick="return validateUserRegister();">
         </form>
       </div>
       <div class="form-image"><img src="./images/student.png"></div>
