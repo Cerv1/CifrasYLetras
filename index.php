@@ -1,9 +1,11 @@
 <?php
 
-  require "./php/common_page.php";
-  HTMLbegin();
-  require "./php/users_common_page.php";
+  if(session_status()==PHP_SESSION_NONE)
+    session_start();
 
+  require "./php/common_page.php";
+  require "./php/users_common_page.php";
+  HTMLbegin();
 
   if(!isset($_GET["user"])){
     if(!isset($_GET["p"])){
@@ -19,7 +21,6 @@
     UserHTMLheader($_GET["p"]);
     UserHTMLcontent($_GET["p"]);
   }
-
   HTMLfooter();
   HTMLend();
 
