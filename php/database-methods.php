@@ -30,11 +30,7 @@
   function createUser($name, $lastname, $emailTeacher, $birth){
     if($_SERVER["REQUEST_METHOD"] == "POST"){
       $sql = "INSERT INTO users(name, lastname, emailTeacher, birth)
-<<<<<<< HEAD
               VALUES($name, $lastname, $emailTeacher, $birth)";
-=======
-      VALUES($name, $lastname, $emailTeacher, $birth)";
->>>>>>> 2b00dcf3a2943567e52ff818babdd1bda2aca134
       $result = mysqli_query($db,$sql);
       if($result)
         return 1;
