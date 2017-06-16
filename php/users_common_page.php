@@ -355,7 +355,6 @@
   function UserHTMLLogin(){
     include("config-db.php");
     include("database-methods.php");
-    session_start();
     echo '
     <div class="general-content">
       <h1>Perfil de usuario</h1><br>
