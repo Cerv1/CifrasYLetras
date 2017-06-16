@@ -6,6 +6,10 @@
   //                 "use_trans_sid" => "1"]);
   // }
 
+  function isTeacher(){
+
+  }
+
   function endSession(){
     //session must be started
     if(session_status()==PHP_SESSION_NONE)

@@ -27,6 +27,17 @@
     return $result;
   }
 
+  function isTeacher(){
+    $activeUser = $_SESSION['login_user'];
+    $isTeacher = "SELECT name FROM Teacher WHERE name='$activeUser'";
+    $resultTeacher = $db->query($sql);
+    if ($result->num_rows > 0)
+      $isTeacher = true;
+    else
+      $isTeacher = false;
+    return $isTeacher;
+  }
+
   function createStudent($name, $lastname, $emailStudent, $birth){
     if($db->connect_error)
       die("Connection failed...". $db->connect_error);
