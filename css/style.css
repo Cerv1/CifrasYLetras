@@ -251,7 +251,7 @@ nav li{
 .form {
   float: left;
   width: 50%;
-  background-color: rgb(238, 238, 238);
+  background-color: white;
   border-radius: 10px;
   margin-top: 15px;
   margin-bottom: 6em;
@@ -316,7 +316,7 @@ nav li{
   border-radius: 0;
   font-size: 15px;
   line-height: 1.467;
-  background-color: rgb(238, 238, 238);
+  background-color: white;
   padding: 4px;
   height: 42px;
   -webkit-appearance: none;

@@ -28,14 +28,14 @@
   }
 
   function isTeacher(){
+    include("config-db.php");
     $activeUser = $_SESSION['login_user'];
-    $isTeacher = "SELECT name FROM Teacher WHERE name='$activeUser'";
+    $sql = "SELECT name FROM Teacher WHERE name='$activeUser'";
     $resultTeacher = $db->query($sql);
-    if ($result->num_rows > 0)
-      $isTeacher = true;
+    if ($resultTeacher->num_rows > 0)
+      return true;
     else
-      $isTeacher = false;
-    return $isTeacher;
+      return false;
   }
 
   function createStudent($name, $lastname, $emailStudent, $birth){
