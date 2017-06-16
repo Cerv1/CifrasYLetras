@@ -217,6 +217,22 @@ nav li{
   margin-right: 80px;
 }
 
+.gallery-content .gallery-image input{
+  width: 50%;
+  margin-top: 50px;
+}
+
+#subject-content{
+  width: 70%;
+}
+
+.subject-buttons{
+  width: 25%;
+  float: right;
+}
+
+
+
 /* CSS associated to forms */
 .form-container{
   overflow: auto;
