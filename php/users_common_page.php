@@ -24,7 +24,7 @@
     ';
   }
 
-  function UserHTMLheader($activo) {
+  function UserHTMLheader($activo){
     echo '
     <div class="top-panel">
       <header>
@@ -138,7 +138,7 @@
 
       <div class="aux-content">
         <ul>
-          <li class="first-li-item"><a href="apoyo-escolar" class="first-ul-item">Apoyo Escolar</a>
+          <li class="first-li-item"><a href="#apoyo-escolar" class="first-ul-item">Apoyo Escolar</a>
           <ul class="ul-second-level">
             <li><a href="#apoyo-primaria">Primaria</a></li>
             <li><a href="#apoyo-eso">ESO</a></li>
@@ -147,13 +147,11 @@
             <li><a href="#apoyo-preparacion-bachillerato">Preparación título Bachillerato</a></li>
             <li><a href="#apoyo-preparacion-selectividad">Preparación Selectividad</a></li>
           </ul></li>
-
           <li class="first-li-item"><a href="#pruebas-de-acceso" class="first-ul-item">Pruebas de Acceso</a>
           <ul class="ul-second-level">
             <li><a href="#pruebas-grado">Acceso a grado medio y superior</a></li>
             <li><a href="#pruebas-universidad">Acceso a Universidad (+25 años)</a></li>
           </ul></li>
-
           <li class="first-li-item"><a href="#cursos-de-ingles" class="first-ul-item">Cursos de Inglés</a>
           <ul class="ul-second-level">
             <li><a href="#cursos-b1">Preparación para el B1, B2 y C1</a></li>
@@ -164,7 +162,6 @@
       <div class="main-content">
         <div class="general-content">
           <h3 id="apoyo-escolar">Apoyo escolar</h3>
-
           <div class="general-content paragraph" id="apoyo-primaria">
             <h4>Primaria</h4>
             <p>¿Notas en tu hijo problemas en el estudio? ¿Necesita refuerzo
@@ -175,7 +172,6 @@
             valerse por ellos mismos.</p>
             <p>Grupos reducidos y atención personalizada para un mayor rendimiento</p>
           </div>
-
           <div class="general-content paragraph" id="apoyo-eso">
             <h4>ESO</h4>
             <p>Obtener el graduado en ESO es el requisito mínimo obligatorio para
@@ -186,7 +182,6 @@
             les damos la formación necesaria para alcanzar los objetivos del curso
             con buenos resultados. <strong>Impartimos clases todo el año</strong></p>
           </div>
-
           <div class="general-content paragraph" id="apoyo-bachillerato">
             <h4>Bachillerato</h4>
             <p>Los dos cursos de Bachillerato son fundamentales si quieres cursar
@@ -197,7 +192,6 @@
             que te has marcado. <strong>¡No lo pienses más, podemos ayudarte!</strong>
             </p>
           </div>
-
           <div class="general-content paragraph" id="apoyo-preparacion-eso">
             <h4>Preparación graduado ESO</h4>
             <p>El Graduado en ESO es un requisito indispensable a la hora de encontrar
@@ -210,7 +204,6 @@
             <p>Tenemos el <b>material necesario</b> y los profesores que te facilitarán
             el contenido requerido para superar el examen.</p>
           </div>
-
           <div class="general-content paragraph" id="apoyo-preparacion-bachillerato">
             <h4>Preparación título Bachillerato</h4>
             <p>Si ya tienes el graduado en ESO y te falta el Bachillerato, no pierdas
@@ -222,7 +215,6 @@
             <p>La prueba es para personas mayores de 20 años o que cumplan esa edad
             en el año natural en que se celebran.</p>
           </div>
-
           <div class="general-content paragraph" id="apoyo-preparacion-selectividad">
             <h4>Preparación Selectividad</h4>
             <p>Si tienes problemas con la selectividad o necesitas una nota más alta
@@ -232,12 +224,9 @@
             todas tus dudas. Nos adaptamos a tus necesidades y horarios, preparamos
             durante todo el año o cursos intensivos previos a las convocatorias.</p>
           </div>
-
         </div>
-
         <div class="general-content" id="pruebas-de-acceso">
           <h3>Pruebas de Acceso</h3>
-
           <div class="general-content paragraph" id="pruebas-grado">
             <h4>Acceso a grado medio y superior</h4>
             <p>¿Has abandonado los estudios? ¿No estás seguro de continuar y quieres
@@ -246,7 +235,6 @@
             superior. Trabajamos de <b>forma personalizada</b> con cada alumno
             preparándole para el examen de acceso.
           </div>
-
           <div class="general-content paragraph" id="pruebas-universidad">
             <h4>Acceso a Universidad (+25 años)</h4>
             <p>Si eres mayor de 25 años y quieres acceder a un título universitario,
@@ -258,12 +246,9 @@
             resulte un paso sencillo. <b>No pierdas la oportunidad de elegir tu futuro</b>
             </p>
           </div>
-
         </div>
-
         <div class="general-content" id="cursos-de-ingles">
           <h3>Cursos de Inglés</h3>
-
           <div class="general-content paragraph" id="cursos-b1">
             <h4>Preparación para el B1, B2 y C1</h4>
             <p>¿Quieres trabajar en el extranjero? ¿Tu trabajo te exige hablar un
@@ -283,7 +268,6 @@
           </div>
         </div>
       </div>
-
     ';
   }
 
@@ -347,25 +331,19 @@
           <input type="text" class="form-control" value="" placeholder="Nombre" id="contact-name" />
           <label class="input-field-icon icon-user" for="login-name"></label>
         </div>
-
         <div class="form-group">
           <input type="email" class="form-control" value="" placeholder="Email" id="contact-email" />
           <label class="input-field-icon icon-email" for="login-email"></label>
         </div>
-
         <div class="form-group">
           <textarea class="form-control" value="" placeholder="Mensaje" id="contact-message" rows="1"></textarea>
         </div>
-
         <button id="contact-send" class="btn btn-primary btn-lg btn-block">Enviar</button>
       </div>
-
       <div class="form-image">
         <img src="./images/support.png">
       </div>
     </div>
-
-
     ';
   }
 
@@ -396,7 +374,7 @@
     include("config-db.php");
     include("database-methods.php");
     echo '
-    <div class="general-content">
+    <div class="general-content" id="user-profile">
       <h1>Perfil de usuario</h1><br>
       <div class="gallery-content">
         <div class="gallery-image">
@@ -404,23 +382,30 @@
         </div>
         <div class="gallery-text">
           <ul class="user-attributes">';
-            getUserAttributes($db);
+          if(isTeacher($db))
+            getTeacherAttributes($db);
+          else
+            getStudentAttributes($db);
           echo '</ul>
+          <div class="floatable-button">
+            <form method="post">
+              <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Cerrar sesión">
+            </form>
+            <form method="post">
+              <input type="submit" formmethod="post" name="gestion" class="login login-submit" value="Gestión general">
+            </form>
+          </div>
         </div>
-      </div>
-      <div class="floatable-button">
-        <form method="post">
-          <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Cerrar sesión">
-        </form>
       </div>
     </div>
     ';
     if(isset($_POST['submit'])){
       $result = logout($db);
-      if($result == true){
+      if($result == true)
         header("location: index.php");
-      }
     }
+    if(isset($_POST['gestion']))
+      header("location: user.php?p=5");
   }
 
   function CreateHTMLStudent(){
