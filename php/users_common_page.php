@@ -376,6 +376,8 @@
           echo '<div  class="subject-buttons">
             <a href="user.php?p=9"><input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" /></a>
             <a href="user.php?p=10"><input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" /></a>
+            <a href="user.php?p=9"><input type="button"  class="login login-submit" name="createUser" value="Eliminar alumno" /></a>
+            <a href="user.php?p=9"><input type="button"  class="login login-submit" name="createUser" value="Eliminar asignatura" /></a>
           </div>';
         }
       echo '</div>
