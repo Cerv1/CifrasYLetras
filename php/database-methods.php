@@ -12,7 +12,7 @@
 
       if($count == 1){
         $_SESSION['login_user'] = $myusername;
-        header("location: index.php?p=0&user=0");
+        header("location: user.php?p=0");
       }
       else{
         return -1;
@@ -22,7 +22,7 @@
 
   function logout($db){
     $result = mysqli_close($db);
-    endSession();
+    session_destroy();
     header("location: index.php?p=0");
     return $result;
   }
