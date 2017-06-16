@@ -44,11 +44,12 @@
     $active = $_SESSION['login_user'];
     $items = ["name", "lastname", "birth", "dni"];
     $sql = "SELECT name, lastname, birth, dni FROM Teacher WHERE name='$active'";
-    $result = $db->query($sql);
-    echo "<li class='user-attribute'>".$result['name']."</li>
-    <li class='user-attribute'>".$result['lastname']."</li>
-    <li class='user-attribute'>".$result['birth']."</li>
-    <li class='user-attribute'>".$result['dni']."</li>";
+    $result = mysqli_query($db,$sql);
+    while($row = mysqli_fetch_assoc($result)){
+      foreach($row as $id => $value){
+        echo "<li class='user-attribute'>".$value."</li>";
+      }
+    }
   }
 
 ?>
