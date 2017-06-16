@@ -27,9 +27,9 @@
     return $result;
   }
 
-  function createUser($name, $lastname, $emailTeacher, $birth){
+  function createStudent($name, $lastname, $emailStudent, $birth){
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $sql = "INSERT INTO users(name, lastname, emailTeacher, birth) VALUES($name, $lastname, $emailTeacher, $birth)";
+      $sql = "INSERT INTO users(name, lastname, emailStudent, birth) VALUES($name, $lastname, $emailTeacher, $birth)";
       $result = $db->query($sql);
       if($result)
         return 1;

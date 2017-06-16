@@ -70,6 +70,7 @@
         UserHTMLContact();
         break;
       case 5:
+        UserHTMLSubject();
         break;
       case 6:
         UserHTMLLogin();
@@ -350,6 +351,17 @@
     </div>
 
 
+    ';
+  }
+
+  function UserHTMLSubject(){
+    echo '
+    <div class="general-content">
+      <div class="gallery-content">
+        <input type="button" name="createUser" value="Añadir alumno" />
+        <input type="button" name="createSubject" value="Añadir asignatura" />
+      </div>
+    </div>
     ';
   }
 
