@@ -61,7 +61,7 @@ CREATE TABLE `Student` (
 
 LOCK TABLES `Student` WRITE;
 /*!40000 ALTER TABLE `Student` DISABLE KEYS */;
-INSERT INTO `Student` VALUES ('parra','diler','nosetio@jaja.ugr','1900-01-01','pabloporro');
+INSERT INTO `Student` VALUES ('Hadri','El mas wapis','adrielvello@vellesa.kon','1233-03-17','guapis'),('parra','diler','nosetio@jaja.ugr','1900-01-01','pabloporro');
 /*!40000 ALTER TABLE `Student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,6 +85,7 @@ CREATE TABLE `Subject` (
 
 LOCK TABLES `Subject` WRITE;
 /*!40000 ALTER TABLE `Subject` DISABLE KEYS */;
+INSERT INTO `Subject` VALUES ('ISE','IsePaServi'),('LMD','LMD2017');
 /*!40000 ALTER TABLE `Subject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,6 +193,33 @@ LOCK TABLES `teachsSubject` WRITE;
 /*!40000 ALTER TABLE `teachsSubject` DISABLE KEYS */;
 /*!40000 ALTER TABLE `teachsSubject` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `name` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lastname` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birth` date DEFAULT NULL,
+  `dni` varchar(9) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`dni`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('Cervi','Cervilla','cervipass','0000-00-00','14275233F');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -202,4 +230,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-16 13:00:24
+-- Dump completed on 2017-06-16 16:17:26
