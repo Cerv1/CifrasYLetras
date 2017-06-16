@@ -98,8 +98,8 @@ CREATE TABLE `Teacher` (
   `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lastname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `emailTeacher` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `birth` date DEFAULT NULL,
-  `password` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birth` date NOT NULL,
+  `password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`emailTeacher`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -110,8 +110,7 @@ CREATE TABLE `Teacher` (
 
 LOCK TABLES `Teacher` WRITE;
 /*!40000 ALTER TABLE `Teacher` DISABLE KEYS */;
-INSERT INTO `Teacher` VALUES ('adri','morente','adrian95morente@gmail.com','0000-00-00','adriroot'),
-('cervi','cervilla','cervick13@gmail.com','0000-00-00','cervipass');
+INSERT INTO `Teacher` VALUES ('adri','morente','adrian95morente@gmail.com','1995-10-20','adriroot'),('cervi','cervilla','cervick13@gmail.com','1996-06-26','cervipass'),('nombre','apellido','nadie@nunca.bah','1990-01-01','rootpass');
 /*!40000 ALTER TABLE `Teacher` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -202,4 +201,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-15 18:43:38
+-- Dump completed on 2017-06-16 11:35:16
