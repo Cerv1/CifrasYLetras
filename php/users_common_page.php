@@ -363,7 +363,6 @@
       <div class="facilities-title"><h1>Lista de asignaturas y material</h1></div>
       <div class="gallery-content">
         <div  id="subject-content" class="gallery-text">
-<<<<<<< HEAD
           <p class="subject-text"><br>Aqui van las asignaturas</p>
         </div>
         <div  class="subject-buttons">
@@ -371,7 +370,6 @@
           <input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" />
         </div>
       </div>
-=======
           <p class="parrafo"><br>Aqui van las asignaturas</p>
         </div>';
         include("database-methods.php");
@@ -382,7 +380,6 @@
           </div>';
         }
       echo '</div>
->>>>>>> hadri
     </div>
     ';
   }
