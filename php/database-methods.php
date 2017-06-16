@@ -40,9 +40,26 @@
   }
 
   function getUserAttributes($db){
+    if($db->connect_error){
+      die("Connection failed...". $db->connect_error);
+    }
     $active = $_SESSION['login_user'];
     $sql = "SELECT name, lastname, emailTeacher, birth FROM Teacher WHERE name='$active'";
-    $result = mysqli_query($db,$sql);
+    $result = $db->query($sql);
+
+    if ($result->num_rows > 0){
+        while($value = $result->fetch_assoc()){
+          echo '<h3>Nombre:</h3>';
+          echo '<li>'.$value['name'].'</li>';
+          echo '<h3>Apellidos:</h3>';
+          echo '<li>'.$value['lastname'].'</li>';
+          echo '<h3>E-mail:</h3>';
+          echo '<li>'.$value['emailTeacher'].'</li>';
+          echo '<h3>Fecha de nacimiento:</h3>';
+          echo '<li>'.$value['birth'].'</li>';
+        }
+    } else
+      echo "0 results found...";
   }
 
 ?>
