@@ -379,8 +379,8 @@
     if(isset($_POST['submit'])){
       $result = logout($db);
       if(result == true){
-        header("location: index.php?p=0");
-        session_close();
+        header("location: index.php");
+        echo session_destroy();
       }
     }
   }
