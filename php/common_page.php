@@ -10,6 +10,7 @@
       <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+      <script src="./js/login-validator.js"></script>
       <title>Cifras y Letras</title>
     </head>
     <body>
@@ -349,18 +350,20 @@
     echo '
     <div class="login-card">
         <h1>Acceder</h1><br>
-      <form>
+      <form name="login-form" onsubmit="return validateForm(this)">
         <input type="text" name="user" placeholder="Usuario">
+        <div class="info" id="user-info"></div>
         <input type="password" name="pass" placeholder="Contraseña">
-        <input type="submit"  formmethod="post" name="login" class="login login-submit" value="Entrar">
+        <div class="info" id="pass-info"></div>
+        <input type="submit"  formmethod="post" name="login" class="login login-submit" value="Entrar" onclick="return validateForm();">
       </form>
     </div>
     ';
-    $myusername = mysqli_real_escape_string($db, $_POST['user']);
-    $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
-    $result = login($myusername, $mypassword,$db);
-    if($result == -1 ){
-      echo 'Zoi jabascript i aun no ago kosas ke tio la virgen';
-    }
+      $myusername = mysqli_real_escape_string($db, $_POST['user']);
+      $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
+      $result = login($myusername, $mypassword,$db);
+      echo $result;
+
+
   }
 ?>

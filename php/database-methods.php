@@ -6,15 +6,12 @@
       $sql_teacher = "SELECT name FROM Teacher WHERE name= '$myusername' AND password='$mypassword'";
       $result_teacher = mysqli_query($db,$sql_teacher);
       $row_teacher = mysqli_fetch_array($result_teacher,MYSQLI_ASSOC);
-      $active_teacher = $row['active'];
       $count_teacher = mysqli_num_rows($result_teacher);
 
       $sql_student = "SELECT name FROM Student WHERE name= '$myusername' AND password='$mypassword'";
       $result_student = mysqli_query($db,$sql_student);
       $row_student = mysqli_fetch_array($result_student,MYSQLI_ASSOC);
-      $active_student = $row['active'];
       $count_student = mysqli_num_rows($result_student);
-
       if($count_teacher == 1){
         $_SESSION['login_user'] = $myusername;
         header("location: user.php?p=0");
@@ -24,7 +21,7 @@
         header("location: user.php?p=0");
       }
       else{
-        return -1;
+
       }
     }
   }
