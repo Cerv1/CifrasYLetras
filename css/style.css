@@ -222,6 +222,27 @@ nav li{
   margin-top: 50px;
 }
 
+#user-profile .gallery-image{
+  width: 40%;
+  float: right;
+}
+
+#user-profile .gallery-text{
+  width: 60%;
+  float: left;
+}
+
+.user-attributes{
+  float: left;
+  width: 40%;
+}
+
+.floatable-button{
+  float: right;
+  margin-top: 50px;
+  width: 40%;
+}
+
 #subject-content{
   width: 70%;
 }

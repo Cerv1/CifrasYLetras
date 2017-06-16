@@ -61,6 +61,7 @@ CREATE TABLE `Student` (
 
 LOCK TABLES `Student` WRITE;
 /*!40000 ALTER TABLE `Student` DISABLE KEYS */;
+INSERT INTO `Student` VALUES ('Sergio','Cervilla Ortega','cervick13@gmail.com','1996-06-26','cerviroot'),('Carlos Manuel','Sequí Sanchez','cmss@gmail.com','1996-07-03','sequi');
 /*!40000 ALTER TABLE `Student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,7 +85,7 @@ CREATE TABLE `Subject` (
 
 LOCK TABLES `Subject` WRITE;
 /*!40000 ALTER TABLE `Subject` DISABLE KEYS */;
-INSERT INTO `Subject` VALUES ('TEDEERRECÉ','TDRC');
+INSERT INTO `Subject` VALUES ('Informática Gráfica','IG'),('Lógica','LMD'),('TEDEERRECÉ','TDRC');
 /*!40000 ALTER TABLE `Subject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -229,4 +230,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-16 16:38:39
+-- Dump completed on 2017-06-16 17:35:54
