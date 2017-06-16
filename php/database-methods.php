@@ -23,9 +23,8 @@
 
   function logout($db){
     $result = mysqli_close($db);
-    endSession();
     header("location: index.php?p=0");
-    return result;
+    return $result;
   }
 
   function createUser($name, $lastname, $password, $birth, $email){
