@@ -364,11 +364,9 @@
     <div class="general-content">
       <div class="facilities-title"><h1>Lista de asignaturas y material</h1></div>
       <div class="gallery-content">
-        <div  id="subject-content" class="gallery-text">
-          <p class="subject-text">';
-          if(!isTeacher($db))
-            getStudentSubjectsList($db);
-          echo '</p></div>';
+        <div  id="subject-content" class="gallery-text">';
+          getSubjectsList($db);
+          echo '</div>';
         if(isTeacher($db)){
           echo '<div class="subject-buttons">
             <a href="user.php?p=9"><input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" /></a>

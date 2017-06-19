@@ -115,9 +115,12 @@
     }
   }
 
-  function getStudentSubjectsList($db){
+  function getSubjectsList($db){
     $active = $_SESSION['login_user'];
-    $sql = "SELECT idSubject FROM StudentSubject WHERE emailStudent='$active'";
+    if(isTeacher($db))
+      $sql = "SELECT idSubject FROM Subject WHERE emailTeacher='$active'";
+    else
+      $sql = "SELECT idSubject FROM StudentSubject WHERE emailStudent='$active'";
     $result = $db->query($sql);
     if($result->num_rows > 0){
       echo '<div class="subjectsList"><ul>';
