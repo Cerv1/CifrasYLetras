@@ -132,7 +132,7 @@
         if($resultado->num_rows > 0){ //lista de material dentro de la asignatura
           echo '<ul>';
           while($valor = $resultado->fetch_assoc())
-            echo '<a href="./subjectResources/'.$valor['idResource'].'"><li>'.$valor['name'].'</li></a>';
+            echo '<a href="./subjectResources/'.$valor['idResource'].'.pdf"><li>'.$valor['name'].'</li></a>';
           echo '</ul>';
         }
       }

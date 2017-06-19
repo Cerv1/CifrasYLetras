@@ -38,7 +38,7 @@ CREATE TABLE `Resource` (
 
 LOCK TABLES `Resource` WRITE;
 /*!40000 ALTER TABLE `Resource` DISABLE KEYS */;
-INSERT INTO `Resource` VALUES ('presentacion.pdf','PRES','ISE'),('tema 158','t158-mates','MATES'),('Tema 1 - ISE','T1ISE','ISE'),('tema 1','t1LC','LC'),('Tema 1 - LMD','T1LMD','LMD'),('Tema 2 - IG','T2IG','IG'),('tema 2','t2LC','LC'),('tema 3','t3-FBD','FBD');
+INSERT INTO `Resource` VALUES ('presentacion','PRES','ISE'),('tema 158','t158-mates','MATES'),('Tema 1 - ISE','T1ISE','ISE'),('tema 1','t1LC','LC'),('Tema 1 - LMD','T1LMD','LMD'),('Tema 2 - IG','T2IG','IG'),('tema 2','t2LC','LC'),('tema 3','t3-FBD','FBD');
 /*!40000 ALTER TABLE `Resource` ENABLE KEYS */;
 UNLOCK TABLES;
 
