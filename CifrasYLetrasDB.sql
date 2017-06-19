@@ -25,7 +25,10 @@ DROP TABLE IF EXISTS `Resource`;
 CREATE TABLE `Resource` (
   `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `idResource` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`idResource`)
+  `idSubject` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`idResource`),
+  KEY `idSubject` (`idSubject`),
+  CONSTRAINT `Resource_ibfk_1` FOREIGN KEY (`idSubject`) REFERENCES `Subject` (`idSubject`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -35,6 +38,7 @@ CREATE TABLE `Resource` (
 
 LOCK TABLES `Resource` WRITE;
 /*!40000 ALTER TABLE `Resource` DISABLE KEYS */;
+INSERT INTO `Resource` VALUES ('presentacion.pdf','PRES','ISE'),('tema 158','t158-mates','MATES'),('Tema 1 - ISE','T1ISE','ISE'),('tema 1','t1LC','LC'),('Tema 1 - LMD','T1LMD','LMD'),('Tema 2 - IG','T2IG','IG'),('tema 2','t2LC','LC'),('tema 3','t3-FBD','FBD');
 /*!40000 ALTER TABLE `Resource` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +65,7 @@ CREATE TABLE `Student` (
 
 LOCK TABLES `Student` WRITE;
 /*!40000 ALTER TABLE `Student` DISABLE KEYS */;
-INSERT INTO `Student` VALUES ('Sergio','Cervilla Ortega','cervick13@gmail.com','1996-06-26','cerviroot'),('Carlos Manuel','Sequí Sanchez','cmss@gmail.com','1996-07-03','sequi');
+INSERT INTO `Student` VALUES ('Sergio','Cervilla Ortega','cervi@gmail.com','1996-06-26','cerviroot'),('Carlos Manuel','Sequí Sanchez','cmss@gmail.com','1996-07-03','sequi');
 /*!40000 ALTER TABLE `Student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,4 +156,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-19 17:12:10
+-- Dump completed on 2017-06-19 18:41:05

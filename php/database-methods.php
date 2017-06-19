@@ -122,10 +122,20 @@
     else
       $sql = "SELECT idSubject FROM StudentSubject WHERE emailStudent='$active'";
     $result = $db->query($sql);
-    if($result->num_rows > 0){
+    if($result->num_rows > 0){  //lista de asignaturas
       echo '<div class="subjectsList"><ul>';
-      while($value = $result->fetch_assoc())
-        echo'<li>'.$value['idSubject'].'</li>';
+      while($value = $result->fetch_assoc()){
+        $aux = $value['idSubject'];
+        echo'<li class="subject-level">'.$aux.'</li>';
+        $material = "SELECT name, idResource FROM Resource WHERE idSubject='$aux'";
+        $resultado = $db->query($material);
+        if($resultado->num_rows > 0){ //lista de material dentro de la asignatura
+          echo '<ul>';
+          while($valor = $resultado->fetch_assoc())
+            echo '<a href="./subjectResources/'.$valor['idResource'].'"><li>'.$valor['name'].'</li></a>';
+          echo '</ul>';
+        }
+      }
       echo '</ul></div>';
     }
   }
