@@ -1,78 +1,80 @@
-body{
+body {
   margin: 0 auto;
   background-color: #e0e0e0;
 }
 
-.top-panel{
+.top-panel {
   overflow: auto;
   background-color: #212121;
   box-shadow: 2px 2px 5px rgb(94, 94, 94);
   margin-bottom: 50px;
 }
 
-.top-panel a{
+.top-panel a {
   color: #eceff1;
   text-decoration: none;
 }
 
-header{
+header {
   font-family: 'Gloria Hallelujah', cursive;
   overflow: auto;
 }
 
-.header-item a{
+.header-item a {
   padding-left: 8px;
   padding-right: 8px;
 }
 
-.header-item h1,h4{
+.header-item h1, h4 {
   margin-top: 5px;
   margin-bottom: 10px;
 }
 
-.link-item :hover{
+.link-item :hover {
   color: orange;
 }
 
-.logo-header{
+.logo-header {
   float: left;
   padding-left: 50px;
 }
 
-.login-header{
+.login-header {
   float: right;
   padding-right: 5px;
 }
 
-nav{
+nav {
   font-family: 'Patrick Hand', cursive;
 }
 
-nav ul{
+nav ul {
   margin-top: 0;
   margin-bottom: 0;
   overflow: auto;
   padding: 2px;
 }
 
-nav li{
+nav li {
   list-style-type: none;
   display: inline;
   padding: 0px 15px 0px 15px;
 }
 
-.activo{
+.activo {
   border-bottom: solid 2px orange;
 }
 
-#content{
+#content {
   overflow: auto;
   margin-left: 7%;
   margin-right: 7%;
 }
 
+
 /* Formation */
-.aux-content{
+
+.aux-content {
   width: 20%;
   font-size: 80%;
   float: left;
@@ -85,51 +87,52 @@ nav li{
   background-color: #212121;
 }
 
-.aux-content a{
+.aux-content a {
   color: white;
   text-decoration: none;
 }
 
-.aux-content a:hover{
+.aux-content a:hover {
   text-decoration: underline;
 }
 
-.aux-content li{
+.aux-content li {
   margin-top: 5px;
   list-style-type: none;
 }
 
-.aux-content ul{
+.aux-content ul {
   padding-left: 0px;
 }
 
-.aux-content .ul-second-level{
+.aux-content .ul-second-level {
   padding-left: 20px;
 }
 
-.aux-content .first-li-item{
+.aux-content .first-li-item {
   margin-top: 15px;
 }
 
-.aux-content .first-ul-item{
+.aux-content .first-ul-item {
   color: orange;
   font-size: 110%;
   font-weight: bold;
 }
 
-.main-content{
+.main-content {
   width: 70%;
   float: right;
 }
 
-.general-title{
+.general-title {
   text-align: center;
   color: #212121;
 }
 
 
 /*CSS associated to general-content class*/
-.general-content{
+
+.general-content {
   overflow: auto;
   padding: 5px 30px 5px 30px;
   margin: 10px 20px 10px 20px;
@@ -139,17 +142,17 @@ nav li{
   font-family: 'Overpass', sans-serif;
 }
 
-.general-content img{
+.general-content img {
   width: 250px;
   margin: 0px 40px 40px 40px;
   float: right;
 }
 
-.general-content h2{
+.general-content h2 {
   font-weight: bold;
 }
 
-.paragraph{
+.paragraph {
   box-shadow: none;
   border-radius: 25px;
   background-color: white;
@@ -159,8 +162,10 @@ nav li{
   font-size: 90%;
 }
 
+
 /* CSS associated to gallery-content */
-.gallery-content{
+
+.gallery-content {
   color: white;
   font-size: 100%;
   padding: 10px;
@@ -172,107 +177,107 @@ nav li{
   box-shadow: 10px 10px 30px #434343;
 }
 
-.gallery-content .gallery-text{
+.gallery-content .gallery-text {
   float: left;
   width: 50%;
 }
 
-.gallery-content .gallery-text .parrafo{
+.gallery-content .gallery-text .parrafo {
   margin: 60px 30px auto 80px;
 }
 
-.gallery-content .gallery-text .about-us{
+.gallery-content .gallery-text .about-us {
   text-align: center;
   margin-top: 60px;
 }
 
-.gallery-content .gallery-text .about-us p{
+.gallery-content .gallery-text .about-us p {
   color: orange;
   font-size: 150%;
   font-weight: bold;
   margin-top: 60px;
 }
 
-.gallery-content .gallery-text .about-us h2{
+.gallery-content .gallery-text .about-us h2 {
   font-size: 170%;
 }
 
-.gallery-content .gallery-image{
+.gallery-content .gallery-image {
   float: right;
   width: 50%;
 }
 
-.gallery-content .gallery-image iframe{
+.gallery-content .gallery-image iframe {
   margin-top: 20px;
   margin-bottom: 20px;
   width: 90%;
   height: 380px;
 }
 
-.gallery-content .gallery-image img{
+.gallery-content .gallery-image img {
   width: 50%;
   border: solid 3px white;
   margin-top: 50px;
   margin-right: 80px;
 }
 
-.gallery-content .gallery-image input{
+.gallery-content .gallery-image input {
   width: 50%;
   margin-top: 50px;
 }
 
-#index-content .gallery-content{
+#index-content .gallery-content {
   padding: 50px;
 }
 
-#user-profile .gallery-image{
+#user-profile .gallery-image {
   width: 40%;
   float: right;
 }
 
-#user-profile .gallery-text{
+#user-profile .gallery-text {
   width: 60%;
   float: left;
 }
 
-.user-attributes{
+.user-attributes {
   float: left;
   width: 40%;
 }
 
-.floatable-button{
+.floatable-button {
   float: right;
   margin-top: 50px;
   width: 40%;
 }
 
-#subject-content{
+#subject-content {
   width: 70%;
 }
 
-.subject-buttons{
+.subject-buttons {
   width: 25%;
   float: right;
 }
 
-.subject-text{
+.subject-text {
   margin-left: 5%;
 }
 
 
-
 /* CSS associated to forms */
-.form-container{
+
+.form-container {
   overflow: auto;
 }
 
-.form-image{
-  float:right;
+.form-image {
+  float: right;
   padding: 65px 0px 30px 60px;
   width: 35%;
 }
 
-.form-image img{
+.form-image img {
   width: 55%;
 }
 
@@ -353,11 +358,13 @@ nav li{
 input, textarea {
   transition: all 800ms;
   font-family: "Roboto";
-  resize: none;  /* removes the resize handle */
-  overflow: auto; /* removes default scrolling bars in IE */
-  outline:none;
-  font-family:inherit;
-  box-sizing:border-box;
+  resize: none;
+  /* removes the resize handle */
+  overflow: auto;
+  /* removes default scrolling bars in IE */
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
   width: 100%;
   padding: 0px 4px;
   color: #34495e;
@@ -369,7 +376,7 @@ input:focus, textarea:focus {
   color: #34495e;
 }
 
-input:focus + .input-field-icon {
+input:focus+.input-field-icon {
   color: #34495e;
 }
 
@@ -390,9 +397,10 @@ textarea.form-control:focus {
   }
 }
 
-/* CSS associated to log in */
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,100);
 
+/* CSS associated to log in */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100);
 body {
   font-family: 'Overpass', sans-serif;
 }
@@ -403,7 +411,7 @@ body {
   background-color: #fafafa;
   margin: 0 auto 10px;
   margin-top: 25px;
-  border-radius: 2px;
+  border-radius: 15px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
@@ -438,9 +446,9 @@ body {
 .login-card input[type=text]:hover, input[type=password]:hover {
   border: 1px solid #b9b9b9;
   border-top: 1px solid #a0a0a0;
-  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .login {
@@ -457,14 +465,14 @@ body {
   cursor: pointer;
   border: 0px;
   color: #fff;
-  text-shadow: 0 1px rgba(0,0,0,0.1);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
   background-color: orange;
 }
 
 .login-submit:hover {
   /* border: 1px solid #2f5bb7; */
   border: 0px;
-  text-shadow: 0 1px rgba(0,0,0,0.3);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   background-color: #ffb74d;
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
@@ -483,6 +491,6 @@ body {
   opacity: 1;
 }
 
-footer{
+footer {
   text-align: center;
 }
