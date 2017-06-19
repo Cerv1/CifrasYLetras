@@ -13,7 +13,6 @@
       <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="./js/login-validator.js"></script>
-      <script src="./js/test.js"></script>
       <script src="./js/contact-validator.js"></script>
       <title>Cifras y Letras</title>
     </head>
