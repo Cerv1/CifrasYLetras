@@ -12,6 +12,8 @@
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
       <script src="./js/contact-validator.js"></script>
+      <script src="./js/subject-validator.js"></script>
+      <script src="./js/delete-subject-validator.js"></script>
       <script src="./js/register-user.js"></script>
       <title>Cifras y Letras</title>
     </head>
@@ -465,16 +467,22 @@
     <div class="form-container">
       <div class="form">
         <h3>Registrar nueva asignatura</h3>
-        <form method="post">
+        <form method="post" name="create-subject-form" onsubmit="return validateSubject(this)">
           <div class="form-group">
             <input type="text" formmethod="post" name="name" class="form-control" placeholder="Nombre de la asignatura"/>
             <label class="input-field-icon icon-user" for="login-name"></label>
           </div>
+
+          <div class="info" id="name-info"></div>
+
           <div class="form-group">
             <input type="text" formmethod="post" name="id" class="form-control" placeholder="Código identificador"/>
             <label class="input-field-icon icon-email" for="login-email"></label>
           </div>
-          <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Crear asignatura">
+
+          <div class="info" id="id-info"></div>
+
+          <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Crear asignatura" onclick="return validateSubject()">
         </form>
       </div>
       <div class="form-image">
@@ -517,12 +525,13 @@
     <div class="form-container">
       <div class="form">
         <h3>Eliminar asignatura</h3>
-        <form method="post">
+        <form method="post" name="delete-subject-form" onsubmit="return validateSubjectDelete(this)">
           <div class="form-group">
             <input type="text" formmethod="post" name="id" class="form-control" value="" placeholder="Código identificador" />
             <label class="input-field-icon icon-user" for="login-name"></label>
           </div>
-          <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Eliminar asignatura">
+          <div class="info" id="id-info"></div>
+          <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Eliminar asignatura" onclick="return validateSubjectDelete()">
         </form>
       </div>
       <div class="form-image">
