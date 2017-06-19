@@ -109,28 +109,31 @@
 
   function UserHTMLIndex(){
     echo '
-      <div class="general-content">
+      <div class="general-content" id="index-content">
         <h1> Nuestro centro </h1>
-        <img src="./images/diploma.png">
-        <p>
-          Cifras y Letras nace con la idea de <b>apoyar</b> a las familias en el duro trabajo de la <b>educación</b> de sus hijos.
-          Ayudandolos en la <b>formación académica</b> que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
-          tan importantes en el día de hoy.
-          <br><br>
-          <b>Cifras y Letras Centro de Formación</b> se caracteriza por:
-          <ul>
-            <li>
-              Estudio y evaluación del alumno/a para ver que metodologia adoptar para el máximo rendimiento.
-            </li>
-            <li>
-              Un equipo de profesionales  implicados en la consecución de los objetivos fijados para cada uno de
-              nuestros alumnos/as.
-            </li>
-            <li>
-              Grupos de trabajo reducido (máx 7 alumnos) de su misma edad.
-            </li>
-          </ul>
-        </p>
+        <div class="gallery-content">
+          <div><img src="./images/diploma.png"></div>
+          <div class="gallery-text"><p>
+            Cifras y Letras nace con la idea de <b>apoyar</b> a las familias en el duro trabajo de la <b>educación</b> de sus hijos.
+            Ayudandolos en la <b>formación académica</b> que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
+            tan importantes en el día de hoy.
+            <br><br>
+            <b>Cifras y Letras Centro de Formación</b> se caracteriza por:
+            <ul>
+              <li>
+                Estudio y evaluación del alumno/a para ver que metodologia adoptar para el máximo rendimiento.
+              </li>
+              <li>
+                Un equipo de profesionales  implicados en la consecución de los objetivos fijados para cada uno de
+                nuestros alumnos/as.
+              </li>
+              <li>
+                Grupos de trabajo reducido (máx 7 alumnos) de su misma edad.
+              </li>
+            </ul>
+            </p>
+          </div>
+        </div>
       </div>
     ';
   }
@@ -431,42 +434,31 @@
       <div class="form">
         <h3>Registrar nuevo estudiante</h3>
         <form name="register-user-form" method="post" onsubmit="return validateUserRegister(this)">
-
           <div class="form-group">
             <input type="text" formmethod="post" name="student-name" class="form-control" placeholder="Nombre del alumno"/>
             <label class="input-field-icon icon-user" for="login-name"></label>
           </div>
-
           <div class="info" id="name-info"></div>
-
           <div class="form-group">
             <input type="text" formmethod="post" name="student-lastname" class="form-control" placeholder="Apellidos"/>
             <label class="input-field-icon icon-email" for="login-email"></label>
           </div>
-
           <div class="info" id="lastname-info"></div>
-
           <div class="form-group">
             <input type="text" formmethod="post" name="student-email" class="form-control" placeholder="Email"/>
             <label class="input-field-icon icon-email" for="login-email"></label>
           </div>
-
           <div class="info" id="email-info"></div>
-
           <div class="form-group">
             <input type="password" formmethod="post" name="student-password" class="form-control" placeholder="Contraseña"/>
             <label class="input-field-icon icon-email" for="login-email"></label>
           </div>
-
           <div class="info" id="password-info"></div>
-
           <div class="form-group">
             <input type="date" formmethod="post" name="student-date" class="form-control" placeholder="Fecha de nacimiento"/>
             <label class="input-field-icon icon-email" for="login-email"></label>
           </div>
-
           <div class="info" id="date-info"></div>
-
           <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Crear usuario" onclick="return validateUserRegister();">
         </form>
       </div>

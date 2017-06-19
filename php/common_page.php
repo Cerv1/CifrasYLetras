@@ -7,6 +7,7 @@
     <head>
       <meta charset="utf-8">
       <link rel="stylesheet" href="/css/style.css">
+      <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
       <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
@@ -84,28 +85,31 @@
 
   function HTMLIndex(){
     echo '
-      <div class="general-content">
+      <div class="general-content" id="index-content">
         <h1> Nuestro centro </h1>
-        <img src="./images/diploma.png">
-        <p>
-          Cifras y Letras nace con la idea de <b>apoyar</b> a las familias en el duro trabajo de la <b>educación</b> de sus hijos.
-          Ayudandolos en la <b>formación académica</b> que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
-          tan importantes en el día de hoy.
-          <br><br>
-          <b>Cifras y Letras Centro de Formación</b> se caracteriza por:
-          <ul>
-            <li>
-              Estudio y evaluación del alumno/a para ver que metodologia adoptar para el máximo rendimiento.
-            </li>
-            <li>
-              Un equipo de profesionales  implicados en la consecución de los objetivos fijados para cada uno de
-              nuestros alumnos/as.
-            </li>
-            <li>
-              Grupos de trabajo reducido (máx 7 alumnos) de su misma edad.
-            </li>
-          </ul>
-        </p>
+        <div class="gallery-content">
+          <div><img src="./images/diploma.png"></div>
+          <div class="gallery-text"><p>
+            Cifras y Letras nace con la idea de <b>apoyar</b> a las familias en el duro trabajo de la <b>educación</b> de sus hijos.
+            Ayudandolos en la <b>formación académica</b> que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
+            tan importantes en el día de hoy.
+            <br><br>
+            <b>Cifras y Letras Centro de Formación</b> se caracteriza por:
+            <ul>
+              <li>
+                Estudio y evaluación del alumno/a para ver que metodologia adoptar para el máximo rendimiento.
+              </li>
+              <li>
+                Un equipo de profesionales  implicados en la consecución de los objetivos fijados para cada uno de
+                nuestros alumnos/as.
+              </li>
+              <li>
+                Grupos de trabajo reducido (máx 7 alumnos) de su misma edad.
+              </li>
+            </ul>
+            </p>
+          </div>
+        </div>
       </div>
     ';
   }
