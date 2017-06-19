@@ -93,15 +93,11 @@
 
   function createSubject($name, $idSubject){
     include("config-db.php");
+    $emailTeacher = $_SESSION['login_user'];
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $sql = "INSERT INTO Subject VALUES('$name', '$idSubject')";
+      $sql = "INSERT INTO Subject VALUES('$name', '$idSubject', '$emailTeacher')";
       if ($db->query($sql) === TRUE){
-        echo "New Subject created successfully.";
-        $sql_subject = "INSERT INTO teachsSubject VALUES('$activeTeacher', '$idSubject')";
-        if($db->query($sql_subject) === TRUE)
-          echo "Added relationship between Teacher and Subject";
-        else
-          echo "Couldn't create relationship Teacher-Subject";
+        echo "<div class='general-content'>Asignatura añadida correctamente.</div>";
       }
       else
         echo "Error: " . $sql . "<br>" . $db->error;
@@ -119,31 +115,26 @@
     }
   }
 
-  function getSubjectsList($db){
+  function getStudentSubjectsList($db){
     $active = $_SESSION['login_user'];
-  }
-
-  function getTeacherAttributes($db){
-    $active = $_SESSION['login_user'];
-    $sql = "SELECT name, lastname, emailTeacher, birth FROM Teacher WHERE emailTeacher='$active'";
+    $sql = "SELECT idSubject FROM StudentSubject WHERE emailStudent='$active'";
     $result = $db->query($sql);
-    if ($result->num_rows > 0){
-      while($value = $result->fetch_assoc()){
-        echo '<h3>Nombre:</h3>';
-        echo '<li>'.$value['name'].'</li>';
-        echo '<h3>Apellidos:</h3>';
-        echo '<li>'.$value['lastname'].'</li>';
-        echo '<h3>E-mail:</h3>';
-        echo '<li>'.$value['emailTeacher'].'</li>';
-        echo '<h3>Fecha de nacimiento:</h3>';
-        echo '<li>'.$value['birth'].'</li>';
-      }
+    if($result->num_rows > 0){
+      echo '<div class="subjectsList"><ul>';
+      while($value = $result->fetch_assoc())
+        echo'<li>'.$value['idSubject'].'</li>';
+      echo '</ul></div>';
     }
   }
 
-  function getStudentAttributes($db){
+  function getAttributes(){
+    include("config-db.php");
     $active = $_SESSION['login_user'];
-    $sql = "SELECT name, lastname, emailStudent, birth FROM Student WHERE emailStudent='$active'";
+    $isTeacher = isTeacher($db);
+    if($isTeacher)
+      $sql = "SELECT name, lastname, emailTeacher, birth FROM Teacher WHERE emailTeacher='$active'";
+    else
+      $sql = "SELECT name, lastname, emailStudent, birth FROM Student WHERE emailStudent='$active'";
     $result = $db->query($sql);
     if ($result->num_rows > 0){
       while($value = $result->fetch_assoc()){
@@ -152,7 +143,10 @@
         echo '<h3>Apellidos:</h3>';
         echo '<li>'.$value['lastname'].'</li>';
         echo '<h3>E-mail:</h3>';
-        echo '<li>'.$value['emailStudent'].'</li>';
+        if($isTeacher)
+          echo '<li>'.$value['emailTeacher'].'</li>';
+        else
+          echo '<li>'.$value['emailStudent'].'</li>';
         echo '<h3>Fecha de nacimiento:</h3>';
         echo '<li>'.$value['birth'].'</li>';
       }

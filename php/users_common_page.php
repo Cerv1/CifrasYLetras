@@ -333,27 +333,20 @@
       <div class="form">
         <form name="contact-form" onsubmit="return validateContact(this)">
           <h3>Contacte con nosotros</h3>
-
           <div class="form-group">
             <input type="text" name ="name" class="form-control" value="" placeholder="Nombre" id="contact-name" />
             <label class="input-field-icon icon-user" for="login-name"></label>
           </div>
-
           <div class="info" id="name-info"></div>
-
           <div class="form-group">
             <input type="email" name="email" class="form-control" value="" placeholder="Email" id="contact-email" />
             <label class="input-field-icon icon-email" for="login-email"></label>
           </div>
-
           <div class="info" id="email-info"></div>
-
           <div class="form-group">
             <textarea class="form-control" name="msg" value="" placeholder="Mensaje" id="contact-message" rows="1"></textarea>
           </div>
-
           <div class="info" id="msg-info"></div>
-
           <button id="contact-send" onclick="return validateForm();" class="btn btn-primary btn-lg btn-block">Enviar</button>
         </div>
       </form>
@@ -365,19 +358,18 @@
   }
 
   function UserHTMLSubject(){
+    include("config-db.php");
+    include("database-methods.php");
     echo '
     <div class="general-content">
       <div class="facilities-title"><h1>Lista de asignaturas y material</h1></div>
       <div class="gallery-content">
         <div  id="subject-content" class="gallery-text">
           <p class="subject-text">';
-
-          echo '</p>
-        </div>';
-        include("database-methods.php");
-        include("config-db.php");
+          getStudentSubjectsList($db);
+          echo '</p></div>';
         if(isTeacher($db) == true){
-          echo '<div  class="subject-buttons">
+          echo '<div class="subject-buttons">
             <a href="user.php?p=9"><input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" /></a>
             <a href="user.php?p=10"><input type="button"  class="login login-submit" name="deleteUser" value="Eliminar alumno" /></a>
             <a href="user.php?p=11"><input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" /></a>
@@ -401,10 +393,7 @@
         </div>
         <div class="gallery-text">
           <ul class="user-attributes">';
-          if(isTeacher($db))
-            getTeacherAttributes($db);
-          else
-            getStudentAttributes($db);
+          getAttributes($db);
           echo '</ul>
           <div class="floatable-button">
             <form method="post">

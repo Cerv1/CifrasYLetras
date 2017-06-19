@@ -371,11 +371,11 @@
       </form>
     </div>
     ';
+    if(isset($_POST['user']) && isset($_POST['pass'])){
       $myusername = mysqli_real_escape_string($db, $_POST['user']);
       $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
       $result = login($myusername, $mypassword,$db);
       echo $result;
-
-
+    }
   }
 ?>
