@@ -11,7 +11,9 @@
       <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="./js/login-validator.js"></script>
+      <script src="./js/test.js"></script>
       <script src="./js/contact-validator.js"></script>
       <title>Cifras y Letras</title>
     </head>
@@ -361,13 +363,13 @@
     include("./php/database-methods.php");
     echo '
     <div class="login-card">
-        <h1>Acceder</h1><br>
+        <h1 id="acceder">Acceder</h1><br>
       <form name="login-form" onsubmit="return validateLogin(this)">
         <input type="text" name="user" placeholder="Usuario">
         <div class="info" id="user-info"></div>
         <input type="password" name="pass" placeholder="Contraseña">
         <div class="info" id="pass-info"></div>
-        <input type="submit"  formmethod="post" name="login" class="login login-submit" value="Entrar" onclick="return validateForm();">
+        <input type="submit" formmethod="post" name="login" class="login login-submit" value="Entrar" onclick="return validateLogin();">
       </form>
     </div>
     ';
@@ -375,7 +377,18 @@
       $myusername = mysqli_real_escape_string($db, $_POST['user']);
       $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
       $result = login($myusername, $mypassword,$db);
-      echo $result;
+      if($result == -1){
+        echo '
+        <script>
+        $.ajax({
+          type: "POST",
+          success: function(data){
+              alert("Usuario o contraseña erroneos");
+          }
+      });
+      </script>
+      ';
+      }
     }
   }
 ?>

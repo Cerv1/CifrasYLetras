@@ -21,7 +21,7 @@
         header("location: user.php?p=0");
       }
       else{
-
+        return -1;
       }
     }
   }
