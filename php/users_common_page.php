@@ -7,7 +7,7 @@
     <html>
     <head>
       <meta charset="utf-8">
-      <link rel="stylesheet" href="./css/style.css">
+      <link rel="stylesheet" href="style.css">
       <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
@@ -114,14 +114,14 @@
         <div class="gallery-content">
           <div><img src="./images/diploma.png"></div>
           <div class="gallery-text"><p>
-            Cifras y Letras nace con la idea de <b>apoyar</b> a las familias en el duro trabajo de la <b>educación</b> de sus hijos.
-            Ayudandolos en la <b>formación académica</b> que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
+            Cifras y Letras nace con la idea de <b>apoyar</b> a las familias en el duro trabajo de la <b>educación</b> de sus hijos,
+            ayudándolos en la <b>formación académica</b> que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
             tan importantes en el día de hoy.
             <br><br>
             <b>Cifras y Letras Centro de Formación</b> se caracteriza por:
             <ul>
               <li>
-                Estudio y evaluación del alumno/a para ver que metodologia adoptar para el máximo rendimiento.
+                Estudio y evaluación del alumno/a para ver qué metodología adoptar para el máximo rendimiento.
               </li>
               <li>
                 Un equipo de profesionales  implicados en la consecución de los objetivos fijados para cada uno de
@@ -366,9 +366,10 @@
       <div class="gallery-content">
         <div  id="subject-content" class="gallery-text">
           <p class="subject-text">';
-          getStudentSubjectsList($db);
+          if(!isTeacher($db))
+            getStudentSubjectsList($db);
           echo '</p></div>';
-        if(isTeacher($db) == true){
+        if(isTeacher($db)){
           echo '<div class="subject-buttons">
             <a href="user.php?p=9"><input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" /></a>
             <a href="user.php?p=10"><input type="button"  class="login login-submit" name="deleteUser" value="Eliminar alumno" /></a>

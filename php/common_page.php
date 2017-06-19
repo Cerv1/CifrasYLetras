@@ -6,7 +6,7 @@
     <html>
     <head>
       <meta charset="utf-8">
-      <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="style.css">
       <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
       <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
@@ -90,14 +90,14 @@
         <div class="gallery-content">
           <div><img src="./images/diploma.png"></div>
           <div class="gallery-text"><p>
-            Cifras y Letras nace con la idea de <b>apoyar</b> a las familias en el duro trabajo de la <b>educación</b> de sus hijos.
-            Ayudandolos en la <b>formación académica</b> que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
+            Cifras y Letras nace con la idea de <b>apoyar</b> a las familias en el duro trabajo de la <b>educación</b> de sus hijos,
+            ayudándolos en la <b>formación académica</b> que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
             tan importantes en el día de hoy.
             <br><br>
             <b>Cifras y Letras Centro de Formación</b> se caracteriza por:
             <ul>
               <li>
-                Estudio y evaluación del alumno/a para ver que metodologia adoptar para el máximo rendimiento.
+                Estudio y evaluación del alumno/a para ver qué metodología adoptar para el máximo rendimiento.
               </li>
               <li>
                 Un equipo de profesionales  implicados en la consecución de los objetivos fijados para cada uno de
