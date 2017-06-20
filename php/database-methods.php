@@ -77,13 +77,13 @@
         if($db->query($sql_teacher) === TRUE)
           echo "<div class='general-content'>Profesor ELIMINADO correctamente.</div>";
         else
-          echo "Error: " . $sql_teacher . "<br>" . $db->error;
+          echo "<div class='general-content'>No se pudo eliminar el profesor.</div>";
       }
       else if($count_student){
         if($db->query($sql_student) === TRUE)
           echo "<div class='general-content'>Alumno ELIMINADO correctamente.</div>";
         else
-          echo "Error: " . $sql_student . "<br>" . $db->error;
+          echo "<div class='general-content'>No se pudo eliminar el alumno.</div>";
       }
     }
   }
@@ -96,7 +96,7 @@
       if ($db->query($sql) === TRUE)
         echo "<div class='general-content'>Asignatura AÑADIDA correctamente.</div>";
       else
-        echo "Error: " . $sql . "<br>" . $db->error;
+        echo "<div class='general-content'>No se pudo añadir la asignatura.</div>";
     }
   }
 
@@ -107,7 +107,7 @@
       if($db->query($sql) === TRUE)
         echo "<div class='general-content'>Asignatura ELIMINADA correctamente.</div>";
       else
-        echo "Error: " . $sql . "<br>" . $db->error;
+        echo "<div class='general-content'>No se pudo eliminar la asignatura.</div>";
     }
   }
 
