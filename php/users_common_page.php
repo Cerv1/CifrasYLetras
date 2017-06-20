@@ -71,7 +71,7 @@
       case 2: UserHTMLFacilities(); break;
       case 3: UserHTMLAboutUs(); break;
       case 4: UserHTMLContact(); break;
-      case 5: UserHTMLSubject(); break;
+      case 5: UserHTMLManagement(); break;
       case 6: UserHTMLLogin(); break;
       case 7: UserHTMLLogin(); break;
       case 8: SubjectCreateUser(); break;
@@ -83,11 +83,11 @@
     echo '</div>';
   }
 
-  function UserHTMLSubject(){
+  function UserHTMLManagement(){
     include ("config-db.php");
     echo '
     <div class="general-content">
-      <div class="facilities-title"><h1>Lista de asignaturas y material</h1></div>
+      <h1>Lista de asignaturas y material</h1>
       <div class="gallery-content">
         <div  id="subject-content" class="gallery-text">';
           getSubjectsList($db);
