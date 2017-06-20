@@ -278,6 +278,11 @@ nav li {
   color: orange;
 }
 
+.error-title{
+  color: orange;
+  text-align: center;
+}
+
 /* CSS associated to forms */
 
 .form-container {

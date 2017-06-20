@@ -3,6 +3,7 @@
   function login($myemail, $mypassword, $db){
     session_start();
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+      $mypassword = hash('sha256', $mypassword);
       $sql_teacher = "SELECT emailTeacher FROM Teacher WHERE emailTeacher= '$myemail' AND password='$mypassword'";
       $result_teacher = mysqli_query($db,$sql_teacher);
       $row_teacher = mysqli_fetch_array($result_teacher,MYSQLI_ASSOC);
@@ -20,9 +21,8 @@
         $_SESSION['login_user'] = $myemail;
         header("location: user.php?p=0");
       }
-      else{
+      else
         return -1;
-      }
     }
   }
 
@@ -49,6 +49,7 @@
     if($db->connect_error)
       die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+      $password = hash('sha256', $password);
       $sql = "INSERT INTO Student() VALUES('$name', '$lastname', '$emailStudent', '$birth', '$password')";
       if ($db->query($sql) === TRUE)
         echo "Estudiante añadido correctamente.";
@@ -74,21 +75,17 @@
 
       if($count_teacher == 1){
         if($db->query($sql_teacher) === TRUE)
-          echo "Teacher deleted successfully.";
+          echo "<div class='general-content'>Profesor ELIMINADO correctamente.</div>";
         else
           echo "Error: " . $sql_teacher . "<br>" . $db->error;
       }
       else if($count_student){
         if($db->query($sql_student) === TRUE)
-          echo "Student deleted successfully.";
+          echo "<div class='general-content'>Alumno ELIMINADO correctamente.</div>";
         else
           echo "Error: " . $sql_student . "<br>" . $db->error;
       }
     }
-  }
-
-  function alterStudent(){
-
   }
 
   function createSubject($name, $idSubject){
@@ -96,9 +93,8 @@
     $emailTeacher = $_SESSION['login_user'];
     if($_SERVER["REQUEST_METHOD"] == "POST"){
       $sql = "INSERT INTO Subject VALUES('$name', '$idSubject', '$emailTeacher')";
-      if ($db->query($sql) === TRUE){
-        echo "<div class='general-content'>Asignatura añadida correctamente.</div>";
-      }
+      if ($db->query($sql) === TRUE)
+        echo "<div class='general-content'>Asignatura AÑADIDA correctamente.</div>";
       else
         echo "Error: " . $sql . "<br>" . $db->error;
     }
@@ -109,7 +105,7 @@
     if($_SERVER["REQUEST_METHOD"] == "POST"){
       $sql = "DELETE FROM Subject WHERE idSubject='$idSubject'";
       if($db->query($sql) === TRUE)
-        echo "Subject deleted successfully.";
+        echo "<div class='general-content'>Asignatura ELIMINADA correctamente.</div>";
       else
         echo "Error: " . $sql . "<br>" . $db->error;
     }
@@ -137,6 +133,11 @@
         }
       }
       echo '</ul></div>';
+    }
+    else{
+      echo '<div class="error-title">
+        <h2>Quizás no estás inscrito en ninguna asignatura...</h2>
+      </div>';
     }
   }
 

@@ -1,8 +1,7 @@
 <?php
 
   function HTMLbegin(){
-    echo '
-    <!DOCTYPE html>
+    echo '<!DOCTYPE html>
     <html>
     <head>
       <meta charset="utf-8">
@@ -14,6 +13,9 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="./js/login-validator.js"></script>
       <script src="./js/contact-validator.js"></script>
+      <script src="./js/register-user.js"></script>
+      <script src="./js/subject-validator.js"></script>
+      <script src="./js/delete-subject-validator.js"></script>
       <title>Cifras y Letras</title>
     </head>
     <body>
@@ -21,8 +23,7 @@
   }
 
   function HTMLend(){
-    echo'
-    </body>
+    echo'</body>
     </html>
     ';
   }
@@ -54,24 +55,12 @@
   function HTMLcontent($page){
     echo '<div id="content">';
     switch($page){
-      case 0:
-        HTMLIndex();
-        break;
-      case 1:
-        HTMLFormation();
-        break;
-      case 2:
-        HTMLFacilities();
-        break;
-      case 3:
-        HTMLAboutUs();
-        break;
-      case 4:
-        HTMLContact();
-        break;
-      case 5:
-        HTMLLogin();
-        break;
+      case 0: HTMLIndex(); break;
+      case 1: HTMLFormation(); break;
+      case 2: HTMLFacilities(); break;
+      case 3: HTMLAboutUs(); break;
+      case 4: HTMLContact(); break;
+      case 5: HTMLLogin(); break;
     }
     echo '</div>';
   }
@@ -86,38 +75,30 @@
 
   function HTMLIndex(){
     echo '
-      <div class="general-content" id="index-content">
-        <h1> Nuestro centro </h1>
-        <div class="gallery-content">
-          <div><img src="./images/diploma.png"></div>
-          <div class="gallery-text"><p>
-            Cifras y Letras nace con la idea de <b>apoyar</b> a las familias en el duro trabajo de la <b>educación</b> de sus hijos,
-            ayudándolos en la <b>formación académica</b> que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
-            tan importantes en el día de hoy.
-            <br><br>
-            <b>Cifras y Letras Centro de Formación</b> se caracteriza por:
-            <ul>
-              <li>
-                Estudio y evaluación del alumno/a para ver qué metodología adoptar para el máximo rendimiento.
-              </li>
-              <li>
-                Un equipo de profesionales  implicados en la consecución de los objetivos fijados para cada uno de
-                nuestros alumnos/as.
-              </li>
-              <li>
-                Grupos de trabajo reducido (máx 7 alumnos) de su misma edad.
-              </li>
-            </ul>
-            </p>
-          </div>
+    <div class="general-content" id="index-content">
+      <h1> Nuestro centro </h1>
+      <div class="gallery-content">
+        <div><img src="./images/diploma.png"></div>
+        <div class="gallery-text"><p>
+          Cifras y Letras nace con la idea de <b>apoyar</b> a las familias en el duro trabajo de la <b>educación</b> de sus hijos,
+          ayudándolos en la <b>formación académica</b> que va desde la mejora de calificaciones al aprendizaje de nuevos idiomas
+          tan importantes en el día de hoy.
+          <br><br>
+          <b>Cifras y Letras Centro de Formación</b> se caracteriza por:
+          <ul>
+            <li>Estudio y evaluación del alumno/a para ver qué metodología adoptar para el máximo rendimiento.</li>
+            <li>Un equipo de profesionales  implicados en la consecución de los objetivos fijados para cada uno de
+              nuestros alumnos/as.</li>
+            <li>Grupos de trabajo reducido (máx 7 alumnos) de su misma edad.</li>
+          </ul>
+          </p>
         </div>
       </div>
-    ';
+    </div>';
   }
 
   function HTMLFormation(){
     echo '
-
       <div class="aux-content">
         <ul>
           <li class="first-li-item"><a href="apoyo-escolar" class="first-ul-item">Apoyo Escolar</a>
@@ -129,13 +110,11 @@
             <li><a href="#apoyo-preparacion-bachillerato">Preparación título Bachillerato</a></li>
             <li><a href="#apoyo-preparacion-selectividad">Preparación Selectividad</a></li>
           </ul></li>
-
           <li class="first-li-item"><a href="#pruebas-de-acceso" class="first-ul-item">Pruebas de Acceso</a>
           <ul class="ul-second-level">
             <li><a href="#pruebas-grado">Acceso a grado medio y superior</a></li>
             <li><a href="#pruebas-universidad">Acceso a Universidad (+25 años)</a></li>
           </ul></li>
-
           <li class="first-li-item"><a href="#cursos-de-ingles" class="first-ul-item">Cursos de Inglés</a>
           <ul class="ul-second-level">
             <li><a href="#cursos-b1">Preparación para el B1, B2 y C1</a></li>
@@ -146,7 +125,6 @@
       <div class="main-content">
         <div class="general-content">
           <h3 id="apoyo-escolar">Apoyo escolar</h3>
-
           <div class="general-content paragraph" id="apoyo-primaria">
             <h4>Primaria</h4>
             <p>¿Notas en tu hijo problemas en el estudio? ¿Necesita refuerzo
@@ -157,7 +135,6 @@
             valerse por ellos mismos.</p>
             <p>Grupos reducidos y atención personalizada para un mayor rendimiento</p>
           </div>
-
           <div class="general-content paragraph" id="apoyo-eso">
             <h4>ESO</h4>
             <p>Obtener el graduado en ESO es el requisito mínimo obligatorio para
@@ -168,7 +145,6 @@
             les damos la formación necesaria para alcanzar los objetivos del curso
             con buenos resultados. <strong>Impartimos clases todo el año</strong></p>
           </div>
-
           <div class="general-content paragraph" id="apoyo-bachillerato">
             <h4>Bachillerato</h4>
             <p>Los dos cursos de Bachillerato son fundamentales si quieres cursar
@@ -179,7 +155,6 @@
             que te has marcado. <strong>¡No lo pienses más, podemos ayudarte!</strong>
             </p>
           </div>
-
           <div class="general-content paragraph" id="apoyo-preparacion-eso">
             <h4>Preparación graduado ESO</h4>
             <p>El Graduado en ESO es un requisito indispensable a la hora de encontrar
@@ -192,7 +167,6 @@
             <p>Tenemos el <b>material necesario</b> y los profesores que te facilitarán
             el contenido requerido para superar el examen.</p>
           </div>
-
           <div class="general-content paragraph" id="apoyo-preparacion-bachillerato">
             <h4>Preparación título Bachillerato</h4>
             <p>Si ya tienes el graduado en ESO y te falta el Bachillerato, no pierdas
@@ -204,7 +178,6 @@
             <p>La prueba es para personas mayores de 20 años o que cumplan esa edad
             en el año natural en que se celebran.</p>
           </div>
-
           <div class="general-content paragraph" id="apoyo-preparacion-selectividad">
             <h4>Preparación Selectividad</h4>
             <p>Si tienes problemas con la selectividad o necesitas una nota más alta
@@ -214,12 +187,9 @@
             todas tus dudas. Nos adaptamos a tus necesidades y horarios, preparamos
             durante todo el año o cursos intensivos previos a las convocatorias.</p>
           </div>
-
         </div>
-
         <div class="general-content" id="pruebas-de-acceso">
           <h3>Pruebas de Acceso</h3>
-
           <div class="general-content paragraph" id="pruebas-grado">
             <h4>Acceso a grado medio y superior</h4>
             <p>¿Has abandonado los estudios? ¿No estás seguro de continuar y quieres
@@ -228,7 +198,6 @@
             superior. Trabajamos de <b>forma personalizada</b> con cada alumno
             preparándole para el examen de acceso.
           </div>
-
           <div class="general-content paragraph" id="pruebas-universidad">
             <h4>Acceso a Universidad (+25 años)</h4>
             <p>Si eres mayor de 25 años y quieres acceder a un título universitario,
@@ -240,12 +209,9 @@
             resulte un paso sencillo. <b>No pierdas la oportunidad de elegir tu futuro</b>
             </p>
           </div>
-
         </div>
-
         <div class="general-content" id="cursos-de-ingles">
           <h3>Cursos de Inglés</h3>
-
           <div class="general-content paragraph" id="cursos-b1">
             <h4>Preparación para el B1, B2 y C1</h4>
             <p>¿Quieres trabajar en el extranjero? ¿Tu trabajo te exige hablar un
@@ -265,7 +231,6 @@
           </div>
         </div>
       </div>
-
     ';
   }
 
@@ -326,27 +291,20 @@
       <div class="form">
         <form name="contact-form" onsubmit="return validateContact(this)">
           <h3>Contacte con nosotros</h3>
-
           <div class="form-group">
             <input type="text" name ="name" class="form-control" value="" placeholder="Nombre" id="contact-name" />
             <label class="input-field-icon icon-user" for="login-name"></label>
           </div>
-
           <div class="info" id="name-info"></div>
-
           <div class="form-group">
             <input type="email" name="email" class="form-control" value="" placeholder="Email" id="contact-email" />
             <label class="input-field-icon icon-email" for="login-email"></label>
           </div>
-
           <div class="info" id="email-info"></div>
-
           <div class="form-group">
             <textarea class="form-control" name="msg" value="" placeholder="Mensaje" id="contact-message" rows="1"></textarea>
           </div>
-
           <div class="info" id="msg-info"></div>
-
           <button id="contact-send" onclick="return validateForm();" class="btn btn-primary btn-lg btn-block">Enviar</button>
         </div>
       </form>
@@ -358,8 +316,8 @@
   }
 
   function HTMLLogin(){
-    include("./php/config-db.php");
-    include("./php/database-methods.php");
+    include("config-db.php");
+    include("database-methods.php");
     echo '
     <div class="login-card">
         <h1 id="acceder">Acceder</h1><br>
@@ -382,11 +340,11 @@
         $.ajax({
           type: "POST",
           success: function(data){
-              alert("Usuario o contraseña erroneos");
+            alert("Usuario y/o contraseña erróneos");
           }
-      });
-      </script>
-      ';
+        });
+        </script>
+        ';
       }
     }
   }
