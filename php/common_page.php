@@ -1,4 +1,6 @@
 <?php
+  require("./php/config-db.php");
+  require("./php/database-methods.php");
 
   function HTMLbegin(){
     echo '
@@ -358,8 +360,6 @@
   }
 
   function HTMLLogin(){
-    include("./php/config-db.php");
-    include("./php/database-methods.php");
     echo '
     <div class="login-card">
         <h1 id="acceder">Acceder</h1><br>

@@ -1,4 +1,5 @@
 <?php
+  include("config-db.php");
 
   function login($myemail, $mypassword, $db){
     session_start();
@@ -45,7 +46,6 @@
   }
 
   function createStudent($name, $lastname, $emailStudent, $birth, $password){
-    include("config-db.php");
     if($db->connect_error)
       die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -58,7 +58,6 @@
   }
 
   function deleteStudent($emailStudent){
-    include("config-db.php");
     if($db->connect_error)
       die("Connection failed...". $db->connect_error);
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -92,7 +91,6 @@
   }
 
   function createSubject($name, $idSubject){
-    include("config-db.php");
     $emailTeacher = $_SESSION['login_user'];
     if($_SERVER["REQUEST_METHOD"] == "POST"){
       $sql = "INSERT INTO Subject VALUES('$name', '$idSubject', '$emailTeacher')";
@@ -105,7 +103,6 @@
   }
 
   function deleteSubject($idSubject){
-    include("config-db.php");
     if($_SERVER["REQUEST_METHOD"] == "POST"){
       $sql = "DELETE FROM Subject WHERE idSubject='$idSubject'";
       if($db->query($sql) === TRUE)
@@ -141,7 +138,6 @@
   }
 
   function getAttributes(){
-    include("config-db.php");
     $active = $_SESSION['login_user'];
     $isTeacher = isTeacher($db);
     if($isTeacher)
