@@ -356,7 +356,7 @@
   }
 
   function BackupDatabase(){
-    header("location: backup.php");
+    header("location: ./php/backup.php");
   }
 
 ?>
