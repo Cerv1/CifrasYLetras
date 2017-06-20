@@ -1,6 +1,9 @@
 <?php
 
-  require ("./php/common_page.php");
+  // if(session_status()==PHP_SESSION_NONE)
+  //   session_start();
+
+  require "./php/common_page.php";
   HTMLbegin();
 
   if(!isset($_GET["p"])){
