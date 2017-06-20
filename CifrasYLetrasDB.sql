@@ -38,7 +38,7 @@ CREATE TABLE `Resource` (
 
 LOCK TABLES `Resource` WRITE;
 /*!40000 ALTER TABLE `Resource` DISABLE KEYS */;
-INSERT INTO `Resource` VALUES ('presentacion','PRES','ISE'),('tema 158','t158-mates','MATES'),('Tema 1 - ISE','T1ISE','ISE'),('tema 1','t1LC','LC'),('Tema 1 - LMD','T1LMD','LMD'),('Tema 2 - IG','T2IG','IG'),('tema 2','t2LC','LC'),('tema 3','t3-FBD','FBD');
+INSERT INTO `Resource` VALUES ('presentacion.pdf','PRES','ISE'),('tema 158','t158-mates','MATES'),('Tema 1 - ISE','T1ISE','ISE'),('tema 1','t1LC','LC'),('Tema 1 - LMD','T1LMD','LMD'),('Tema 2 - IG','T2IG','IG'),('tema 2','t2LC','LC'),('tema 3','t3-FBD','FBD');
 /*!40000 ALTER TABLE `Resource` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,7 +54,7 @@ CREATE TABLE `Student` (
   `lastname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `emailStudent` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `birth` date DEFAULT NULL,
-  `password` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`emailStudent`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -65,7 +65,7 @@ CREATE TABLE `Student` (
 
 LOCK TABLES `Student` WRITE;
 /*!40000 ALTER TABLE `Student` DISABLE KEYS */;
-INSERT INTO `Student` VALUES ('Sergio','Cervilla Ortega','cervi@gmail.com','1996-06-26','cerviroot'),('Carlos Manuel','Sequí Sanchez','cmss@gmail.com','1996-07-03','sequi');
+INSERT INTO `Student` VALUES ('Carlos Manuel','Sequí Sanchez','cmss@gmail.com','1996-07-03','fc90c598053696ab356f01ed580d6ee73f11554b6c71fe1b591db402e83a42fa'),('Pablo','Parra Garófano','pabloparra@gmail.com','1995-10-03','986c229473762d8543ef1b45a9aa4ae87dccea16b8c38dcc7b6faec7912477db');
 /*!40000 ALTER TABLE `Student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,7 +132,7 @@ CREATE TABLE `Teacher` (
   `lastname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `emailTeacher` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `birth` date NOT NULL,
-  `password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`emailTeacher`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -143,7 +143,7 @@ CREATE TABLE `Teacher` (
 
 LOCK TABLES `Teacher` WRITE;
 /*!40000 ALTER TABLE `Teacher` DISABLE KEYS */;
-INSERT INTO `Teacher` VALUES ('adri','morente','adrian95morente@gmail.com','1995-10-20','adriroot'),('cervi','cervilla','cervick13@gmail.com','1996-06-26','cervipass');
+INSERT INTO `Teacher` VALUES ('adri','morente','adrian95morente@gmail.com','1995-10-20','1ea22f962c3d0d21a62b5542dca0acdafc2e4372d447fd8d187fd56bc42519c6'),('cervi','cervilla','cervick13@gmail.com','1996-06-26','a55393343e6f2719d441bc44a5206a05b83f92bf1d3122d80fd06980caecced5');
 /*!40000 ALTER TABLE `Teacher` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -156,4 +156,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-19 18:41:05
+-- Dump completed on 2017-06-20 13:07:13
