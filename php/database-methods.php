@@ -20,9 +20,8 @@
         $_SESSION['login_user'] = $myemail;
         header("location: user.php?p=0");
       }
-      else{
+      else
         return -1;
-      }
     }
   }
 
@@ -85,10 +84,6 @@
           echo "Error: " . $sql_student . "<br>" . $db->error;
       }
     }
-  }
-
-  function alterStudent(){
-
   }
 
   function createSubject($name, $idSubject){
