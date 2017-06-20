@@ -1,5 +1,5 @@
 <?php
-  include("config-db.php");
+include("./php/config-db.php");
 
   function login($myemail, $mypassword, $db){
     session_start();

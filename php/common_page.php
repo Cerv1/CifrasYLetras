@@ -1,6 +1,6 @@
 <?php
-  require("./php/config-db.php");
-  require("./php/database-methods.php");
+  include("./php/config-db.php");
+  include("./php/database-methods.php");
 
   function HTMLbegin(){
     echo '
@@ -360,6 +360,7 @@
   }
 
   function HTMLLogin(){
+    include ("./php/config-db.php");
     echo '
     <div class="login-card">
         <h1 id="acceder">Acceder</h1><br>
@@ -375,7 +376,7 @@
     if(isset($_POST['user']) && isset($_POST['pass'])){
       $myusername = mysqli_real_escape_string($db, $_POST['user']);
       $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
-      $result = login($myusername, $mypassword,$db);
+      $result = login($myusername, $mypassword, $db);
       if($result == -1){
         echo '
         <script>

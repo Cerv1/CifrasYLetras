@@ -1,26 +1,20 @@
 <?php
-
-  // if(session_status()==PHP_SESSION_NONE)
-  //   session_start();
-
-  require "./php/users_common_page.php";
-  UserHTMLbegin();
+  include ("./php/users_common_page.php");
+  include ("./php/common_page.php");
+  HTMLbegin();
   if($_SESSION['login_user']){
-    if(!isset($_GET["p"])){
+    if(!isset($_GET["p"]))
       $_GET['p']=0;
-    }
-    else if($_GET["p"]<0 || $_GET["p"]>20){
+
+    else if($_GET["p"]<0 || $_GET["p"]>13)
       $_GET['p']=0;
-    }
 
     UserHTMLheader($_GET["p"]);
     UserHTMLcontent($_GET["p"]);
-
-    UserHTMLfooter();
-    UserHTMLend();
+    HTMLfooter();
+    HTMLend();
   }
-  else{
+  else
     header("location: index.php?p=0");
-  }
 
 ?>

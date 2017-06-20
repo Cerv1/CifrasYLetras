@@ -3,34 +3,6 @@
   require("./php/database-methods.php");
   require("./php/common_page.php");
 
-  function UserHTMLbegin(){
-    session_start();
-    echo '
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <meta charset="utf-8">
-      <link rel="stylesheet" href="style.css">
-      <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
-      <script src="./js/contact-validator.js"></script>
-      <script src="./js/subject-validator.js"></script>
-      <script src="./js/delete-subject-validator.js"></script>
-      <script src="./js/register-user.js"></script>
-      <title>Cifras y Letras</title>
-    </head>
-    <body>
-    ';
-  }
-
-  function UserHTMLend(){
-    echo'
-    </body>
-    </html>
-    ';
-  }
-
   function UserHTMLheader($activo){
     echo '
     <div class="top-panel">
@@ -59,6 +31,7 @@
   }
 
   function UserHTMLcontent($page){
+    include ("./php/common_page.php");
     echo '<div id="content">';
     switch($page){
       case 0:
@@ -104,15 +77,8 @@
     echo '</div>';
   }
 
-  function UserHTMLfooter(){
-    echo'
-    <footer>
-    <small>(C) Sergio Cervilla , Adrián Morente</small>
-    </footer>
-    ';
-  }
-
   function UserHTMLSubject(){
+    include ("./phpp/config-db.php");
     echo '
     <div class="general-content">
       <div class="facilities-title"><h1>Lista de asignaturas y material</h1></div>
@@ -219,16 +185,12 @@
             <input type="text" formmethod="post" name="name" class="form-control" placeholder="Nombre de la asignatura"/>
             <label class="input-field-icon icon-user" for="login-name"></label>
           </div>
-
           <div class="info" id="name-info"></div>
-
           <div class="form-group">
             <input type="text" formmethod="post" name="id" class="form-control" placeholder="Código identificador"/>
             <label class="input-field-icon icon-email" for="login-email"></label>
           </div>
-
           <div class="info" id="id-info"></div>
-
           <input type="submit" formmethod="post" name="submit" class="login login-submit" value="Crear asignatura" onclick="return validateSubject()">
         </form>
       </div>
