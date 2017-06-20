@@ -45,7 +45,7 @@
             <h1>Cifras y Letras - Academia de Formación</h1>
           </div></a>
           <a class="header-item link-item" href="#"><div class="login-header">
-            <h4><a href="user.php?p=7">';
+            <h4><a href="user.php?p=14">';
             $activeUser = $_SESSION['login_user'];
             echo "$activeUser";
             echo '</a></h4>
@@ -54,7 +54,7 @@
       </header>
       <nav>
         <div><ul class="link-item">';
-        $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto", "Gestión", "Mi cuenta"];
+        $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto", "Gestión", "Mi cuenta", "Documentación", "Copia de seguridad DB"];
           foreach ($items as $k => $v)
             echo "<li".($k==$activo?" class='activo'":"").">"."<a href='user.php?p=".($k)."'>".$v."</a></li>";
         echo '</ul>
@@ -73,14 +73,14 @@
       case 4: UserHTMLContact(); break;
       case 5: UserHTMLManagement(); break;
       case 6: UserHTMLLogin(); break;
-      case 7: UserHTMLLogin(); break;
-      case 8: SubjectCreateUser(); break;
-      case 9: CreateHTMLStudent(); break;
-      case 10: DeleteHTMLStudent(); break;
-      case 11: CreateHTMLSubject(); break;
-      case 12: DeleteHTMLSubject(); break;
-      case 13: ShowDocumentation(); break;
-      case 14: BackupDatabase(); break;
+      case 7: UserShowDocumentation(); break;
+      case 8: UserBackupDatabase(); break;
+      case 9: SubjectCreateUser(); break;
+      case 10: CreateHTMLStudent(); break;
+      case 11: DeleteHTMLStudent(); break;
+      case 12: CreateHTMLSubject(); break;
+      case 13: DeleteHTMLSubject(); break;
+      case 14: UserHTMLLogin(); break;
     }
     echo '</div>';
   }
@@ -96,10 +96,10 @@
           echo '</div>';
         if(isTeacher($db)){
           echo '<div class="subject-buttons">
-            <a href="user.php?p=9"><input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" /></a>
-            <a href="user.php?p=10"><input type="button"  class="login login-submit" name="deleteUser" value="Eliminar alumno" /></a>
-            <a href="user.php?p=11"><input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" /></a>
-            <a href="user.php?p=12"><input type="button"  class="login login-submit" name="deleteSubject" value="Eliminar asignatura" /></a>
+            <a href="user.php?p=10"><input type="button"  class="login login-submit" name="createUser" value="Añadir alumno" /></a>
+            <a href="user.php?p=11"><input type="button"  class="login login-submit" name="deleteUser" value="Eliminar alumno" /></a>
+            <a href="user.php?p=12"><input type="button" class="login login-submit" name="createSubject" value="Añadir asignatura" /></a>
+            <a href="user.php?p=13"><input type="button"  class="login login-submit" name="deleteSubject" value="Eliminar asignatura" /></a>
           </div>';
         }
       echo '</div>
@@ -260,12 +260,12 @@
     }
   }
 
-  function ShowDocumentation(){
-    header("location: documentacion.pdf");
+  function UserShowDocumentation(){
+    ShowDocumentation();
   }
 
-  function BackupDatabase(){
-    header("location: backup.php");
+  function UserBackupDatabase(){
+    BackupDatabase();
   }
 
 ?>

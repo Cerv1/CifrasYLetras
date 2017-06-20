@@ -44,6 +44,6 @@
   $backup[0]=" ";
   $backup[strlen($backup)-1]=" ";
   $backup = "SET FOREIGN_KEY_CHECKS=0;\n" . $backup . "\nSET FOREIGN_KEY_CHECKS=1;";
-  file_put_contents('../db_backup/backup.sql', $backup);
-
+  // file_put_contents('../db_backup/backup.sql', $backup);
+  echo $backup;
 ?>

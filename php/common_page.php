@@ -37,13 +37,13 @@
             <h1>Cifras y Letras - Academia de Formación</h1>
           </div></a>
           <a class="header-item link-item" href="#"><div class="login-header">
-            <h4><a href="index.php?p=5">LOG IN</a></h4>
+            <h4><a href="index.php?p=7">LOG IN</a></h4>
           </div></a>
         </div>
       </header>
       <nav>
         <div><ul class="link-item">';
-        $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto"];
+        $items = ["Inicio", "Formación", "Instalaciones", "Sobre nosotros", "Contacto", "Documentación", "Copia de seguridad DB"];
           foreach ($items as $k => $v)
             echo "<li".($k==$activo?" class='activo'":"").">"."<a href='index.php?p=".($k)."'>".$v."</a></li>";
         echo '</ul>
@@ -60,7 +60,9 @@
       case 2: HTMLFacilities(); break;
       case 3: HTMLAboutUs(); break;
       case 4: HTMLContact(); break;
-      case 5: HTMLLogin(); break;
+      case 5: ShowDocumentation(); break;
+      case 6: BackupDatabase(); break;
+      case 7: HTMLLogin(); break;
     }
     echo '</div>';
   }
@@ -348,4 +350,13 @@
       }
     }
   }
+
+  function ShowDocumentation(){
+    header("location: documentacion.pdf");
+  }
+
+  function BackupDatabase(){
+    header("location: backup.php");
+  }
+
 ?>
