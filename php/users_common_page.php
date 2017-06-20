@@ -79,6 +79,8 @@
       case 10: DeleteHTMLStudent(); break;
       case 11: CreateHTMLSubject(); break;
       case 12: DeleteHTMLSubject(); break;
+      case 13: ShowDocumentation(); break;
+      case 14: BackupDatabase(); break;
     }
     echo '</div>';
   }
@@ -256,6 +258,14 @@
       $result = deleteSubject($_POST["id"]);
       echo $result;
     }
+  }
+
+  function ShowDocumentation(){
+    header("location: documentacion.pdf");
+  }
+
+  function BackupDatabase(){
+    header("location: backup.php");
   }
 
 ?>
